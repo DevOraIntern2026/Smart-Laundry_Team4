@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+/* Editing the container class so that it works like bootstrap container */
+
+@layer base {
+  .container {
+    @apply px-4 mx-auto max-w-[540px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1140px] xl:max-w-[1320px];
+  }
+}
+
+/* Project colors from figma desgin  */
+
+@theme {
+  --color-blue-light: #e6f1fa;
+  --color-blue-light-hover: #daeaf7;
+  --color-blue-light-active: #b2d5ef;
+
+  --color-blue-normal: #0776cb;
+  --color-blue-normal-hover: #068ab7;
+  --color-blue-normal-active: #065aa2;
+
+  --color-blue-dark: #055998;
+  --color-blue-dark-hover: #04477a;
+  --color-blue-dark-active: #03355b;
+
+  --color-blue-darker: #022947;
+}
