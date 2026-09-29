@@ -16,9 +16,4 @@ export const env: Env = {
   admin_signature: process.env.ADMIN_SIGNATURE as string,
   user_refresh_signature: process.env.USER_REFRESH_SIGNATURE as string,
   admin_refresh_signature: process.env.ADMIN_REFRESH_SIGNATURE as string,
-  //   cloud_name: process.env.CLOUD_NAME as string,
-  //   api_key: process.env.API_KEY as string,
-  //   api_secret: process.env.API_SECRET as string,
-  //   access_key: process.env.Access_key_ID as string,
-  //   secret_key: process.env.Secret_access_key as string,
 };

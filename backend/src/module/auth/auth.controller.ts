@@ -2,7 +2,13 @@ import { Request, Response, Router } from "express";
 import { authService } from "./auth.service";
 import { successResponce } from "../../common/responce/succ.responce";
 import { validation } from "../../common/validation/validation";
-import { loginSchema, signUpSchema, verifyOTPSchema } from "./auth.validation";
+import {
+  loginSchema,
+  logoutSchema,
+  refreshTokenSchema,
+  signUpSchema,
+  verifyOTPSchema,
+} from "./auth.validation";
 const router = Router();
 router.post(
   "/signup",
@@ -44,6 +50,38 @@ router.post(
       res,
       data: user,
       message: "Account verified successfully",
+      status: 200,
+    });
+  },
+);
+
+router.post(
+  "/refresh-token",
+  validation(refreshTokenSchema),
+  async (req: Request, res: Response) => {
+    const { refreshToken } = req.body;
+    const data = await authService.refreshToken(refreshToken);
+    successResponce({
+      res,
+      data,
+      message: "Access token refreshed successfully",
+      status: 200,
+    });
+  },
+);
+
+router.post(
+  "/logout",
+  validation(logoutSchema),
+  async (req: Request, res: Response) => {
+    const { refreshToken } = req.body;
+
+    await authService.logout(refreshToken);
+
+    successResponce({
+      res,
+      data: "success",
+      message: "Logged out successfully",
       status: 200,
     });
   },

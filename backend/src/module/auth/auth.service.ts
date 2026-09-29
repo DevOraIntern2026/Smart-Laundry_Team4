@@ -9,6 +9,7 @@ import {
   badRequest,
   conflict,
   notFound,
+  unauthorized,
 } from "../../common/responce/error.responce";
 import { compareHash, hashing } from "../../common/utils/security/encryption";
 import { sendMail } from "../../common/utils/service/email/sendEmail";
@@ -66,7 +67,13 @@ class AuthService {
     if (!user.isVerified) {
       throw new badRequest("Please verify your account first");
     }
+
     const { accessToken, refreshToken } = token.generateTokens(user);
+    await redisService.set({
+      key: `refresh:${user._id}`,
+      value: refreshToken,
+      ttl: 60 * 60 * 24 * 365,
+    });
     return { accessToken, refreshToken };
   }
 
@@ -87,6 +94,35 @@ class AuthService {
     );
     await redisService.del(`user:${userId}`);
     return user;
+  }
+
+  async refreshToken(refreshToken: string) {
+    const decoded: any = token.verifyRefreshToken(refreshToken);
+    const userId = decoded.id;
+    const savedToken = await redisService.get(`refresh:${userId}`);
+    if (!savedToken) {
+      throw new unauthorized("Refresh token expired or logged out");
+    }
+    if (savedToken !== refreshToken) {
+      throw new unauthorized("Invalid refresh token");
+    }
+    const user = await this.userRepo.findOne({
+      _id: userId,
+    });
+    if (!user) {
+      throw new notFound("User not found");
+    }
+    const { accessToken } = token.generateTokens(user);
+    return {
+      accessToken,
+    };
+  }
+
+  async logout(refreshToken: string) {
+    const decoded: any = token.verifyRefreshToken(refreshToken);
+    const userId = decoded.id;
+    await redisService.del(`refresh:${userId}`);
+    return true;
   }
 }
 

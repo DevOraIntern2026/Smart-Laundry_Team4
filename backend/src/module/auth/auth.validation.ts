@@ -45,3 +45,15 @@ export const verifyOTPSchema = {
     }),
   }),
 };
+
+export const refreshTokenSchema = {
+  body: z.strictObject({
+    refreshToken: z.string(),
+  }),
+};
+
+export const logoutSchema = {
+  body: z.strictObject({
+    refreshToken: z.string(),
+  }),
+};
