@@ -1,0 +1,93 @@
+import {
+  ICreateUser,
+  ILogin,
+  IUser,
+} from "../../common/interface/user.interface";
+import { DatabaseRepository } from "../../database/repo/database.repo";
+import userModel from "../../database/model/user.model";
+import {
+  badRequest,
+  conflict,
+  notFound,
+} from "../../common/responce/error.responce";
+import { compareHash, hashing } from "../../common/utils/security/encryption";
+import { sendMail } from "../../common/utils/service/email/sendEmail";
+import { redisService } from "../../common/service/redis.service";
+import { token, userType } from "../../common/utils/token/token";
+import { userRole } from "../../common/enum/role.enum";
+
+class AuthService {
+  private userRepo: DatabaseRepository<IUser>;
+  constructor() {
+    this.userRepo = new DatabaseRepository<IUser>(userModel);
+  }
+
+  async signUp(data: ICreateUser) {
+    const { firstName, lastName, phoneNumber, age, email, password } = data;
+    const user = await this.userRepo.findOne({ email });
+    if (user) {
+      throw new conflict("Email already exist");
+    }
+    const hashedPassword = await hashing(password);
+    const addedUser = await this.userRepo.create({
+      firstName,
+      lastName,
+      phoneNumber,
+      age,
+      email,
+      password: hashedPassword,
+      role: userRole.user,
+      isVerified: false,
+    });
+    const otp = Math.floor(100000 + Math.random() * 900000);
+    await redisService.set({
+      key: `user:${addedUser._id}`,
+      value: String(otp),
+      ttl: 60 * 5,
+    });
+    await sendMail({
+      to: addedUser.email,
+      subject: "Welcome to Smart Laundry",
+      html: `<div style="font-family: Arial, sans-serif; max-width: 500px; margin: auto; padding: 30px; border: 1px solid #ddd; border-radius: 10px;"> <h2>Welcome to Smart Laundry 👋</h2> <p>Hi ${addedUser.firstName},</p> <p>Thank you for creating an account with us.</p> <p>Your verification code is:</p> <div style="font-size: 32px; font-weight: bold; letter-spacing: 8px; text-align: center; padding: 15px; margin: 20px 0; background: #f5f5f5; border-radius: 8px;"> ${otp} </div> <p>This code will expire soon. Please don't share it with anyone.</p> <p>Best regards,<br>Smart Laundry Team</p> </div> `,
+    });
+    return addedUser;
+  }
+
+  async login(data: ILogin) {
+    const { email, password } = data;
+    const user: userType | null = await this.userRepo.findOne({ email });
+    if (!user) {
+      throw new notFound("email not found");
+    }
+    const isValid = await compareHash(password, user.password);
+    if (!isValid) {
+      throw new badRequest("Incorrect password");
+    }
+    if (!user.isVerified) {
+      throw new badRequest("Please verify your account first");
+    }
+    const { accessToken, refreshToken } = token.generateTokens(user);
+    return { accessToken, refreshToken };
+  }
+
+  async verifyOTP(userId: string, otp: string) {
+    const savedOTP = await redisService.get(`user:${userId}`);
+
+    if (!savedOTP) {
+      throw new badRequest("OTP expired or not found");
+    }
+
+    if (savedOTP !== otp) {
+      throw new badRequest("Invalid OTP");
+    }
+
+    const user = await this.userRepo.updateOne(
+      { _id: userId },
+      { isVerified: true },
+    );
+    await redisService.del(`user:${userId}`);
+    return user;
+  }
+}
+
+export const authService = new AuthService();
