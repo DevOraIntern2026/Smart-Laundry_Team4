@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 import { IUser } from "../../common/interface/user.interface";
 import { userRole } from "../../common/enum/role.enum";
+import { Provider } from "../../common/enum/provider.enum";
 
 const userSchema = new Schema<IUser>(
   {
@@ -8,6 +9,11 @@ const userSchema = new Schema<IUser>(
       type: String,
       enum: Object.values(userRole),
       default: userRole.user,
+    },
+    provider: {
+      type: String,
+      enum: Object.values(Provider),
+      default: Provider.SYSTEM,
     },
     firstName: {
       type: String,
@@ -27,7 +33,9 @@ const userSchema = new Schema<IUser>(
     },
     password: {
       type: String,
-      required: true,
+      required: function (): boolean {
+        return this.provider === Provider.SYSTEM;
+      },
     },
     phoneNumber: {
       type: String,
@@ -35,7 +43,7 @@ const userSchema = new Schema<IUser>(
     },
     age: {
       type: Number,
-      required: true,
+      min: 0,
     },
     isVerified: {
       type: Boolean,

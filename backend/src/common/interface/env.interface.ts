@@ -9,4 +9,6 @@ export interface Env {
   admin_signature: string;
   user_refresh_signature: string;
   admin_refresh_signature: string;
+  client_id: string;
+  client_secret: string;
 }

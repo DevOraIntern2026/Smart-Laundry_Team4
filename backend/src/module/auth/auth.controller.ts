@@ -86,4 +86,15 @@ router.post(
     });
   },
 );
+
+router.post("/login-with-google", async (req, res) => {
+  const { idToken } = req.body;
+  const user = await authService.signInWithGoogle(idToken);
+  successResponce({
+    res,
+    status: 200,
+    message: "login successfully",
+    data: user,
+  });
+});
 export default router;

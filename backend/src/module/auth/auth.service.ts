@@ -16,7 +16,9 @@ import { sendMail } from "../../common/utils/service/email/sendEmail";
 import { redisService } from "../../common/service/redis.service";
 import { token, userType } from "../../common/utils/token/token";
 import { userRole } from "../../common/enum/role.enum";
-
+import { OAuth2Client } from "google-auth-library";
+import { env } from "../../config/env.service";
+import { Provider } from "../../common/enum/provider.enum";
 class AuthService {
   private userRepo: DatabaseRepository<IUser>;
   constructor() {
@@ -36,6 +38,7 @@ class AuthService {
       phoneNumber,
       age,
       email,
+      provider: Provider.SYSTEM,
       password: hashedPassword,
       role: userRole.user,
       isVerified: false,
@@ -59,6 +62,9 @@ class AuthService {
     const user: userType | null = await this.userRepo.findOne({ email });
     if (!user) {
       throw new notFound("email not found");
+    }
+    if (!user.password) {
+      throw new badRequest("Please login with Google");
     }
     const isValid = await compareHash(password, user.password);
     if (!isValid) {
@@ -124,6 +130,54 @@ class AuthService {
     await redisService.del(`refresh:${userId}`);
     return true;
   }
+
+  signInWithGoogle = async (idToken: string) => {
+    const client = new OAuth2Client({
+      clientId: env.client_id,
+    });
+    const ticket = await client.verifyIdToken({
+      idToken,
+      audience: env.client_id,
+    });
+    const payload = ticket.getPayload();
+    if (!payload) {
+      throw new Error("Invalid Google token");
+    }
+    if (!payload.email || !payload.name || payload.email_verified !== true) {
+      throw new badRequest("Invalid Google account data");
+    }
+    const user = await this.userRepo.findOne({
+      email: payload.email,
+    });
+    if (user) {
+      const { accessToken, refreshToken } = token.generateTokens(user);
+      return {
+        accessToken,
+        refreshToken,
+      };
+    }
+    let [firstName, ...lastNameParts] = payload.name.split(" ");
+    if (!firstName) {
+      firstName = "User";
+    }
+    const lastName = lastNameParts.join(" ") || "User";
+    const newUser = await this.userRepo.create({
+      firstName,
+      lastName,
+      email: payload.email,
+      role: userRole.user,
+      provider: Provider.GOOGLE,
+      isVerified: payload.email_verified,
+    });
+    if (!newUser) {
+      throw new badRequest("can't add user");
+    }
+    const { accessToken, refreshToken } = token.generateTokens(newUser);
+    return {
+      accessToken,
+      refreshToken,
+    };
+  };
 }
 
 export const authService = new AuthService();

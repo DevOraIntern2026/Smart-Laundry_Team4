@@ -16,4 +16,6 @@ export const env: Env = {
   admin_signature: process.env.ADMIN_SIGNATURE as string,
   user_refresh_signature: process.env.USER_REFRESH_SIGNATURE as string,
   admin_refresh_signature: process.env.ADMIN_REFRESH_SIGNATURE as string,
+  client_id: process.env.CLIENT_ID as string,
+  client_secret: process.env.CLIENT_SECRET as string,
 };
