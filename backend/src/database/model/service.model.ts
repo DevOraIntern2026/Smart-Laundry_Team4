@@ -5,30 +5,40 @@ import { userRole } from "../../common/enum/role.enum";
 import { timeStamp } from "node:console";
 import { Types } from "mysql2";
 
-
-export const service_schema = new Schema<I_service>({
-        creator:{
-            type:Schema.Types.ObjectId,
-            ref:"User",
-            required:true,
+const service_schema = new Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+            trim: true,
+            minlength: 2,
+            maxlength: 100
         },
-    name:{
-        type:String,
-        required:true,
-        trim:true,
+        description: {
+            type: String,
+            required: true,
+            trim: true,
+            minlength: 5
+        },
+        price: {
+            type: Number,
+            required: true,
+            min: 0.01
+        },
+        isAvailable: {
+            type: Boolean,
+            default: true
+        },
+        creator: {
+            type: Schema.Types.ObjectId,
+            ref: "User",
+            required: true
+        }
     },
-    description:{
-        type:String,
-        required:true
-    },
-    price:{
-        type:Number,
-        required:true,
-        min:0,
+    {
+        timestamps: true
     }
-
-
-},{timestamps:true,})
+);
 
 
 

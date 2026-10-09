@@ -1,10 +1,11 @@
 import dotenv from "dotenv";
-import path from "path";
+import path from "node:path";
 import { Env } from "../common/interface/env.interface";
 
-const nodeEnv = process.env.NODE_ENV;
-const envPath = path.resolve(process.cwd(), `.env.${nodeEnv}`);
+const envPath = path.resolve(process.cwd(), "backend", "src", "config", "dev.env");
+
 dotenv.config({ path: envPath });
+
 export const env: Env = {
   port: process.env.PORT as string,
   mood: process.env.MOOD as string,

@@ -1,0 +1,217 @@
+import { Router, type Request, type Response, type NextFunction } from "express";
+import mongoose from "mongoose";
+import Joi from "joi";
+import {
+    create_order_service,
+    get_all_orders_service,
+    get_order_by_id_service,
+    get_customer_orders_service,
+    update_order_status_service
+} from "./order_service.js";
+import {
+    create_order_schema,
+    get_order_by_id_schema,
+    get_customer_orders_schema,
+    get_orders_schema,
+    update_order_status_schema
+} from "./order.validation.js";
+import { OrderStatus } from "../../common/enum/order.enum.js";
+
+const order_router = Router();
+
+const validate = (
+    schema: Joi.ObjectSchema,
+    source: "body" | "params" | "query"
+) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+        const { error, value } = schema.validate(req[source], {
+            abortEarly: false,
+            convert: true
+        });
+
+        if (error) {
+            return res.status(400).json({
+                message: "Validation error",
+                errors: error.details.map((detail) => detail.message)
+            });
+        }
+
+        if (source === "body") {
+            req.body = value;
+        }
+
+        next();
+    };
+};
+
+order_router.post(
+    "/",
+    validate(create_order_schema, "body"),
+    async (req: Request, res: Response) => {
+        try {
+            const order = await create_order_service(req.body);
+
+            return res.status(201).json({
+                message: "Order created successfully",
+                order
+            });
+        } catch (error) {
+            const message = error instanceof Error
+                ? error.message
+                : "Error creating order";
+
+            if (message.startsWith("Service not found")) {
+                return res.status(404).json({ message });
+            }
+
+            if (message.startsWith("Service is unavailable")) {
+                return res.status(422).json({ message });
+            }
+
+            if (
+                message === "Invalid pickup schedule" ||
+                message === "Invalid delivery schedule"
+            ) {
+                return res.status(400).json({ message });
+            }
+
+            return res.status(500).json({
+                message: "Error creating order"
+            });
+        }
+    }
+);
+
+order_router.get(
+    "/",
+    validate(get_orders_schema, "query"),
+    async (req: Request, res: Response) => {
+        try {
+            const status = req.query.status as OrderStatus| undefined;
+        const orders = await get_all_orders_service(status);
+
+            return res.status(200).json({
+                message: "Orders fetched successfully",
+                orders
+            });
+        } catch {
+            return res.status(500).json({
+                message: "Error fetching orders"
+            });
+        }
+    }
+);
+
+order_router.get(
+    "/customer/:customerId",
+    validate(get_customer_orders_schema, "params"),
+    async (req: Request, res: Response) => {
+        try {
+            const customerId = req.params.customerId;
+
+            if (
+                typeof customerId !== "string" ||
+                !mongoose.Types.ObjectId.isValid(customerId)
+            ) {
+                return res.status(400).json({
+                    message: "Invalid Customer ID"
+                });
+            }
+
+            const orders = await get_customer_orders_service(customerId);
+
+            return res.status(200).json({
+                message: "Customer orders fetched successfully",
+                orders
+            });
+        } catch {
+            return res.status(500).json({
+                message: "Error fetching customer orders"
+            });
+        }
+    }
+);
+
+order_router.get(
+    "/:orderId",
+    validate(get_order_by_id_schema, "params"),
+    async (req: Request, res: Response) => {
+        try {
+            const orderId = req.params.orderId;
+
+            if (
+                typeof orderId !== "string" ||
+                !mongoose.Types.ObjectId.isValid(orderId)
+            ) {
+                return res.status(400).json({
+                    message: "Invalid Order ID"
+                });
+            }
+
+            const order = await get_order_by_id_service(orderId);
+
+            if (!order) {
+                return res.status(404).json({
+                    message: "Order not found"
+                });
+            }
+
+            return res.status(200).json({
+                message: "Order fetched successfully",
+                order
+            });
+        } catch {
+            return res.status(500).json({
+                message: "Error fetching order"
+            });
+        }
+    }
+);
+
+order_router.patch(
+    "/:orderId/status",
+    validate(get_order_by_id_schema, "params"),
+    validate(update_order_status_schema, "body"),
+    async (req: Request, res: Response) => {
+        try {
+            const orderId = req.params.orderId;
+
+            if (
+                typeof orderId !== "string" ||
+                !mongoose.Types.ObjectId.isValid(orderId)
+            ) {
+                return res.status(400).json({
+                    message: "Invalid Order ID"
+                });
+            }
+
+            const order = await update_order_status_service(
+                orderId,
+                req.body.status
+            );
+
+            return res.status(200).json({
+                message: "Order status updated successfully",
+                order
+            });
+        } catch (error) {
+            const message = error instanceof Error
+                ? error.message
+                : "Error updating order status";
+
+            if (message === "Order not found") {
+                return res.status(404).json({ message });
+            }
+
+            if (message.startsWith("Invalid status transition")) {
+                return res.status(422).json({ message });
+            }
+
+            return res.status(500).json({
+                message: "Error updating order status"
+            });
+        }
+    }
+);
+
+export default order_router;
