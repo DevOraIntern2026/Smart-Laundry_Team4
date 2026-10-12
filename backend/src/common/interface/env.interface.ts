@@ -1,4 +1,5 @@
 export interface Env {
+  DB_URL:string,
   port: string;
   mood: string;
   salt_rounds: string;
