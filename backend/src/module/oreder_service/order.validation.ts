@@ -1,3 +1,4 @@
+
 import Joi from "joi";
 import { OrderStatus } from "../../common/enum/order.enum.js";
 
@@ -23,7 +24,6 @@ export const create_order_schema = Joi.object({
         .items(
             Joi.object({
                 service: objectId_schema.required(),
-
                 item: objectId_schema.required(),
 
                 quantity: Joi.number()
@@ -57,6 +57,20 @@ export const create_order_schema = Joi.object({
     }
 
     return value;
+});
+
+export const update_pickup_schema = Joi.object({
+    date: Joi.date()
+        .iso()
+        .min("now")
+        .required(),
+
+    timeSlot: Joi.string()
+        .trim()
+        .min(1)
+        .required(),
+
+    addressId: objectId_schema.required()
 });
 
 export const get_order_by_id_schema = Joi.object({
