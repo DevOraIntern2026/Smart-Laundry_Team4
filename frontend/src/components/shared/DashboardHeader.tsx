@@ -27,7 +27,7 @@ export default function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
         <input
           type="search"
           placeholder="ابحث عن طلب، عميل، أو رقم شحنة..."
-          className="w-full ps-10 pe-3 py-2 text-sm rounded-lg bg-[#F4F7FF] text-body placeholder:text-[#737373] outline-none transition focus:ring-2 focus:ring-primary/20"
+          className="w-full ps-10 pe-3 py-2 text-sm rounded-lg bg-primary-100 text-body placeholder:text-gray-600 outline-none transition focus:ring-2 focus:ring-primary/20"
         />
       </div>
 

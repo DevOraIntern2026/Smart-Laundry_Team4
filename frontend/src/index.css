@@ -39,17 +39,16 @@
   --font-tajawal: "Tajawal", sans-serif;
 
   /* Font sizes */
-  --text-xs: 10px;      /* 0.625rem */
-  --text-sm: 13px;      /* 0.813rem */
-  --text-md: 16px;    /* 1.000rem */
-  --text-lg: 20px;      /* 1.250rem */
-  --text-xl: 25px;      /* 1.563rem */
-  --text-2xl: 31px;     /* 1.938rem */
-  --text-3xl: 39px;     /* 2.438rem */
-  --text-4xl: 49px;     /* 3.063rem */
-  --text-5xl: 61px;     /* 3.813rem */
-  --text-6xl: 76px;     /* 4.750rem */
-
+  --text-xs: 10px; /* 0.625rem */
+  --text-sm: 13px; /* 0.813rem */
+  --text-md: 16px; /* 1.000rem */
+  --text-lg: 20px; /* 1.250rem */
+  --text-xl: 25px; /* 1.563rem */
+  --text-2xl: 31px; /* 1.938rem */
+  --text-3xl: 39px; /* 2.438rem */
+  --text-4xl: 49px; /* 3.063rem */
+  --text-5xl: 61px; /* 3.813rem */
+  --text-6xl: 76px; /* 4.750rem */
 
   /* Shades of gray colors (cards) from figma  */
   --color-gray-50: #ffffff;
