@@ -21,7 +21,7 @@ import OrderTracking from "../pages/customer/orders/OrderTracking";
 import AdminLogin from "../pages/admin/account/AdminLogin";
 import OrderDetails from "../pages/admin/orders/OrderDetails";
 import Analysis from "../pages/admin/Analysis";
-import DashboardHome from "../pages/admin/DashboardHome";
+import AdminHome from "../pages/admin/home";
 import Delivery from "../pages/admin/Delivery";
 import AdminServices from "../pages/admin/services/AdminServices";
 import LaundryItems from "../pages/admin/services/LaundryItems";
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
     path: "/admin",
     element: <AdminLayout />,
     children: [
-      { index: true, element: <DashboardHome /> },
+      { index: true, element: <AdminHome /> },
 
       { path: "services", element: <AdminServices/> },
       { path: "services/items", element: <LaundryItems /> },
