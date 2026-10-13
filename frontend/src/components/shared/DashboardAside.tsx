@@ -2,12 +2,12 @@ import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 
 // Icons
-import homeIcon from "../../assets/icons/aside-home-icon.png";
-import ordersIcon from "../../assets/icons/aside-orders-icon.png";
-import deliveryIcon from "../../assets/icons/aside-delivery-icon.png";
-import customersIcon from "../../assets/icons/aside-customers-icon.png";
-import servicesIcon from "../../assets/icons/aside-services-icon.png";
-import analysisIcon from "../../assets/icons/aside-analysis-icon.png";
+import homeIcon from "../../assets/icons/aside-home-icon.svg?react";
+import ordersIcon from "../../assets/icons/aside-orders-icon.svg?react";
+import deliveryIcon from "../../assets/icons/aside-delivery-icon.svg?react";
+import customersIcon from "../../assets/icons/aside-customers-icon.svg?react";
+import servicesIcon from "../../assets/icons/aside-services-icon.svg?react";
+import analysisIcon from "../../assets/icons/aside-analysis-icon.svg?react";
 
 const navItems = [
   { label: "الرئيسية", path: "/admin", icon: homeIcon },
@@ -59,7 +59,7 @@ export default function DashboardAside({
 
         <nav className="flex-1">
           <ul className="flex flex-col gap-1">
-            {navItems.map(({ label, path, icon }) => (
+            {navItems.map(({ label, path, icon: Icon }) => (
               <li key={path}>
                 <NavLink
                   to={path}
@@ -69,11 +69,11 @@ export default function DashboardAside({
                     `flex items-center gap-2 rounded-lg p-2 text-sm font-bold transition-colors duration-200 ${
                       isActive
                         ? "bg-accent text-background hover:bg-accent-hover"
-                        : "text-[#545454] hover:bg-accent/10"
+                        : "text-gray-700 hover:bg-accent/10"
                     }`
                   }
                 >
-                  <img src={icon} alt="Icon" className="h-4 w-4" />
+                  <Icon className="h-4 w-4" />
 
                   <span>{label}</span>
                 </NavLink>

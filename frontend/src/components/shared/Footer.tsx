@@ -62,7 +62,7 @@ export default function Footer() {
               alt="Nivo Logo"
               className="h-7 w-auto mx-auto md:mx-0 mb-3"
             />
-            <p className="max-w-xl text-sm leading-6 text-[#E6EEFF] mb-3">
+            <p className="max-w-xl text-sm leading-6 text-primary-200 mb-3">
               خدمة الغسيل والتنظيف الجاف الذكية الأسرع في مصر، نمتلئ بملابسك
               بأحدث التقنيات مع التوصيل الدقيق حتى باب منزلك في الموعد المحدد.
             </p>
@@ -92,7 +92,7 @@ export default function Footer() {
                     alt=""
                     className="size-4 object-contain"
                   />
-                  <span className="text-[#E6EEFF]">{area}</span>
+                  <span className="text-primary-200">{area}</span>
                 </li>
               ))}
             </ul>
@@ -112,7 +112,7 @@ export default function Footer() {
                       alt="Contact Icon"
                       className="size-4 shrink-0"
                     />
-                    <span dir="ltr" className="text-[#E6EEFF]">
+                    <span dir="ltr" className="text-primary-200">
                       {contact.label}
                     </span>
                   </a>
@@ -156,7 +156,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 mt-8 text-xs text-[#E6EEFF] md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 mt-8 text-xs text-primary-200 md:flex-row">
           <p>
             © 2025 نيفو Nivo Smart Laundry - جميع الحقوق محفوظة لجمهورية مصر
             العربية.
