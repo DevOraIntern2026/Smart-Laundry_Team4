@@ -25,3 +25,12 @@ export const HeaderData = {
 
   notificationsCount: 0,
 };
+
+export const NotFoundData = {
+  code: "404",
+  title: "الصفحة غير موجودة",
+  description:
+    "يبدو أن الصفحة التي تبحث عنها غير متاحة أو تم نقلها. يمكنك العودة للرئيسية أو تصفح خدماتنا.",
+  primaryAction: { label: "العودة للرئيسية", path: "/" },
+  secondaryAction: { label: "تصفح الخدمات", path: "/services" },
+};
