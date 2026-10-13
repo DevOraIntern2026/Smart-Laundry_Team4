@@ -23,6 +23,7 @@ import OrderDetails from "../pages/admin/orders/OrderDetails";
 import Analysis from "../pages/admin/Analysis";
 import DashboardHome from "../pages/admin/DashboardHome";
 import Delivery from "../pages/admin/Delivery";
+import AdminServices from "../pages/admin/services/AdminServices";
 import LaundryItems from "../pages/admin/services/LaundryItems";
 import Orders from "../pages/admin/orders/Orders";
 import Customers from "../pages/admin/customers/Customers";
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <DashboardHome /> },
 
-      { path: "services", element: <Services /> },
+      { path: "services", element: <AdminServices/> },
       { path: "services/items", element: <LaundryItems /> },
 
       { path: "orders", element: <Orders /> },
