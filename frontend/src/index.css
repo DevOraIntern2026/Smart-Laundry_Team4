@@ -36,4 +36,52 @@
 
   /* Font family */
   --font-nunito: "Nunito", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+
+  /* Font sizes */
+  --text-xs: 10px;      /* 0.625rem */
+  --text-sm: 13px;      /* 0.813rem */
+  --text-md: 16px;    /* 1.000rem */
+  --text-lg: 20px;      /* 1.250rem */
+  --text-xl: 25px;      /* 1.563rem */
+  --text-2xl: 31px;     /* 1.938rem */
+  --text-3xl: 39px;     /* 2.438rem */
+  --text-4xl: 49px;     /* 3.063rem */
+  --text-5xl: 61px;     /* 3.813rem */
+  --text-6xl: 76px;     /* 4.750rem */
+
+
+  /* Shades of gray colors (cards) from figma  */
+  --color-gray-50: #ffffff;
+  --color-gray-100: #f8f8f8;
+  --color-gray-200: #ededed;
+  --color-gray-300: #dedede;
+  --color-gray-400: #d6d6d6;
+  --color-gray-500: #a2a2a2;
+  --color-gray-600: #737373;
+  --color-gray-700: #545454;
+  --color-gray-800: #404040;
+  --color-gray-900: #272727;
+
+  /* Shades of primary colors  (blues ) */
+  --color-primary-50: #f0fbff;
+  --color-primary-100: #f4f7ff;
+  --color-primary-200: #e6eeff;
+  --color-primary-300: #d0dfff;
+  --color-primary-400: #adc7ff;
+  --color-primary-500: #77a1ff;
+  --color-primary-600: #4d7fff;
+  --color-primary-700: #2a5bff;
+  --color-primary-800: #1a37ff;
+  --color-primary-900: #1900f3;
+
+  /* shades of secondary/ accent colors (reds) */
+  --color-accent-50: #fffaf9;
+  --color-accent-100: #fff5f3;
+  --color-accent-200: #ffede5;
+  --color-accent-300: #ffd4cf;
+  --color-accent-400: #ffb5ad;
+  --color-accent-500: #feb77d;
+  --color-accent-600: #fe574f;
+  --color-accent-700: #f51d23;
 }
