@@ -29,6 +29,8 @@ import Orders from "../pages/admin/orders/Orders";
 import Customers from "../pages/admin/customers/Customers";
 import CustomerDetails from "../pages/admin/customers/CustomerDetails";
 
+import NotFound from "../pages/NotFound";
+
 const router = createBrowserRouter([
   // login and register are separated outside the layouts to appear without any fixed components like Header, Footer or Aside in main layout or in dashboard
   { path: "/login", element: <Login /> },
@@ -49,6 +51,9 @@ const router = createBrowserRouter([
       { path: "/orders/scheduling", element: <PickupScheduling /> },
       { path: "/orders/confirmation", element: <OrderConfirmation /> },
       { path: "/orders/:orderId/tracking", element: <OrderTracking /> },
+
+      // Any unknown route shows the 404 page with Header and Footer
+      { path: "*", element: <NotFound /> },
     ],
   },
   {
