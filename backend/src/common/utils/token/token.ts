@@ -1,5 +1,4 @@
 import jwt from "jsonwebtoken";
-
 import { env } from "../../../config/env.service";
 import { IUser } from "../../interface/user.interface";
 import { Types } from "mongoose";
@@ -12,9 +11,9 @@ export type userType = IUser & {
 
 class Token {
   generateTokens(user: userType) {
-    let signature: string = "";
-    let audience: string = "";
-    let refreshSignature: string = "";
+    let signature: string;
+    let audience: "user" | "admin";
+    let refreshSignature: string;
 
     switch (user.role) {
       case userRole.user:
@@ -47,30 +46,43 @@ class Token {
   }
 
   verifyRefreshToken(refreshToken: string) {
-    const decoded: any = jwt.decode(refreshToken);
-
-    if (!decoded) {
-      throw new unauthorized("Invalid refresh token");
-    }
-
-    let signature: string;
-
-    switch (decoded.aud) {
-      case "user":
-        signature = env.user_refresh_signature;
-        break;
-
-      case "admin":
-        signature = env.admin_refresh_signature;
-        break;
-
-      default:
-        throw new unauthorized("Invalid refresh token audience");
-    }
-
     try {
-      return jwt.verify(refreshToken, signature);
+      const decoded = jwt.decode(refreshToken);
+
+      if (
+        !decoded ||
+        typeof decoded === "string" ||
+        typeof decoded.aud !== "string"
+      ) {
+        throw new unauthorized("Invalid refresh token");
+      }
+
+      let signature: string;
+      let audience: "user" | "admin";
+
+      switch (decoded.aud) {
+        case "user":
+          signature = env.user_refresh_signature;
+          audience = "user";
+          break;
+
+        case "admin":
+          signature = env.admin_refresh_signature;
+          audience = "admin";
+          break;
+
+        default:
+          throw new unauthorized("Invalid refresh token audience");
+      }
+
+      return jwt.verify(refreshToken, signature, {
+        audience,
+      });
     } catch (error) {
+      if (error instanceof unauthorized) {
+        throw error;
+      }
+
       throw new unauthorized("Invalid refresh token", error);
     }
   }

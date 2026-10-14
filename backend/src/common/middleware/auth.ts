@@ -1,41 +1,66 @@
 import { NextFunction, Request, Response } from "express";
 
-import { unauthorized } from "../responce/error.responce";
+import { forbidden, unauthorized } from "../responce/error.responce";
 import { authService } from "../service/auth.jwt";
+import { userRole } from "../enum/role.enum";
 
-export type AuthRequest = Request & {
-  user?: any;
+export type AuthUser = {
+  id: string;
+  aud: "user" | "admin";
 };
 
-export const auth = async (
-  req: AuthRequest,
-  res: Response,
-  next: NextFunction,
-) => {
-  const { authorization } = req.headers;
+export type AuthRequest = Request & {
+  user?: AuthUser;
+};
 
-  if (!authorization) {
-    throw new unauthorized("Authorization header is required");
-  }
-
-  const [flag, token] = authorization.split(" ");
-
-  if (!flag || !token) {
-    throw new unauthorized("Invalid authorization format");
-  }
-
+export const auth = (req: AuthRequest, res: Response, next: NextFunction) => {
   try {
-    switch (flag) {
-      case "Bearer":
-        const decodedUser = authService.verifyToken(token);
-        req.user = decodedUser;
-        next();
-        break;
+    const authorization = req.headers.authorization;
 
-      default:
-        throw new unauthorized("Invalid authorization type");
+    if (!authorization) {
+      return next(new unauthorized("Authorization header is required"));
     }
+
+    const [flag, token, ...extra] = authorization.trim().split(/\s+/);
+
+    if (flag !== "Bearer" || !token || extra.length > 0) {
+      return next(new unauthorized("Invalid authorization format"));
+    }
+
+    const decodedUser = authService.verifyToken(token);
+
+    if (
+      typeof decodedUser !== "object" ||
+      decodedUser === null ||
+      !("id" in decodedUser) ||
+      typeof decodedUser.id !== "string" ||
+      !("aud" in decodedUser) ||
+      (decodedUser.aud !== "user" && decodedUser.aud !== "admin")
+    ) {
+      return next(new unauthorized("Invalid token"));
+    }
+
+    req.user = {
+      id: decodedUser.id,
+      aud: decodedUser.aud,
+    };
+
+    return next();
   } catch (error) {
-    throw new unauthorized("Invalid token");
+    if (error instanceof unauthorized) {
+      return next(error);
+    }
+
+    return next(new unauthorized("Invalid token", error));
   }
+};
+
+export const authorize = (...roles: userRole[]) => {
+  return (req: AuthRequest, res: Response, next: NextFunction) => {
+    if (!req.user || !roles.includes(req.user.aud as userRole)) {
+      return next(new forbidden("Insufficient permissions"));
+    }
+
+    return next();
+  };
 };

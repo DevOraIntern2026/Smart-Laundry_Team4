@@ -54,16 +54,6 @@ const userSchema = new Schema<IUser>(
     timestamps: true,
   },
 );
-userSchema
-  .virtual("userName")
-  .set(function (values) {
-    const [firstName, lastName] = values.split(" ");
-    this.firstName = firstName;
-    this.lastName = lastName;
-  })
-  .get(function () {
-    return `${this.firstName} ${this.lastName}`;
-  });
 
 const userModel = model<IUser>("User", userSchema);
 
