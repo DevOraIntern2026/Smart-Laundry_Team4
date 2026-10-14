@@ -8,6 +8,7 @@ import { SlidersHorizontal } from "lucide-react";
 import { servicesStats } from "../../../Data/Admin/AServicesStat";
 import { StatCard } from "../../../components/adminServices/StatCard";
 import { ServiceEditPanel } from "../../../components/adminServices/ServiceEditPanel";
+import { useNavigate } from "react-router-dom";
 
 type FilterType = "all" | "active" | "paused" | "vip";
 
@@ -34,6 +35,8 @@ export default function AdminServices() {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
 
   const [isAddingService, setIsAddingService] = useState(false);
+
+  const navigate = useNavigate();
 
   const handleToggle = (id: string, active: boolean) => {
     setServiceStatuses((previous) => ({
@@ -93,7 +96,9 @@ export default function AdminServices() {
   };
 
   const handleItemsClick = (service: Service) => {
-    console.log("الأصناف الخاصة بالخدمة:", service.id);
+    navigate("/admin/services/items", {
+      state: { serviceId: service.id },
+    });
   };
 
   const filteredServices = editedServices.filter((service) => {
