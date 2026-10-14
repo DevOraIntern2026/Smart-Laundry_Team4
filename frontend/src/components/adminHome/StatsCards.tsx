@@ -7,24 +7,25 @@ import {
   TriangleAlert,
   Truck,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { AdminHomeData } from "../../Data";
 
 const { stats } = AdminHomeData;
 
-const icons = {
+const icons: Record<string, LucideIcon> = {
   orders: Shirt,
   alert: TriangleAlert,
   fleet: Truck,
   revenue: Banknote,
 };
 
-const badgeIcons = {
+const badgeIcons: Record<string, LucideIcon> = {
   trend: TrendingUp,
   check: CircleCheck,
   up: ArrowUp,
 };
 
-const tones = {
+const tones: Record<string, Record<string, string>> = {
   primary: {
     icon: "bg-primary-200 text-primary",
     value: "text-heading",
@@ -46,9 +47,9 @@ export default function StatsCards() {
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {stats.map((stat) => {
-        const Icon = icons[stat.icon as keyof typeof icons];
-        const BadgeIcon = badgeIcons[stat.badgeIcon as keyof typeof badgeIcons];
-        const tone = tones[stat.tone as keyof typeof tones];
+        const Icon = icons[stat.icon];
+        const BadgeIcon = badgeIcons[stat.badgeIcon];
+        const tone = tones[stat.tone];
 
         return (
           <div

@@ -3,7 +3,7 @@ import { AdminHomeData } from "../../Data";
 
 const { activityLog } = AdminHomeData;
 
-const dotColors = {
+const dotColors: Record<string, string> = {
   success: "bg-green-600",
   primary: "bg-primary",
   danger: "bg-accent",
@@ -25,7 +25,7 @@ export default function ActivityLog() {
               <span className="absolute top-4 bottom-0 start-[7px] w-0.5 bg-primary-200" />
             )}
             <span
-              className={`relative mt-1 size-4 shrink-0 rounded-full ring-4 ring-white ${dotColors[item.tone as keyof typeof dotColors]}`}
+              className={`relative mt-1 size-4 shrink-0 rounded-full ring-4 ring-white ${dotColors[item.tone]}`}
             />
 
             <div className="flex flex-1 flex-wrap justify-between gap-x-4 gap-y-1">

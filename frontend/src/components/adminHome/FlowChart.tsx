@@ -2,7 +2,7 @@ import { AdminHomeData } from "../../Data";
 
 const { flowChart } = AdminHomeData;
 
-const barColors = {
+const barColors: Record<string, string> = {
   low: "bg-primary-200",
   normal: "bg-primary",
   peak: "bg-accent",
@@ -38,7 +38,7 @@ export default function FlowChart() {
             <div
               key={`${bar.time}-${index}`}
               title={`${bar.value}%`}
-              className={`flex-1 rounded-t-lg ${barColors[bar.status as keyof typeof barColors]}`}
+              className={`flex-1 rounded-t-lg ${barColors[bar.status]}`}
               style={{ height: `${bar.value}%` }}
             />
           ))}
