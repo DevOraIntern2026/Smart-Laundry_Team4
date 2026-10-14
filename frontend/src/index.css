@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Editing the container class so that it works like bootstrap container */
+
+@layer base {
+  .container {
+    @apply px-4 mx-auto max-w-[540px] sm:max-w-[720px] md:max-w-[960px] lg:max-w-[1140px] xl:max-w-[1320px];
+  }
+}
+
+/* Project colors and font from figma desgin  */
+
+@theme {
+  /* Main background color */
+  --color-background: #f8f9fc;
+
+  /* Cards color */
+  --color-card: #ffffff;
+
+  /* Primary color and a darker one for hover */
+  --color-primary: #1a37ff;
+  --color-primary-hover: #1900f3;
+
+  /* Accent color and a darker one for hover */
+  --color-accent: #fe574f;
+  --color-accent-hover: #f51d23;
+
+  /* Headings text color */
+  --color-heading: #111827;
+
+  /* normal text color like paragraphs */
+  --color-body: #374151;
+
+  /* Darker text color */
+  --color-muted: #6b7280;
+
+  /* Font family */
+  --font-nunito: "Nunito", sans-serif;
+}
