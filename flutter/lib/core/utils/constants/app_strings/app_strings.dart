@@ -12,4 +12,5 @@ class AppStrings {
   static const String dryCleaning = "تنظيف جاف (Dry Clean)";
   static const String upholstery = "مفروشات";
   static const String search = 'ابحث عن خدمة أو نوع ملابس...';
+
 }

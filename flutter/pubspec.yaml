@@ -32,6 +32,7 @@ flutter:
     - assets/images/Auth/google.png
     - assets/images/Auth/banner_logo.png
     - assets/images/Auth/reset_lock.png
+    - assets/images/profile/
     - assets/Icons/
 
   fonts:

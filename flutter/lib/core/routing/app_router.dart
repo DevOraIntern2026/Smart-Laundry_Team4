@@ -1,6 +1,6 @@
 
 import 'package:go_router/go_router.dart';
-import 'package:smart_laundry/features/services/presentation/views/services_view.dart';
+import 'package:smart_laundry/features/main_screen.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
@@ -32,8 +32,9 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: AppRoutes.services,
-        builder: (context, state) => const ServicesView(),
-      )
+        builder: (context, state) => const MainScreen(),
+      ),
+
     ],
   );
 }

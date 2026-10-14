@@ -48,6 +48,18 @@ class AppTextStyle {
     color: color ?? AppColors.gray,
     fontFamily: _fontFamily,
   );
+  static TextStyle mediumTitle16(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 16),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.gray,
+    fontFamily: _fontFamily,
+  );
+
+  
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
