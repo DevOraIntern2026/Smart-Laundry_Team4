@@ -2,20 +2,20 @@ import { NavLink } from "react-router-dom";
 import { X } from "lucide-react";
 
 // Icons
-import homeIcon from "../../assets/icons/aside-home-icon.svg?react";
-import ordersIcon from "../../assets/icons/aside-orders-icon.svg?react";
-import deliveryIcon from "../../assets/icons/aside-delivery-icon.svg?react";
-import customersIcon from "../../assets/icons/aside-customers-icon.svg?react";
-import servicesIcon from "../../assets/icons/aside-services-icon.svg?react";
-import analysisIcon from "../../assets/icons/aside-analysis-icon.svg?react";
+import HomeIcon from "../../assets/icons/aside-home-icon.svg?react";
+import OrdersIcon from "../../assets/icons/aside-orders-icon.svg?react";
+import DeliveryIcon from "../../assets/icons/aside-delivery-icon.svg?react";
+import CustomersIcon from "../../assets/icons/aside-customers-icon.svg?react";
+import ServicesIcon from "../../assets/icons/aside-services-icon.svg?react";
+import AnalysisIcon from "../../assets/icons/aside-analysis-icon.svg?react";
 
 const navItems = [
-  { label: "الرئيسية", path: "/admin", icon: homeIcon },
-  { label: "الطلبات", path: "/admin/orders", icon: ordersIcon },
-  { label: "الاستلام والتوصيل", path: "/admin/delivery", icon: deliveryIcon },
-  { label: "العملاء", path: "/admin/customers", icon: customersIcon },
-  { label: "الخدمات والقطع", path: "/admin/services", icon: servicesIcon },
-  { label: "التقارير والتحليلات", path: "/admin/analysis", icon: analysisIcon },
+  { label: "الرئيسية", path: "/admin", icon: HomeIcon },
+  { label: "الطلبات", path: "/admin/orders", icon: OrdersIcon },
+  { label: "الاستلام والتوصيل", path: "/admin/delivery", icon: DeliveryIcon },
+  { label: "العملاء", path: "/admin/customers", icon: CustomersIcon },
+  { label: "الخدمات والقطع", path: "/admin/services", icon: ServicesIcon },
+  { label: "التقارير والتحليلات", path: "/admin/analysis", icon: AnalysisIcon },
 ];
 
 type DashboardAsideProps = {
