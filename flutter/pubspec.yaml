@@ -26,7 +26,10 @@ flutter:
 
   assets:
     - assets/images/welcome/nivo_logo_only.png
-  
+    - assets/images/Auth/badge_laundry.png 
+    - assets/images/Auth/google.png
+    - assets/images/Auth/banner_logo.png
+    - assets/images/Auth/reset_lock.png
 
   fonts:
     - family: Tajawal
