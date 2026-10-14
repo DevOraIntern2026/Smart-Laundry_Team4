@@ -1,0 +1,674 @@
+export const HeaderData = {
+  logo: {
+    src: "/logo.png",
+    alt: "Nivo Logo",
+    path: "/",
+  },
+
+  navLinks: [
+    { label: "الرئيسية", path: "/" },
+    { label: "الخدمات", path: "/services" },
+    { label: "طلباتي", path: "/orders" },
+    { label: "المساعد الذكي", path: "/assistant" },
+  ],
+
+  cta: {
+    label: "اطلب الان",
+    path: "/services",
+  },
+
+  profile: {
+    path: "/profile",
+    avatar: "",
+    alt: "Profile Picture",
+  },
+
+  notificationsCount: 0,
+};
+
+export const NotFoundData = {
+  code: "404",
+  title: "الصفحة غير موجودة",
+  description:
+    "يبدو أن الصفحة التي تبحث عنها غير متاحة أو تم نقلها. يمكنك العودة للرئيسية أو تصفح خدماتنا.",
+  primaryAction: { label: "العودة للرئيسية", path: "/" },
+  secondaryAction: { label: "تصفح الخدمات", path: "/services" },
+};
+
+export const HomeData = {
+  user: {
+    name: "أحمد",
+    subtitle: "ملابسك في أيدٍ أمينة مع نيفو الذكي",
+    location: "المعادي، القاهرة",
+  },
+
+  activeOrder: {
+    label: "طلب نشط",
+    id: "#SL-9402",
+    status: "قيد الغسيل والتعقيم",
+    steps: ["تم الاستلام", "المعالجة والكوي", "جاهز للتسليم"],
+    currentStep: 1,
+    deliveryLabel: "التسليم المتوقع:",
+    deliveryTime: "اليوم 07:30 م",
+    trackLabel: "متابعة الطلب",
+    trackPath: "/orders/SL-9402/tracking",
+  },
+
+  services: {
+    title: "خدماتنا",
+    viewAllLabel: "عرض الكل",
+    viewAllPath: "/services",
+    currency: "ج.م",
+    items: [
+      {
+        id: "wash-iron",
+        title: "غسيل وكوي",
+        description: "غسيل عميق وكي بالبخار",
+        price: 15,
+        unit: "قطعة",
+        image: "",
+        badge: "الأكثر طلباً",
+      },
+      {
+        id: "dry-clean",
+        title: "تنظيف جاف",
+        description: "عناية خاصة للبدل والفساتين",
+        price: 35,
+        unit: "قطعة",
+        image: "",
+        badge: "",
+      },
+      {
+        id: "steam-iron",
+        title: "كوي بخار فقط",
+        description: "فرد وتجهيز فوري للارتداء",
+        price: 10,
+        unit: "قطعة",
+        image: "",
+        badge: "",
+      },
+      {
+        id: "bedding",
+        title: "مفروشات وبطاطين",
+        description: "تعقيم بالحرارة ورائحة تدوم",
+        price: 60,
+        unit: "عنصر",
+        image: "",
+        badge: "",
+      },
+    ],
+    featured: {
+      id: "shoes-care",
+      title: "عناية بالأحذية والشنط",
+      description: "تنظيف متخصص وإعادة حيوية",
+      badge: "يدوي",
+      startingFrom: "يبدأ من 45 ج.م",
+      image: "",
+    },
+  },
+
+  aiAssistant: {
+    title: "مساعدك نيفو الذكي",
+    subtitle: "وفر وقتك واطلب بأمر صوتي أو برسالة واحدة",
+    example:
+      "عندي قميصين كلاسيك وبطانية كبيرة محتاجين غسيل وكوي تسليم بكرة المسا...",
+    actionLabel: "جرّب مساعد نيفو الذكي",
+    path: "/assistant",
+  },
+
+  quickOrder: {
+    badge: "تنظيف فائق بنقرة واحدة",
+    title: "ابدأ طلبك الفوري الآن",
+    description:
+      "حدد موقعك واختر القطع وسيقوم مندوبنا بالاستلام في غضون 30 دقيقة",
+    steps: ["اختر الملابس", "مندوب يستلم", "عودة كأنها جديدة"],
+    actionLabel: "اطلب الآن",
+    path: "/services",
+  },
+
+  lastOrder: {
+    id: "#SL-8841",
+    status: "تم التوصيل بنجاح",
+    date: "تم التسليم: 18 أكتوبر 2024",
+    service: "تنظيف جاف خاص",
+    itemsCount: "4 قطع مقاس سهرة وبدل",
+    total: "140.00 ج.م",
+    paymentMethod: "دفع إلكتروني",
+    items: [
+      { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
+      { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
+      { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+    ],
+    reorderLabel: "إعادة نفس الطلب",
+    invoiceLabel: "عرض الفاتورة",
+  },
+};
+
+export const AdminHomeData = {
+  intro: {
+    liveLabel: "بث تشغيلي مباشر",
+    branch: "محطة فرع النخيل المتطورة",
+    title: "مركز التحكم والعمليات الميدانية الحية",
+    description:
+      "إدارة تدفق الغسيل الفائق، جدولة مسارات التوصيل الذكية، وتدخلات مراقبة الجودة الآنية.",
+  },
+
+  stats: [
+    {
+      title: "الطلبات النشطة اليوم",
+      value: "142",
+      unit: "طلب",
+      icon: "orders",
+      tone: "primary",
+      badge: "+14% مقارنة بالأمس",
+      badgeIcon: "trend",
+      note: "48 طلب قيد الغسيل والتعقيم، 34 بانتظار التوصيل",
+    },
+    {
+      title: "مهام تتطلب اتخاذ إجراء فوري",
+      value: "7",
+      unit: "طلبات حرجة",
+      icon: "alert",
+      tone: "danger",
+      badge: "تأخير استلام 3 • مراجعة أسعار 4",
+      badgeIcon: "",
+      note: "تستوجب موافقة مشرف الجودة ومندوب النقل",
+    },
+    {
+      title: "جاهزية الأسطول ومواعيد الاستلام",
+      value: "98.4%",
+      unit: "",
+      icon: "fleet",
+      tone: "success",
+      badge: "في الموعد المحدد تماماً",
+      badgeIcon: "check",
+      note: "22 رحلة مندوب جارية بالـ GPS الذكي",
+    },
+    {
+      title: "إجمالي الإيراد التشغيلي الموثق",
+      value: "18,450",
+      unit: "ج.م",
+      icon: "revenue",
+      tone: "primary",
+      badge: "+9.2% نمو أسبوعي",
+      badgeIcon: "up",
+      note: "شامل الفواتير والمدفوعات الإلكترونية المؤكدة",
+    },
+  ],
+
+  flowChart: {
+    title: "المخطط البياني للتدفق",
+    subtitle: "توزيع أحمال الاستلام مقابل الطاقة الاستيعابية القصوى",
+    capacityLabel: "حد الطاقة: 90%",
+    thresholdLabel: "عتبة الضغط القصوى (90%)",
+    threshold: 90,
+    bars: [
+      { time: "08:00", value: 30, status: "low" },
+      { time: "10:00", value: 85, status: "normal" },
+      { time: "12:00", value: 95, status: "peak" },
+      { time: "02:00", value: 92, status: "normal" },
+      { time: "04:00", value: 48, status: "low" },
+      { time: "06:00", value: 95, status: "peak" },
+      { time: "08:00", value: 66, status: "normal" },
+      { time: "10:00", value: 26, status: "low" },
+    ],
+    peaksNote: "ذروات الاستلام الحالية: 12:00 ظهراً و 06:00 مساءً",
+  },
+
+  activityLog: {
+    title: "سجل النشاطات والأحداث التشغيلية",
+    items: [
+      {
+        title: "اعتماد فحص الجودة النهائي",
+        before: "اجتاز الطلب",
+        orderId: "#9812",
+        after:
+          "مرحلة اختبار خلو العوالق والتغليف الحراري بواسطة المشرف أحمد زكي.",
+        time: "منذ 3 دقائق",
+        tone: "success",
+      },
+      {
+        title: "تسليم شحنة وتوثيق التوقيع",
+        before: "تم تسليم الطلب",
+        orderId: "#9804",
+        after: "بنجاح للعميل، واستلام الدفع الإلكتروني بنجاح (340 ج.م).",
+        time: "منذ 9 دقائق",
+        tone: "primary",
+      },
+      {
+        title: "تنبيه تأخر استلام شحنة",
+        before: "تعذر وصول العميل لهاتف في الموعد المحدد للطلب",
+        orderId: "#9798",
+        after: "تم تحويله لمسار المحاولة المسائية.",
+        time: "منذ 16 دقيقة",
+        tone: "danger",
+      },
+      {
+        title: "بدء دورة غسيل آلية كبرى #08",
+        before: "",
+        orderId: "",
+        after:
+          "حمولة 60 كجم مفروشات وأغطية أسرة - برنامج التعقيم الحراري بالأوزون.",
+        time: "منذ 24 دقيقة",
+        tone: "muted",
+      },
+    ],
+  },
+
+  drivers: {
+    title: "حالة مسارات مناديب الاستلام والتوصيل",
+    items: [
+      {
+        initials: "ف.ع",
+        name: "كابتن فهد العتيبي",
+        vehicle: "مركبة كهربائية 04 • حي النخيل",
+        status: "في المسار",
+        remaining: "المتبقي: 3 طلبات تسليم",
+        destinationLabel: "الوجهة:",
+        destination: "مجمع النخيل السكني",
+      },
+    ],
+  },
+};
+
+export const AdminOrdersData = {
+  intro: {
+    title: "إدارة وسجل الطلبات التشغيلية",
+    liveLabel: "بث مباشر للعمليات",
+    description:
+      "متابعة دقيقة لمراحل الغسيل، الفرز الآلي، والتوزيع اللوجستي بكفاءة SLA تبلغ 99.4%",
+    exportLabel: "تصدير تقرير (Excel)",
+    createLabel: "إنشاء طلب يدوي",
+  },
+
+  stats: [
+    { title: "كافة الطلبات", value: 142, note: "طلب اليوم", icon: "all", tone: "primary", progress: 100, highlight: false },
+    { title: "جارية في المغسلة", value: 48, note: "3 غسالات نشطة", icon: "washing", tone: "primary", progress: 50, highlight: true },
+    { title: "مجدولة للاستلام", value: 24, note: "بين 2 - 6 مساءً", icon: "scheduled", tone: "muted", progress: 70, highlight: false },
+    { title: "في طريق التوصيل", value: 20, note: "4 مناديب نشطين", icon: "delivery", tone: "primary", progress: 50, highlight: true },
+    { title: "مكتملة اليوم", value: 43, note: "+18% نمو", icon: "completed", tone: "success", progress: 80, highlight: true },
+  ],
+
+  tabs: [
+    { id: "all", label: "الكل", count: 142 },
+    { id: "urgent", label: "تتطلب إجراء فوري", count: 7 },
+    { id: "washing", label: "النشطة بالمغسلة", count: 48 },
+    { id: "pickup", label: "بانتظار الاستلام", count: 24 },
+    { id: "delivery", label: "جاهزة للتوصيل", count: 20 },
+    { id: "completed", label: "المكتملة", count: 43 },
+    { id: "cancelled", label: "الملغاة", count: 4 },
+  ],
+
+  filters: {
+    searchPlaceholder: "ابحث برقم الطلب (#ORD)، العميل، أو الجوال...",
+    date: { label: "النطاق:", options: ["اليوم (18 أكتوبر)", "أمس", "آخر 7 أيام"] },
+    service: { label: "نوع الخدمة:", options: ["الكل", "غسيل وكوي", "تنظيف جاف", "كوي بخار"] },
+    driver: { label: "المندوب:", options: ["جميع المناديب", "عمر الفهد", "فهد العتيبي"] },
+  },
+
+  table: {
+    columns: [
+      "رقم الطلب والنوع",
+      "العميل والموقع",
+      "محتوى القطع والخدمة",
+      "الجدول الزمني والـ SLA",
+      "المالية والدفع",
+      "المرحلة التشغيلية",
+      "إجراءات سريعة",
+    ],
+    orders: [
+      {
+        id: "ORD-9842",
+        category: "urgent",
+        priority: "vip",
+        priorityLabel: "عاجل VIP",
+        service: "تنظيف جاف حريري فاخر",
+        customer: "د. منصور العتيبي",
+        phone: "0505129841",
+        address: "حي النخيل الغربي، فيلا 14",
+        itemsTitle: "4 قطع خاصة",
+        itemsDetails: "فستان سهرة دانتيل + بدلة إيطالية رجالية قطعتين",
+        itemsTag: "عناية خاصة",
+        sla: {
+          label: "متبقي 42 دقيقة للتسليم",
+          progress: 90,
+          tone: "danger",
+          schedule: "استلام 10:15 ص ← تسليم مستهدف 02:00 م",
+        },
+        amount: "340.00 ج.م.",
+        payment: "مدفوع عبر مدى",
+        invoice: "فاتورة ضريبية #INV-771",
+        stage: { label: "فحص بقع معقدة", tone: "danger" },
+      },
+      {
+        id: "ORD-9841",
+        category: "washing",
+        priority: "normal",
+        priorityLabel: "عادي",
+        service: "غسيل أوزون وكوي بخاري",
+        customer: "سارة ناصر السبيعي",
+        phone: "0542389104",
+        address: "حي حطين، مجمع أوركيد شقة 203",
+        itemsTitle: "8 قطع منزلية",
+        itemsDetails: "6 أثواب شتوية رجالية + 2 عباية مطرزة",
+        itemsTag: "",
+        sla: {
+          label: "الالتزام 100% (باقي 4 ساعات)",
+          progress: 60,
+          tone: "primary",
+          schedule: "استلام 09:00 ص ← تسليم 06:00 م",
+        },
+        amount: "128.50 ج.م.",
+        payment: "محفظة Apple Pay",
+        invoice: "فاتورة ضريبية #INV-770",
+        stage: { label: "قيد الغسيل (الغسالة #04)", tone: "primary" },
+      },
+      {
+        id: "ORD-9839",
+        category: "pickup",
+        priority: "normal",
+        priorityLabel: "عادي",
+        service: "غسيل وكوي",
+        customer: "خالد عبد الرحمن",
+        phone: "0551237788",
+        address: "حي الياسمين، عمارة 9 شقة 4",
+        itemsTitle: "5 قطع",
+        itemsDetails: "3 قمصان رسمية + 2 بنطلون قماش",
+        itemsTag: "",
+        sla: {
+          label: "استلام مجدول 04:00 م",
+          progress: 20,
+          tone: "muted",
+          schedule: "استلام 04:00 م ← تسليم غداً 12:00 م",
+        },
+        amount: "75.00 ج.م.",
+        payment: "الدفع عند الاستلام",
+        invoice: "فاتورة ضريبية #INV-768",
+        stage: { label: "بانتظار المندوب", tone: "muted" },
+      },
+      {
+        id: "ORD-9836",
+        category: "delivery",
+        priority: "normal",
+        priorityLabel: "عادي",
+        service: "مفروشات وبطاطين",
+        customer: "نورة الشهري",
+        phone: "0569981230",
+        address: "حي الملقا، فيلا 22",
+        itemsTitle: "3 قطع كبيرة",
+        itemsDetails: "بطانية كينج + 2 لحاف قطني",
+        itemsTag: "",
+        sla: {
+          label: "الالتزام 100% (باقي ساعة)",
+          progress: 85,
+          tone: "primary",
+          schedule: "استلام 08:30 ص ← تسليم 03:00 م",
+        },
+        amount: "180.00 ج.م.",
+        payment: "مدفوع عبر مدى",
+        invoice: "فاتورة ضريبية #INV-765",
+        stage: { label: "جاهز للتوصيل", tone: "primary" },
+      },
+      {
+        id: "ORD-9830",
+        category: "completed",
+        priority: "normal",
+        priorityLabel: "عادي",
+        service: "كوي بخار فقط",
+        customer: "عبدالله القحطاني",
+        phone: "0533456789",
+        address: "حي العليا، برج 3 مكتب 12",
+        itemsTitle: "6 قطع",
+        itemsDetails: "4 قمصان + 2 بدلة رسمية",
+        itemsTag: "",
+        sla: {
+          label: "تم التسليم في الموعد",
+          progress: 100,
+          tone: "success",
+          schedule: "استلام 07:00 ص ← تسليم 11:30 ص",
+        },
+        amount: "60.00 ج.م.",
+        payment: "محفظة Apple Pay",
+        invoice: "فاتورة ضريبية #INV-760",
+        stage: { label: "تم التسليم", tone: "success" },
+      },
+    ],
+    pagination: {
+      summary: "عرض 1 - 5 من أصل 142 طلب تشغيلي",
+      rowsLabel: "عدد الصفوف بالصفحة:",
+      rowsValue: "15 صف",
+      pages: [1, 2, 3],
+      lastPage: 10,
+    },
+  },
+
+  quality: {
+    title: "مؤشر أداء الجودة والـ SLA",
+    badge: "ممتاز (99.4%)",
+    cycleLabel: "متوسط وقت دورة الغسيل",
+    cycleValue: "2 ساعة و 14 دقيقة",
+    cycleNote: "أسرع بـ 12 دقيقة من المستهدف",
+    score: 92,
+  },
+
+  stations: {
+    title: "طاقة محطات التشغيل",
+    badge: "سعة 84%",
+    unit: "قطعة",
+    items: [
+      { name: "محطة الفرز والتعقيم بالأوزون", used: 18, total: 20, tone: "primary" },
+      { name: "غسالات العناية بالأقمشة الحساسة", used: 12, total: 16, tone: "primary" },
+      { name: "مكابس البخار والتغليف الآلي", used: 22, total: 25, tone: "success" },
+    ],
+  },
+
+  fleet: {
+    title: "تغطية أسطول التوصيل",
+    drivers: [
+      {
+        name: "عمر الفهد (شمال الرياض)",
+        lastUpdate: "آخر تحديث للموقع: قبل دقيقة واحدة",
+        remaining: "3 طلبات متبقية",
+      },
+    ],
+    speedLabel: "معدل سرعة التسليم اليوم:",
+    speedValue: "31 دقيقة / رحلة",
+  },
+};
+
+export const AdminOrderDetailsData = {
+  backLabel: "العودة لسجل الطلبات",
+  backPath: "/admin/orders",
+
+  summary: {
+    title: "طلب تشغيلي",
+    id: "#ORD-9842",
+    tags: [
+      { label: "خدمة نيفو السريعة (Express 24h)", tone: "primary" },
+      { label: "عضوية ماسية", tone: "danger" },
+    ],
+    createdAt: "تاريخ الإنشاء: اليوم، 10:15 صباحاً",
+    statusLabel: "الحالة التشغيلية:",
+    status: "قيد الغسيل والتعقيم الحيوي بالأوزون",
+    sla: "SLA: 01:45:00 متبقي",
+  },
+
+  stats: [
+    { label: "القطع المفحوصة", value: "3 قطع / 4 وحدات", icon: "items", tone: "primary" },
+    { label: "المسح الضوئي الذكي (AI)", value: "مكتمل 100%", icon: "scan", tone: "success" },
+    { label: "طريقة الدفع", value: "مدى (معتمد)", icon: "payment", tone: "primary" },
+    { label: "فارق زمن التسليم", value: "-25 دقيقة (مبكر)", icon: "time", tone: "danger" },
+  ],
+
+  customer: {
+    title: "بيانات العميل والتوصيل المعتمدة",
+    otp: "رمز التحقق للاستلام: OTP #4891",
+    name: "د. سارة عبد الرحمن",
+    initials: "س.ع",
+    membership: "عميل نيفو الماسي",
+    phone: "+20 102 984 5512",
+    address: "المعادي الجديدة - شارع النصر المتفرع من شارع 14",
+    addressDetails:
+      "برج الياسمين الإداري السكني - الدور 4 - شقة 42 (رنين الجرس مرتين)",
+    notes: "تعليمات خاصة: ملابس حساسة جداً",
+    historyLabel: "سجل الطلبات السابقة (28 طلب)",
+  },
+
+  items: {
+    title: "محتويات الطلب وفحص الذكاء الاصطناعي الذكي",
+    badge: "3 قطع محددة مع باركود منفصل",
+    columns: [
+      "القطعة ومسار المعالجة",
+      "الخدمة المطلوبة",
+      "تقرير الفحص البصري (AI)",
+      "السعر",
+    ],
+    list: [
+      {
+        name: "فستان سواريه حرير طبيعي",
+        barcode: "باركود: NV-9842-A1#",
+        details: "قماش ناعم حساس",
+        service: "تنظيف جاف هيدروكربون",
+        serviceNote: "كي بخاري رأسي يدوي",
+        inspection: {
+          status: "issue",
+          title: "رصد بقعة زيت خفيفة",
+          note: "تم التقاطها آلياً قبل الاستلام (الطرف الأيمن)",
+        },
+        price: "95.00 ج.م",
+        image: "",
+      },
+      {
+        name: "بدلة رجالية فاخرة (قطعتين)",
+        barcode: "باركود: NV-9842-B2#",
+        details: "جاكيت + بنطال صوف",
+        service: "تنظيف جاف متقدم",
+        serviceNote: "كي رول مضغوط ألماني",
+        inspection: {
+          status: "ok",
+          title: "سليمة بالكامل",
+          note: "لا توجد تمزقات أو تلف بالأزرار",
+        },
+        price: "95.00 ج.م",
+        image: "",
+      },
+      {
+        name: "قميص كلاسيك قطني فاخر",
+        barcode: "باركود: NV-9842-C3#",
+        details: "قطن مصري 100%",
+        service: "غسيل مخصص + نشا خفيف",
+        serviceNote: "شماعة خشبية مجانية مع تغليف هوائي",
+        inspection: {
+          status: "ok",
+          title: "سليمة بالكامل",
+          note: "الياقة والأساور بحالة ممتازة",
+        },
+        price: "25.00 ج.م",
+        image: "",
+      },
+    ],
+  },
+
+  invoice: {
+    title: "الفاتورة الضريبية وبيانات التحصيل",
+    lines: [
+      { label: "المجموع الفرعي للخدمات:", value: "260.00 ج.م", tone: "normal" },
+      { label: "خصم باقة نيفو بلاتينيوم (10%):", value: "-26.00 ج.م", tone: "discount" },
+      { label: "ضريبة القيمة المضافة (14%):", value: "32.76 ج.م", tone: "normal" },
+    ],
+    totalLabel: "الإجمالي الصافي:",
+    totalNote: "شامل الضريبة وكافة الرسوم",
+    total: "266.76 ج.م",
+    payment: {
+      title: "بيانات ووسيلة الدفع",
+      rows: [
+        { label: "طريقة السداد:", value: "بطاقة مدى البنكية •••• 9102" },
+        { label: "الرقم المرجعي (RRN):", value: "TXN-4920491823" },
+        { label: "وقت المعاملة:", value: "10:20:14 صباحاً (معتمدة فوراً)" },
+      ],
+      downloadLabel: "تحميل الفاتورة الإلكترونية PDF",
+      qrLabel: "ZATCA QR Ready",
+    },
+  },
+
+  timeline: {
+    title: "الخط الزمني المباشر لمراحل الطلب",
+    liveLabel: "محدث تلقائياً",
+    steps: [
+      {
+        title: "إنشاء الطلب عبر المساعد الذكي",
+        description: "طلب إلكتروني مباشر وتحديد الأصناف الأولية بواسطة العميل.",
+        time: "10:15 ص",
+        status: "done",
+        actionLabel: "",
+      },
+      {
+        title: "اعتماد الطلب وتأكيد السداد",
+        description: "تم توجيه أمر التحضير إلى كابتن الحي وتعيين مسار الاستلام.",
+        time: "10:20 ص",
+        status: "done",
+        actionLabel: "",
+      },
+      {
+        title: "استلام الملابس والتحقق عبر OTP",
+        description: "تم الاستلام من العميل بواسطة كابتن فهد العتيبي بعد مطابقة الرمز.",
+        time: "11:30 ص",
+        status: "done",
+        actionLabel: "",
+      },
+      {
+        title: "فحص الأقمشة والمسح البصري الذكي",
+        description: "تم توثيق 3 صور احترافية لسلامة الأقمشة والأزرار.",
+        time: "12:15 م",
+        status: "done",
+        actionLabel: "عرض الصور",
+      },
+      {
+        title: "قيد الغسيل والتعقيم الحيوي (المرحلة الحالية)",
+        description:
+          "جهاز التنظيف الجاف رقم M-04# - دورة الهيدروكربون البيئي على حرارة 30° مئوية.",
+        time: "نشط الآن",
+        status: "current",
+        actionLabel: "",
+      },
+      {
+        title: "الكي البخاري والتغليف بعطر اللافندر",
+        description: "وضع أغطية الحماية المعقمة مع بطاقات نيفو المعطرة الفاخرة.",
+        time: "المرحلة القادمة",
+        status: "upcoming",
+        actionLabel: "",
+      },
+      {
+        title: "خروج مع كابتن التوصيل",
+        description: "نقل القطع في كابينة فان مكيفة مخصصة للملابس المكوية.",
+        time: "المتوقع: 02:45 م",
+        status: "upcoming",
+        actionLabel: "",
+      },
+      {
+        title: "تسليم مكتمل للعميل",
+        description: "",
+        time: "الموعد الأقصى: 03:30 م",
+        status: "upcoming",
+        actionLabel: "",
+      },
+    ],
+    currentProgress: {
+      progress: 72,
+      label: "دورة الغسيل: 72% مكتمل",
+      remaining: "الوقت المتبقي: 22 دقيقة",
+    },
+  },
+
+  driver: {
+    title: "كابتن التوصيل والتسليم المكلّف",
+    name: "كابتن عادل الدوسري",
+    initials: "ع.د",
+    rating: "4.92 (840 رحلة)",
+    vehicle: "مركبة فان كهربائية صديقة للبيئة EV-04#",
+    location: "الموقع الحالي: محطة المعادي المركزية (على بعد 8 دقائق)",
+    phone: "+201000000000",
+    callLabel: "اتصال هاتفي سريع",
+    chatLabel: "محادثة واتساب",
+  },
+};

@@ -19,14 +19,17 @@ import OrderTracking from "../pages/customer/orders/OrderTracking";
 
 // Admin pages
 import AdminLogin from "../pages/admin/account/AdminLogin";
-import DashboardOverview from "../pages/admin/DashboardOverview";
-import OrdersManagement from "../pages/admin/orders/OrdersManagement";
 import OrderDetails from "../pages/admin/orders/OrderDetails";
-import ServicesManagement from "../pages/admin/services/ServicesManagement";
-import AddService from "../pages/admin/services/AddService";
-import EditService from "../pages/admin/services/EditService";
-import AdminProfile from "../pages/admin/account/AdminProfile";
-import Settings from "../pages/admin/Settings";
+import Analysis from "../pages/admin/Analysis";
+import AdminHome from "../pages/admin/home";
+import Delivery from "../pages/admin/Delivery";
+import AdminServices from "../pages/admin/services/AdminServices";
+import LaundryItems from "../pages/admin/services/LaundryItems";
+import Orders from "../pages/admin/orders/Orders";
+import Customers from "../pages/admin/customers/Customers";
+import CustomerDetails from "../pages/admin/customers/CustomerDetails";
+
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
   // login and register are separated outside the layouts to appear without any fixed components like Header, Footer or Aside in main layout or in dashboard
@@ -48,22 +51,30 @@ const router = createBrowserRouter([
       { path: "/orders/scheduling", element: <PickupScheduling /> },
       { path: "/orders/confirmation", element: <OrderConfirmation /> },
       { path: "/orders/:orderId/tracking", element: <OrderTracking /> },
+
+      // Any unknown route shows the 404 page with Header and Footer
+      { path: "*", element: <NotFound /> },
     ],
   },
   {
     // Admin layout for all dashboard pages
-    // It has Aside and DashboardHeader fixed in all pages
+    // It has Aside and DashboardHeader and Footer fixed in all pages
     path: "/admin",
     element: <AdminLayout />,
     children: [
-      { index: true, element: <DashboardOverview /> },
-      { path: "orders", element: <OrdersManagement /> },
+      { index: true, element: <AdminHome /> },
+
+      { path: "services", element: <AdminServices/> },
+      { path: "services/items", element: <LaundryItems /> },
+
+      { path: "orders", element: <Orders /> },
       { path: "orders/:orderId", element: <OrderDetails /> },
-      { path: "services", element: <ServicesManagement /> },
-      { path: "services/add", element: <AddService /> },
-      { path: "services/:serviceId/edit", element: <EditService /> },
-      { path: "profile", element: <AdminProfile /> },
-      { path: "settings", element: <Settings /> },
+
+      { path: "customers", element: <Customers /> },
+      { path: "customers/:customerId", element: <CustomerDetails /> },
+
+      { path: "delivery", element: <Delivery /> },
+      { path: "analysis", element: <Analysis /> },
     ],
   },
 ]);

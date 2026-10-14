@@ -24,3 +24,6 @@ yarn-error.log*
 
 # misc
 *.local
+
+# Design Images
+design

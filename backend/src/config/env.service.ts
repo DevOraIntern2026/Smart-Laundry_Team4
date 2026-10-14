@@ -6,6 +6,7 @@ const envPath = path.resolve(process.cwd(), ".env.dev");
 dotenv.config({ path: envPath });
 
 export const env: Env = {
+  DB_URL:process.env.DB_URL as string,
   port: process.env.PORT as string,
   mood: process.env.MOOD as string,
   salt_rounds: process.env.SALT_ROUNDS as string,

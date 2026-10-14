@@ -1,3 +1,4 @@
+
 import Joi from "joi";
 import { OrderStatus } from "../../common/enum/order.enum.js";
 
@@ -12,12 +13,20 @@ const schedule_schema = Joi.object({
 export const create_order_schema = Joi.object({
   customer: objectId_schema.optional(),
 
+<<<<<<< HEAD
   items: Joi.array()
     .items(
       Joi.object({
         service: objectId_schema.required(),
 
         item: objectId_schema.required(),
+=======
+    items: Joi.array()
+        .items(
+            Joi.object({
+                service: objectId_schema.required(),
+                item: objectId_schema.required(),
+>>>>>>> c745c93190463eac63d3cb1bbe257e1c2294253e
 
         quantity: Joi.number().integer().min(1).required(),
       }),
@@ -49,6 +58,20 @@ export const create_order_schema = Joi.object({
   return value;
 });
 
+export const update_pickup_schema = Joi.object({
+    date: Joi.date()
+        .iso()
+        .min("now")
+        .required(),
+
+    timeSlot: Joi.string()
+        .trim()
+        .min(1)
+        .required(),
+
+    addressId: objectId_schema.required()
+});
+
 export const get_order_by_id_schema = Joi.object({
   orderId: objectId_schema.required(),
 });
@@ -64,7 +87,13 @@ export const update_order_status_schema = Joi.object({
 });
 
 export const get_orders_schema = Joi.object({
+<<<<<<< HEAD
   status: Joi.string()
     .valid(...Object.values(OrderStatus))
     .optional(),
+=======
+    status: Joi.string()
+        .valid(...Object.values(OrderStatus))
+        .optional()
+>>>>>>> c745c93190463eac63d3cb1bbe257e1c2294253e
 });
