@@ -9,6 +9,7 @@ type OrderState = {
   speedId: string;
   paymentId: string;
   setQuantity: (itemId: string, quantity: number) => void;
+  setCart: (items: { id: string; quantity: number }[]) => void;
   setNote: (itemId: string, note: string) => void;
   setDay: (dayId: string) => void;
   setSlot: (slotId: string) => void;
@@ -31,6 +32,15 @@ export const useOrderStore = create<OrderState>((set) => ({
     set((state) => ({
       quantities: { ...state.quantities, [itemId]: Math.max(0, quantity) },
     })),
+  setCart: (items) =>
+    set({
+      quantities: Object.fromEntries(
+        CartData.items.map((item) => [
+          item.id,
+          items.find((cartItem) => cartItem.id === item.id)?.quantity ?? 0,
+        ]),
+      ),
+    }),
   setNote: (itemId, note) =>
     set((state) => ({ notes: { ...state.notes, [itemId]: note } })),
   setDay: (dayId) => set({ dayId }),

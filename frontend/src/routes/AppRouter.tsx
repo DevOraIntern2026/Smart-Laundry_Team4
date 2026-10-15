@@ -16,6 +16,9 @@ import OrderSummary from "../pages/customer/orders/OrderSummary";
 import PickupScheduling from "../pages/customer/orders/PickupScheduling";
 import OrderConfirmation from "../pages/customer/orders/OrderConfirmation";
 import OrderTracking from "../pages/customer/orders/OrderTracking";
+import MyOrders from "../pages/customer/orders/MyOrders";
+import CustomerOrderDetails from "../pages/customer/orders/CustomerOrderDetails";
+import AiAssistant from "../pages/customer/AiAssistant";
 
 // Admin pages
 import AdminLogin from "../pages/admin/account/AdminLogin";
@@ -51,6 +54,9 @@ const router = createBrowserRouter([
       { path: "/orders/scheduling", element: <PickupScheduling /> },
       { path: "/orders/confirmation", element: <OrderConfirmation /> },
       { path: "/orders/:orderId/tracking", element: <OrderTracking /> },
+      { path: "/orders", element: <MyOrders /> },
+      { path: "/orders/:orderId", element: <CustomerOrderDetails /> },
+      { path: "/assistant", element: <AiAssistant /> },
 
       // Any unknown route shows the 404 page with Header and Footer
       { path: "*", element: <NotFound /> },
