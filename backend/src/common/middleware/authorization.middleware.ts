@@ -1,15 +1,15 @@
 
 import {
-  type Request,
   type Response,
   type NextFunction,
 } from "express";
 
 import { userRole } from "../enum/role.enum";
+import type { AuthRequest } from "./auth";
 
 export const authorization = (...allowedRoles: userRole[]) => {
   return (
-    req: Request,
+    req: AuthRequest,
     res: Response,
     next: NextFunction
   ) => {
@@ -20,7 +20,7 @@ export const authorization = (...allowedRoles: userRole[]) => {
       });
     }
 
-    if (!allowedRoles.includes(req.user.role as userRole)) {
+    if (!allowedRoles.includes(req.user.aud as userRole)) {
       return res.status(403).json({
         success: false,
         message: "Forbidden: Insufficient permissions",
