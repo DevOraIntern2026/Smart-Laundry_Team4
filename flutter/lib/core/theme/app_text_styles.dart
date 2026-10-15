@@ -59,6 +59,31 @@ class AppTextStyle {
     fontFamily: _fontFamily,
   );
 
+  static TextStyle profileTileHeader18(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle profileSubHeader12(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 12),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+
+
+
+  
+
   
 }
 

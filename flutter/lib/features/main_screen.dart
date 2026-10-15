@@ -21,6 +21,12 @@ class _MainScreenState extends State<MainScreen> {
         textDirection: TextDirection.rtl,
         child: PageView(
           controller: controller,
+          onPageChanged: (value) {
+            setState(() {
+              
+            currentIndex = value;
+            });
+          },
           children: [
             ServicesView(),
             ServicesView(),
