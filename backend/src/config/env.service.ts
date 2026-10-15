@@ -2,8 +2,7 @@ import dotenv from "dotenv";
 import path from "node:path";
 import { Env } from "../common/interface/env.interface";
 
-const envPath = path.resolve(process.cwd(), "backend", "src", "config", "dev.env");
-
+const envPath = path.resolve(process.cwd(), ".env.dev");
 dotenv.config({ path: envPath });
 
 export const env: Env = {

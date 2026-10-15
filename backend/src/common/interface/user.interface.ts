@@ -2,7 +2,6 @@ import { Provider } from "../enum/provider.enum";
 import { userRole } from "../enum/role.enum";
 
 export interface IUser {
-  userName?: string;
   firstName: string;
   lastName: string;
   email: string;

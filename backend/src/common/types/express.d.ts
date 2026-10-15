@@ -1,15 +1,14 @@
-
 import { userRole } from "../enum/role.enum";
 
 declare global {
-    namespace Express {
+  namespace Express {
     interface User {
-        id: string;
-        role: userRole;
+      id: string;
+      aud: "user" | "admin";
     }
 
     interface Request {
-        user?: User;
+      user?: User;
     }
   }
 }
