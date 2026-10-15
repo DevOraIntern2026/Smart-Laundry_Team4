@@ -1171,3 +1171,247 @@ export const OrderTrackingData = {
     actionLabel: "تحدث معنا",
   },
 };
+
+export const CustomerOrdersData = {
+  banner: {
+    badge: "عناية فائقة ونظافة ذكية",
+    title: "ملابسك في أيدٍ أمينة مع نيفو",
+    description: "تتبع الطلبات الجارية وتاريخ الغسيل الفاخر بكل سهولة",
+  },
+
+  tabs: [
+    { id: "active", label: "الطلبات النشطة" },
+    { id: "past", label: "الطلبات السابقة" },
+  ],
+  filterLabel: "تصفية السجل",
+  emptyMessage: "لا توجد طلبات هنا حالياً",
+  currency: "ج.م",
+
+  activeOrders: [
+    {
+      id: "SL-9402",
+      date: "تاريخ الطلب: 24 أكتوبر 2024",
+      status: "قيد الغسيل والتعقيم",
+      stageLabel: "المرحلة:",
+      stage: "تنظيف بالبخار وتعقيم حراري",
+      progress: 60,
+      steps: ["استلام الملابس", "في المغسلة", "جاري التوصيل"],
+      currentStep: 1,
+      items: [
+        { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
+        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
+        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+      ],
+      deliveryLabel: "موعد التسليم المتوقع",
+      delivery: "غداً (05:00 - 08:00 م)",
+      totalLabel: "الإجمالي المسدد",
+      total: "110.70 ج.م",
+      paidLabel: "مدفوع",
+      trackLabel: "تتبع مسار الطلب",
+    },
+  ],
+
+  pastOrders: [
+    {
+      id: "SL-8841",
+      status: "تم التوصيل بنجاح",
+      date: "تم التسليم: 18 أكتوبر 2024",
+      service: "تنظيف جاف خاص",
+      itemsCount: "4 قطع ملابس سهرة وبدل",
+      total: "140.00 ج.م",
+      paymentMethod: "دفع إلكتروني",
+      items: [
+        { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
+        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
+        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+      ],
+      cartItems: [
+        { id: "classic-shirt", quantity: 2 },
+        { id: "blue-jeans", quantity: 1 },
+        { id: "winter-blanket", quantity: 1 },
+      ],
+    },
+    {
+      id: "SL-8219",
+      status: "تم التوصيل بنجاح",
+      date: "تم التسليم: 02 أكتوبر 2024",
+      service: "غسيل وكوي منزلي",
+      itemsCount: "6 قطع قطنية يومية",
+      total: "85.00 ج.م",
+      paymentMethod: "نقداً عند الاستلام",
+      items: [
+        { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
+        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
+        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+      ],
+      cartItems: [
+        { id: "classic-shirt", quantity: 2 },
+        { id: "blue-jeans", quantity: 1 },
+        { id: "winter-blanket", quantity: 1 },
+      ],
+    },
+    {
+      id: "SL-7930",
+      status: "تم التوصيل بنجاح",
+      date: "تم التسليم: 21 سبتمبر 2024",
+      service: "كوي بخار فقط",
+      itemsCount: "5 قمصان رسمية",
+      total: "50.00 ج.م",
+      paymentMethod: "دفع إلكتروني",
+      items: [{ name: "قميص رسمي (كوي بالبخار)", quantity: 5, price: "50 ج.م" }],
+      cartItems: [{ id: "classic-shirt", quantity: 5 }],
+    },
+    {
+      id: "SL-7514",
+      status: "تم التوصيل بنجاح",
+      date: "تم التسليم: 05 سبتمبر 2024",
+      service: "مفروشات وبطاطين",
+      itemsCount: "2 بطانية شتوية",
+      total: "150.00 ج.م",
+      paymentMethod: "نقداً عند الاستلام",
+      items: [{ name: "بطانية شتوية كبيرة (تنظيف عميق)", quantity: 2, price: "150 ج.م" }],
+      cartItems: [{ id: "winter-blanket", quantity: 2 }],
+    },
+  ],
+
+  reorderLabel: "إعادة نفس الطلب",
+  invoiceLabel: "عرض الفاتورة",
+};
+
+export const CustomerOrderDetailsData = {
+  title: "تفاصيل الطلب",
+  orderLabel: "طلب",
+  status: "تم التوصيل بنجاح",
+  date: "السبت، 24 أكتوبر 2024 • 09:42 ص",
+  address: "المعادي، القاهرة، عمارة 14 شارع النصر",
+  addressDetails: "الدور الرابع • شقة 8",
+  captain: {
+    label: "الكابتن:",
+    name: "أحمد سامي",
+    initials: "أ.س",
+    rating: "4.9 (تسليم دقيق وسريع)",
+  },
+
+  itemsTitle: "بيان قطع الملابس والخدمات",
+  currency: "ج.م",
+  piecesLabel: "قطع",
+  items: [
+    { name: "قميص رجالي كلاسيك", quantity: 2, service: "غسيل وكوي بالبخار المعقم", price: 30, icon: "shirt" },
+    { name: "بطانية شتوية كبيرة", quantity: 1, service: "غسيل وتعقيم عميق خاص", price: 75, icon: "blanket" },
+    { name: "بنطلون جينز أزرق", quantity: 1, service: "غسيل وحماية الألوان وكوي", price: 18, icon: "pants" },
+  ],
+  cartItems: [
+    { id: "classic-shirt", quantity: 2 },
+    { id: "winter-blanket", quantity: 1 },
+    { id: "blue-jeans", quantity: 1 },
+  ],
+  notesTitle: "ملاحظات العناية الخاصة:",
+  notes: "التركيز على تنظيف الياقات والأكمام مع معطر خفيف خالي من الكحول.",
+
+  quality: {
+    title: "ضمان الجودة الفائقة",
+    description: "عناية بالأقمشة وحماية مضاعفة للخيوط",
+  },
+
+  schedule: {
+    title: "جدول المواعيد المعتمد",
+    steps: [
+      { label: "استلام الملابس", date: "السبت 24 أكتوبر 2024 (01:22 م)" },
+      { label: "تسليم الملابس نظيفة", date: "الأحد 25 أكتوبر 2024 (05:15 م)" },
+    ],
+  },
+
+  invoice: {
+    title: "الفاتورة الإلكترونية",
+    subtotalLabel: "المجموع الفرعي",
+    discountLabel: "خصم العضوية (10%)",
+    discountRate: 0.1,
+    deliveryLabel: "رسوم التوصيل السريع",
+    deliveryValue: "مجاني (0.00 ج.م)",
+    totalLabel: "الإجمالي النهائي المدفوع",
+    paymentMethod: "الدفع عند الاستلام (كاش)",
+  },
+
+  reorderLabel: "إعادة طلب نفس الأصناف الآن",
+  supportLabel: "المساعدة والدعم",
+  backLabel: "العودة لطلباتي",
+};
+
+export const AiAssistantData = {
+  hero: {
+    title: "مساعدك نيفو الذكي",
+    description:
+      "اطلب غسيلك بالصوت أو النص بلهجتك اليومية، ونحن نتكفل بالباقي",
+  },
+
+  greeting:
+    "أهلاً بك! أنا مساعدك نيفو الذكي. اكتب أو سجل صوتياً أي طلب مثل:",
+  greetingExample: "\"عندي قميصين وبطانية وعايزهم بكرة\"",
+  greetingEnd: "وسأقوم بتجهيز مسودة طلبك فوراً!",
+  exampleMessage: "عندي قميصين كلاسيك وبطانية كبيرة وعايز أستلمهم بكرة مساءً",
+
+  suggestionsTitle: "اقتراحات سريعة للبدء:",
+  suggestions: [
+    { label: "غسيل وكوي", text: "عندي 3 قمصان عايز غسيل وكوي", icon: "wash" },
+    { label: "تنظيف جاف", text: "عندي بدلة وفستان محتاجين تنظيف جاف", icon: "dry" },
+    { label: "مفروشات وسجاد", text: "عندي بطانيتين كبار محتاجين تنظيف عميق", icon: "bedding" },
+    { label: "إكسبريس 12س", text: "عندي قميصين وبنطلون وعايزهم مستعجل", icon: "express" },
+  ],
+
+  draft: {
+    title: "فهمت طلبك تماماً!",
+    subtitle: "جاري استخراج القطع والمواعيد وتجهيز مسودة الطلب الذكية لك:",
+    listTitle: "مسودة الطلب المستخرجة",
+    scheduleLabel: "الموعد المقترح:",
+    estimateSuffix: "تقديرياً",
+    retryTitle: "إعادة صياغة الطلب بطريقة أخرى",
+    retryDescription: "اكتب نصاً أبسط أو سجل مقطعاً صوتياً قصيراً",
+    reviewLabel: "مراجعة الطلب",
+    reviewPath: "/orders/summary",
+  },
+
+  notUnderstood:
+    "معلش، ماقدرتش أطلع قطع من رسالتك. جرب تكتب اسم القطعة وعددها، مثلاً: \"عندي 2 قميص وبطانية\".",
+
+  schedules: {
+    tomorrowWords: ["بكرة", "بكره", "غدا", "غداً"],
+    eveningWords: ["مساء", "مساءً", "بالليل", "الليل"],
+    morningWords: ["الصبح", "صباحا", "صباحاً"],
+    tomorrow: "غداً",
+    today: "اليوم",
+    evening: "7:00 - 9:00م",
+    morning: "10:00 - 1:00م",
+    defaultTime: "1:00 - 4:00م",
+  },
+
+  itemKeywords: [
+    { id: "classic-shirt", words: ["قميص", "قمصان"], dual: "قميصين" },
+    { id: "blue-jeans", words: ["بنطلون", "بنطال", "جينز"], dual: "بنطلونين" },
+    { id: "winter-blanket", words: ["بطانية", "بطاطين", "بطانيه"], dual: "بطانيتين" },
+    { id: "suit-jacket", words: ["جاكيت", "بدلة", "بدل"], dual: "بدلتين" },
+    { id: "polo-shirt", words: ["تيشيرت", "تيشرت", "بولو"], dual: "تيشيرتين" },
+    { id: "silk-abaya", words: ["عباية", "فستان", "فساتين"], dual: "فستانين" },
+  ],
+
+  numberWords: {
+    واحد: 1,
+    واحدة: 1,
+    اتنين: 2,
+    اثنين: 2,
+    تلات: 3,
+    تلاتة: 3,
+    ثلاث: 3,
+    ثلاثة: 3,
+    اربع: 4,
+    أربع: 4,
+    اربعة: 4,
+    أربعة: 4,
+    خمس: 5,
+    خمسة: 5,
+  } as Record<string, number>,
+
+  inputPlaceholder: "اكتب تفاصيل ملابسك هنا...",
+  disclaimer:
+    "نيفو لا يؤكد الطلب تلقائياً، لك حرية المراجعة والتعديل دائماً قبل الدفع",
+  nowLabel: "الآن",
+};
