@@ -10,6 +10,7 @@ import Login from "../pages/customer/account/Login";
 import SignUp from "../pages/customer/account/SignUp";
 import CustomerProfile from "../pages/customer/account/CustomerProfile";
 import EditProfile from "../pages/customer/account/EditProfile";
+import Addresses from "../pages/customer/account/Addresses";
 import Services from "../pages/customer/services/Services";
 import ServiceDetails from "../pages/customer/services/ServiceDetails";
 import OrderSummary from "../pages/customer/orders/OrderSummary";
@@ -48,6 +49,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/profile", element: <CustomerProfile /> },
       { path: "/profile/edit", element: <EditProfile /> },
+      { path: "/profile/addresses", element: <Addresses /> },
       { path: "/services", element: <Services /> },
       { path: "/services/:serviceId", element: <ServiceDetails /> },
       { path: "/orders/summary", element: <OrderSummary /> },
