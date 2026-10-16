@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:smart_laundry/core/routing/app_routes.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 import 'package:smart_laundry/core/widgets/custom_app_bar.dart';
+import 'package:smart_laundry/features/profile/presentation/widgets/profile_button.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_header.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_indecators.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_list_tile.dart';
@@ -32,6 +35,10 @@ class ProfileView extends StatelessWidget {
                   image: AppAssets.profileAvatar,
                   name: "أحمد عبدالله",
                   phoneNumber: "+20 10 1234 5678",
+                  onTap: (){
+                  context.go(AppRoutes.addresses);
+                  },
+                  
                 ),
                 SizedBox(height: 16.h),
                 ProfileIndecators(),
@@ -107,6 +114,9 @@ class ProfileView extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                ProfileButton(text: "تسجيل خروح", icons: AppAssets.logout, onPressed: (){}),
+                SizedBox(height: 100.h,)
               ],
             ),
           ),

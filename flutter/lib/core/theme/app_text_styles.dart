@@ -79,6 +79,37 @@ class AppTextStyle {
     color: color ?? AppColors.darkblue,
     fontFamily: _fontFamily,
   );
+  static TextStyle f18w700(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f12w700(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f14w400(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 14),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+
 
 
 

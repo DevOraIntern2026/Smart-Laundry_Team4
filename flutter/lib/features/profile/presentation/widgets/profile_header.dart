@@ -7,11 +7,12 @@ import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 
 class ProfileHeader extends StatelessWidget {
-  const ProfileHeader({super.key, required this.image, required this.name, required this.phoneNumber});
+  const ProfileHeader({super.key, required this.image, required this.name, required this.phoneNumber, this.onTap});
 
   final String image;
   final String name;
   final String phoneNumber;
+  final void Function()? onTap;
 
 
   @override
@@ -51,13 +52,16 @@ class ProfileHeader extends StatelessWidget {
           ],
         ),
     
-        Container(
-          padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12.r),
-            color: AppColors.lightGray
+        InkWell(
+          onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 12.w),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12.r),
+              color: AppColors.lightGray
+            ),
+            child: Icon(Icons.edit_outlined),
           ),
-          child: Icon(Icons.edit_outlined),
         )
       ],
     );

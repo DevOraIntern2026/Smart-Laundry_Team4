@@ -14,6 +14,8 @@ class AppAssets {
   static const String preferances = "assets/Icons/preferances.svg";
   static const String callCenter = "assets/Icons/call_center.svg";
   static const String sheeld = "assets/Icons/sheeld.svg";
+  static const String logout = "assets/Icons/logout.svg";
+  static const String streetSign = "assets/Icons/street_sign.svg";
 
 
 
