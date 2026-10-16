@@ -20,6 +20,10 @@ export const HeaderData = {
     label: "تسجيل الدخول",
     path: "/login",
   },
+  adminButton: {
+    label: "لوحة التحكم",
+    path: "/admin/login",
+  },
 
   profile: {
     path: "/profile",
