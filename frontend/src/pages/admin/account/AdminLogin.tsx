@@ -53,7 +53,7 @@ export default function AdminLogin() {
         <div className="container flex h-full items-center">
           <img
             src="/logo.png"
-            alt="Nivo Logo"
+            alt="Nivo Logo Image"
             className="h-10 w-24 object-contain"
           />
         </div>
