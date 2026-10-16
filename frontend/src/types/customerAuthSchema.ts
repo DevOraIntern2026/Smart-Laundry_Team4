@@ -41,7 +41,7 @@ export const customerLoginSchema = z.object({
   phone: z
     .string()
     .trim()
-    .regex(/^1[0125]\d{8}$/, "أدخل رقم هاتف مصري صحيح"),
+    .regex(/^01[0125]\d{8}$/, "أدخل رقم هاتف مصري صحيح"),
 
   password: z.string().min(1, "كلمة المرور مطلوبة"),
 });

@@ -3,15 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Bell, CirclePlus, Menu, UserRound, X } from "lucide-react";
 import { HeaderData } from "../../Data";
 
-const {
-  logo,
-  navLinks,
-  cta,
-  loginButton,
-  adminButton,
-  profile,
-  notificationsCount,
-} = HeaderData;
+const { logo, navLinks, cta, loginButton, profile, notificationsCount } =
+  HeaderData;
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -50,13 +43,6 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <Link
-            to={adminButton.path}
-            className="hidden sm:block border border-accent text-accent  rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent hover:text-white duration-200"
-          >
-            {adminButton.label}
-          </Link>
-
           <Link
             to={loginButton.path}
             className="hidden sm:block bg-accent text-white rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent-700 duration-200"
@@ -142,13 +128,6 @@ export const Header = () => {
               </li>
             ))}
             <li className="sm:hidden">
-              <Link
-                to={adminButton.path}
-                className="bg-accent text-white rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent-700 duration-200 mt-2 w-full block text-center"
-              >
-                {adminButton.label}
-              </Link>
-
               <Link
                 to={loginButton.path}
                 className="bg-accent text-white rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent-700 duration-200 mt-2 w-full block text-center"

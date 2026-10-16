@@ -51,7 +51,12 @@ export default function CustomerLogin() {
 
   const onSubmit = (formData: CustomerLoginFormData) => {
     console.log(formData);
-    navigate("/");
+
+    if (formData.phone == "01123456789") {
+      navigate("/admin");
+    } else {
+      navigate("/");
+    }
   };
 
   return (
@@ -166,7 +171,7 @@ export default function CustomerLogin() {
                         type="tel"
                         autoComplete="tel-national"
                         inputMode="numeric"
-                        maxLength={10}
+                        maxLength={11}
                         placeholder="01X XXXX XXXX"
                         dir="ltr"
                         className="ps-6 min-w-0 flex-1 bg-transparent px-3 text-sm text-heading outline-none placeholder:text-gray-400"

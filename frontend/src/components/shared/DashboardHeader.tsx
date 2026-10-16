@@ -1,6 +1,7 @@
 import { Menu } from "lucide-react";
 import notificationIcon from "../../assets/icons/admin-notification-icon.png";
 import searchIcon from "../../assets/icons/input-search-icon.png";
+import { Link } from "react-router-dom";
 
 type DashboardHeaderProps = {
   onMenuClick: () => void;
@@ -31,12 +32,21 @@ export default function DashboardHeader({ onMenuClick }: DashboardHeaderProps) {
         />
       </div>
 
-      <button className="relative cursor-pointer">
-        <img src={notificationIcon} alt="Notification Icon" className="w-4" />
-        <span className="absolute -top-1.5 -inset-e-1.5 flex w-4 h-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">
-          0
-        </span>
-      </button>
+      <div className="flex items-center gap-1 sm:gap-6">
+        <Link
+          to="/login"
+          className="bg-accent text-white text-xs rounded-xl py-1 sm:py-2 px-3 sm:px-6 sm:font-bold sm:text-[14px] hover:bg-accent-700 duration-200"
+        >
+          تسجيل خروج
+        </Link>
+
+        <button className="relative cursor-pointer">
+          <img src={notificationIcon} alt="Notification Icon" className="w-4" />
+          <span className="absolute -top-1.5 -inset-e-1.5 flex w-4 h-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">
+            0
+          </span>
+        </button>
+      </div>
     </header>
   );
 }
