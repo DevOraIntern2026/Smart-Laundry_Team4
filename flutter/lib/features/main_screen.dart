@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:smart_laundry/core/widgets/app_bottom_nav_bar.dart';
 import 'package:smart_laundry/features/profile/presentation/views/profile_view.dart';
+import 'package:smart_laundry/features/services/presentation/views/order_confirmed.dart';
 import 'package:smart_laundry/features/services/presentation/views/services_view.dart';
 
 class MainScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
           },
           children: [
             ServicesView(),
-            ServicesView(),
+            OrderConfirmed(),
             ServicesView(),
             ServicesView(),
             ProfileView(),

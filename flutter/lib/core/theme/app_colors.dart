@@ -7,9 +7,12 @@ class AppColors {
   static const Color sunsetOrange = Color(0xFFFFE9E6);
   static const Color red = Color(0xFFA00407);
   static const Color white = Color(0xFFFFFFFF);
+  static const Color white500 = Color(0xFF737373);
+  static const Color white800 = Color(0xFF272727);
   static const Color black = Color(0xFF272727);
   static const Color darkblue = Color(0xFF111827);
   static const Color darkblue50 = Color(0xFFF4F7FF);
+  static const Color darkblue100 = Color(0xFFFE6EEFF);
   static const Color darkblue600 = Color(0xFF2A5BFF);
   static const Color navyBlue = Color(0xFF111827);
   static const Color navyBlue1 = Color(0xFF374151);

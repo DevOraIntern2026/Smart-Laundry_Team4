@@ -109,6 +109,26 @@ class AppTextStyle {
     color: color ?? AppColors.darkblue,
     fontFamily: _fontFamily,
   );
+  static TextStyle f12w500(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 12),
+    fontWeight: fontWeight ?? FontWeight.w500,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f20w700(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 20),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
 
 
 
