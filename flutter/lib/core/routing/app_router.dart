@@ -1,6 +1,8 @@
 
 import 'package:go_router/go_router.dart';
-import 'package:smart_laundry/features/services/presentation/views/services_view.dart';
+import 'package:smart_laundry/core/widgets/test_screen.dart';
+import 'package:smart_laundry/features/main_screen.dart';
+import 'package:smart_laundry/features/profile/presentation/views/addresses_view.dart';
 
 import '../../features/auth/presentation/views/login_view.dart';
 import '../../features/auth/presentation/views/sign_up_view.dart';
@@ -11,7 +13,7 @@ import '../../features/auth/presentation/views/forgot_password_view.dart';
 /// App router configuration
 abstract class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.services,
+    initialLocation: AppRoutes.mainPage,
     routes: [
       GoRoute(
         path: AppRoutes.welcome,
@@ -31,9 +33,18 @@ abstract class AppRouter {
 
       ),
       GoRoute(
-        path: AppRoutes.services,
-        builder: (context, state) => const ServicesView(),
-      )
+        path: AppRoutes.mainPage,
+        builder: (context, state) => const MainScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.addresses,
+        builder: (context, state) =>  AddressesView(),
+      ),
+      GoRoute(
+        path: AppRoutes.testScreen,
+        builder: (context, state) =>  const TestScreen(),
+      ),
+
     ],
   );
 }

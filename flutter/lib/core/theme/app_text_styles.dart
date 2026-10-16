@@ -48,6 +48,74 @@ class AppTextStyle {
     color: color ?? AppColors.gray,
     fontFamily: _fontFamily,
   );
+  static TextStyle mediumTitle16(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 16),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.gray,
+    fontFamily: _fontFamily,
+  );
+
+  static TextStyle profileTileHeader18(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle profileSubHeader12(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 12),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f18w700(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f12w700(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 18),
+    fontWeight: fontWeight ?? FontWeight.w700,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+  static TextStyle f14w400(
+    BuildContext context, {
+    Color? color,
+    FontWeight? fontWeight,
+  }) => TextStyle(
+    fontSize: getResponsiveFontSize(context, fontSize: 14),
+    fontWeight: fontWeight ?? FontWeight.w400,
+    color: color ?? AppColors.darkblue,
+    fontFamily: _fontFamily,
+  );
+
+
+
+
+  
+
+  
 }
 
 double getResponsiveFontSize(BuildContext context, {required double fontSize}) {
