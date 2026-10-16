@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Bell, CirclePlus, Menu, UserRound, X } from "lucide-react";
 import { HeaderData } from "../../Data";
 
-const { logo, navLinks, cta, profile, notificationsCount } = HeaderData;
+const { logo, navLinks, cta, loginButton, profile, notificationsCount } =
+  HeaderData;
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +43,12 @@ export const Header = () => {
         </div>
 
         <div className="flex items-center gap-4">
+          <Link
+            to={loginButton.path}
+            className="hidden sm:block bg-accent text-white rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent-700 duration-200"
+          >
+            {loginButton.label}
+          </Link>
           <Link
             to={cta.path}
             className="hidden items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-bold text-white transition hover:bg-accent-hover sm:flex"
@@ -121,6 +128,13 @@ export const Header = () => {
               </li>
             ))}
             <li className="sm:hidden">
+              <Link
+                to={loginButton.path}
+                className="bg-accent text-white rounded-xl py-2 px-6 font-bold text-[14px] hover:bg-accent-700 duration-200 mt-2 w-full block text-center"
+              >
+                {loginButton.label}
+              </Link>
+
               <Link
                 to={cta.path}
                 onClick={closeMenu}

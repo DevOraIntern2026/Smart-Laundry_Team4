@@ -34,11 +34,13 @@ import Customers from "../pages/admin/customers/Customers";
 import CustomerDetails from "../pages/admin/customers/CustomerDetails";
 
 import NotFound from "../pages/NotFound";
+import ForgetPassword from "../pages/customer/account/ForgetPassword";
 
 const router = createBrowserRouter([
   // login and register are separated outside the layouts to appear without any fixed components like Header, Footer or Aside in main layout or in dashboard
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <SignUp /> },
+  { path: "/forget-password", element: <ForgetPassword /> },
   { path: "/admin/login", element: <AdminLogin /> },
 
   {
@@ -72,7 +74,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <AdminHome /> },
 
-      { path: "services", element: <AdminServices/> },
+      { path: "services", element: <AdminServices /> },
       { path: "services/items", element: <LaundryItems /> },
 
       { path: "orders", element: <Orders /> },

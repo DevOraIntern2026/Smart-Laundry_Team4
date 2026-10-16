@@ -16,6 +16,10 @@ export const HeaderData = {
     label: "اطلب الان",
     path: "/services",
   },
+  loginButton: {
+    label: "تسجيل الدخول",
+    path: "/login",
+  },
 
   profile: {
     path: "/profile",
@@ -282,11 +286,51 @@ export const AdminOrdersData = {
   },
 
   stats: [
-    { title: "كافة الطلبات", value: 142, note: "طلب اليوم", icon: "all", tone: "primary", progress: 100, highlight: false },
-    { title: "جارية في المغسلة", value: 48, note: "3 غسالات نشطة", icon: "washing", tone: "primary", progress: 50, highlight: true },
-    { title: "مجدولة للاستلام", value: 24, note: "بين 2 - 6 مساءً", icon: "scheduled", tone: "muted", progress: 70, highlight: false },
-    { title: "في طريق التوصيل", value: 20, note: "4 مناديب نشطين", icon: "delivery", tone: "primary", progress: 50, highlight: true },
-    { title: "مكتملة اليوم", value: 43, note: "+18% نمو", icon: "completed", tone: "success", progress: 80, highlight: true },
+    {
+      title: "كافة الطلبات",
+      value: 142,
+      note: "طلب اليوم",
+      icon: "all",
+      tone: "primary",
+      progress: 100,
+      highlight: false,
+    },
+    {
+      title: "جارية في المغسلة",
+      value: 48,
+      note: "3 غسالات نشطة",
+      icon: "washing",
+      tone: "primary",
+      progress: 50,
+      highlight: true,
+    },
+    {
+      title: "مجدولة للاستلام",
+      value: 24,
+      note: "بين 2 - 6 مساءً",
+      icon: "scheduled",
+      tone: "muted",
+      progress: 70,
+      highlight: false,
+    },
+    {
+      title: "في طريق التوصيل",
+      value: 20,
+      note: "4 مناديب نشطين",
+      icon: "delivery",
+      tone: "primary",
+      progress: 50,
+      highlight: true,
+    },
+    {
+      title: "مكتملة اليوم",
+      value: 43,
+      note: "+18% نمو",
+      icon: "completed",
+      tone: "success",
+      progress: 80,
+      highlight: true,
+    },
   ],
 
   tabs: [
@@ -301,9 +345,18 @@ export const AdminOrdersData = {
 
   filters: {
     searchPlaceholder: "ابحث برقم الطلب (#ORD)، العميل، أو الجوال...",
-    date: { label: "النطاق:", options: ["اليوم (18 أكتوبر)", "أمس", "آخر 7 أيام"] },
-    service: { label: "نوع الخدمة:", options: ["الكل", "غسيل وكوي", "تنظيف جاف", "كوي بخار"] },
-    driver: { label: "المندوب:", options: ["جميع المناديب", "عمر الفهد", "فهد العتيبي"] },
+    date: {
+      label: "النطاق:",
+      options: ["اليوم (18 أكتوبر)", "أمس", "آخر 7 أيام"],
+    },
+    service: {
+      label: "نوع الخدمة:",
+      options: ["الكل", "غسيل وكوي", "تنظيف جاف", "كوي بخار"],
+    },
+    driver: {
+      label: "المندوب:",
+      options: ["جميع المناديب", "عمر الفهد", "فهد العتيبي"],
+    },
   },
 
   table: {
@@ -456,9 +509,24 @@ export const AdminOrdersData = {
     badge: "سعة 84%",
     unit: "قطعة",
     items: [
-      { name: "محطة الفرز والتعقيم بالأوزون", used: 18, total: 20, tone: "primary" },
-      { name: "غسالات العناية بالأقمشة الحساسة", used: 12, total: 16, tone: "primary" },
-      { name: "مكابس البخار والتغليف الآلي", used: 22, total: 25, tone: "success" },
+      {
+        name: "محطة الفرز والتعقيم بالأوزون",
+        used: 18,
+        total: 20,
+        tone: "primary",
+      },
+      {
+        name: "غسالات العناية بالأقمشة الحساسة",
+        used: 12,
+        total: 16,
+        tone: "primary",
+      },
+      {
+        name: "مكابس البخار والتغليف الآلي",
+        used: 22,
+        total: 25,
+        tone: "success",
+      },
     ],
   },
 
@@ -494,10 +562,30 @@ export const AdminOrderDetailsData = {
   },
 
   stats: [
-    { label: "القطع المفحوصة", value: "3 قطع / 4 وحدات", icon: "items", tone: "primary" },
-    { label: "المسح الضوئي الذكي (AI)", value: "مكتمل 100%", icon: "scan", tone: "success" },
-    { label: "طريقة الدفع", value: "مدى (معتمد)", icon: "payment", tone: "primary" },
-    { label: "فارق زمن التسليم", value: "-25 دقيقة (مبكر)", icon: "time", tone: "danger" },
+    {
+      label: "القطع المفحوصة",
+      value: "3 قطع / 4 وحدات",
+      icon: "items",
+      tone: "primary",
+    },
+    {
+      label: "المسح الضوئي الذكي (AI)",
+      value: "مكتمل 100%",
+      icon: "scan",
+      tone: "success",
+    },
+    {
+      label: "طريقة الدفع",
+      value: "مدى (معتمد)",
+      icon: "payment",
+      tone: "primary",
+    },
+    {
+      label: "فارق زمن التسليم",
+      value: "-25 دقيقة (مبكر)",
+      icon: "time",
+      tone: "danger",
+    },
   ],
 
   customer: {
@@ -573,8 +661,16 @@ export const AdminOrderDetailsData = {
     title: "الفاتورة الضريبية وبيانات التحصيل",
     lines: [
       { label: "المجموع الفرعي للخدمات:", value: "260.00 ج.م", tone: "normal" },
-      { label: "خصم باقة نيفو بلاتينيوم (10%):", value: "-26.00 ج.م", tone: "discount" },
-      { label: "ضريبة القيمة المضافة (14%):", value: "32.76 ج.م", tone: "normal" },
+      {
+        label: "خصم باقة نيفو بلاتينيوم (10%):",
+        value: "-26.00 ج.م",
+        tone: "discount",
+      },
+      {
+        label: "ضريبة القيمة المضافة (14%):",
+        value: "32.76 ج.م",
+        tone: "normal",
+      },
     ],
     totalLabel: "الإجمالي الصافي:",
     totalNote: "شامل الضريبة وكافة الرسوم",
@@ -604,14 +700,16 @@ export const AdminOrderDetailsData = {
       },
       {
         title: "اعتماد الطلب وتأكيد السداد",
-        description: "تم توجيه أمر التحضير إلى كابتن الحي وتعيين مسار الاستلام.",
+        description:
+          "تم توجيه أمر التحضير إلى كابتن الحي وتعيين مسار الاستلام.",
         time: "10:20 ص",
         status: "done",
         actionLabel: "",
       },
       {
         title: "استلام الملابس والتحقق عبر OTP",
-        description: "تم الاستلام من العميل بواسطة كابتن فهد العتيبي بعد مطابقة الرمز.",
+        description:
+          "تم الاستلام من العميل بواسطة كابتن فهد العتيبي بعد مطابقة الرمز.",
         time: "11:30 ص",
         status: "done",
         actionLabel: "",
@@ -633,7 +731,8 @@ export const AdminOrderDetailsData = {
       },
       {
         title: "الكي البخاري والتغليف بعطر اللافندر",
-        description: "وضع أغطية الحماية المعقمة مع بطاقات نيفو المعطرة الفاخرة.",
+        description:
+          "وضع أغطية الحماية المعقمة مع بطاقات نيفو المعطرة الفاخرة.",
         time: "المرحلة القادمة",
         status: "upcoming",
         actionLabel: "",
@@ -839,7 +938,8 @@ export const CartData = {
       name: "بطانية شتوية كبيرة",
       service: "تنظيف جاف عميق + تعطير فاخر",
       reviewName: "بطانية شتوية كبيرة مقاس كينج",
-      reviewService: "تنظيف جاف عميق فائق، تعقيم حراري ضد البكتيريا ومسببات الحساسية",
+      reviewService:
+        "تنظيف جاف عميق فائق، تعقيم حراري ضد البكتيريا ومسببات الحساسية",
       reviewFeature: "تعقيم مضاد لحشرات الفراش",
       price: 75,
       quantity: 1,
@@ -1119,7 +1219,8 @@ export const OrderTrackingData = {
     },
     {
       title: "المعالجة والغسيل الآن",
-      description: "ملابسك تخضع لبرنامج الغسيل والتعقيم والكي بالبخار بعناية فائقة",
+      description:
+        "ملابسك تخضع لبرنامج الغسيل والتعقيم والكي بالبخار بعناية فائقة",
       time: "",
       icon: "washing",
     },
@@ -1199,8 +1300,16 @@ export const CustomerOrdersData = {
       currentStep: 1,
       items: [
         { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
-        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
-        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+        {
+          name: "بنطلون جينز (غسيل وكوي بالبخار)",
+          quantity: 1,
+          price: "28 ج.م",
+        },
+        {
+          name: "بطانية كينج فاخرة (عناية خاصة)",
+          quantity: 1,
+          price: "55 ج.م",
+        },
       ],
       deliveryLabel: "موعد التسليم المتوقع",
       delivery: "غداً (05:00 - 08:00 م)",
@@ -1222,8 +1331,16 @@ export const CustomerOrdersData = {
       paymentMethod: "دفع إلكتروني",
       items: [
         { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
-        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
-        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+        {
+          name: "بنطلون جينز (غسيل وكوي بالبخار)",
+          quantity: 1,
+          price: "28 ج.م",
+        },
+        {
+          name: "بطانية كينج فاخرة (عناية خاصة)",
+          quantity: 1,
+          price: "55 ج.م",
+        },
       ],
       cartItems: [
         { id: "classic-shirt", quantity: 2 },
@@ -1241,8 +1358,16 @@ export const CustomerOrdersData = {
       paymentMethod: "نقداً عند الاستلام",
       items: [
         { name: "قميص كاجوال (غسيل وكوي)", quantity: 2, price: "40 ج.م" },
-        { name: "بنطلون جينز (غسيل وكوي بالبخار)", quantity: 1, price: "28 ج.م" },
-        { name: "بطانية كينج فاخرة (عناية خاصة)", quantity: 1, price: "55 ج.م" },
+        {
+          name: "بنطلون جينز (غسيل وكوي بالبخار)",
+          quantity: 1,
+          price: "28 ج.م",
+        },
+        {
+          name: "بطانية كينج فاخرة (عناية خاصة)",
+          quantity: 1,
+          price: "55 ج.م",
+        },
       ],
       cartItems: [
         { id: "classic-shirt", quantity: 2 },
@@ -1258,7 +1383,9 @@ export const CustomerOrdersData = {
       itemsCount: "5 قمصان رسمية",
       total: "50.00 ج.م",
       paymentMethod: "دفع إلكتروني",
-      items: [{ name: "قميص رسمي (كوي بالبخار)", quantity: 5, price: "50 ج.م" }],
+      items: [
+        { name: "قميص رسمي (كوي بالبخار)", quantity: 5, price: "50 ج.م" },
+      ],
       cartItems: [{ id: "classic-shirt", quantity: 5 }],
     },
     {
@@ -1269,7 +1396,13 @@ export const CustomerOrdersData = {
       itemsCount: "2 بطانية شتوية",
       total: "150.00 ج.م",
       paymentMethod: "نقداً عند الاستلام",
-      items: [{ name: "بطانية شتوية كبيرة (تنظيف عميق)", quantity: 2, price: "150 ج.م" }],
+      items: [
+        {
+          name: "بطانية شتوية كبيرة (تنظيف عميق)",
+          quantity: 2,
+          price: "150 ج.م",
+        },
+      ],
       cartItems: [{ id: "winter-blanket", quantity: 2 }],
     },
   ],
@@ -1296,9 +1429,27 @@ export const CustomerOrderDetailsData = {
   currency: "ج.م",
   piecesLabel: "قطع",
   items: [
-    { name: "قميص رجالي كلاسيك", quantity: 2, service: "غسيل وكوي بالبخار المعقم", price: 30, icon: "shirt" },
-    { name: "بطانية شتوية كبيرة", quantity: 1, service: "غسيل وتعقيم عميق خاص", price: 75, icon: "blanket" },
-    { name: "بنطلون جينز أزرق", quantity: 1, service: "غسيل وحماية الألوان وكوي", price: 18, icon: "pants" },
+    {
+      name: "قميص رجالي كلاسيك",
+      quantity: 2,
+      service: "غسيل وكوي بالبخار المعقم",
+      price: 30,
+      icon: "shirt",
+    },
+    {
+      name: "بطانية شتوية كبيرة",
+      quantity: 1,
+      service: "غسيل وتعقيم عميق خاص",
+      price: 75,
+      icon: "blanket",
+    },
+    {
+      name: "بنطلون جينز أزرق",
+      quantity: 1,
+      service: "غسيل وحماية الألوان وكوي",
+      price: 18,
+      icon: "pants",
+    },
   ],
   cartItems: [
     { id: "classic-shirt", quantity: 2 },
@@ -1340,22 +1491,32 @@ export const CustomerOrderDetailsData = {
 export const AiAssistantData = {
   hero: {
     title: "مساعدك نيفو الذكي",
-    description:
-      "اطلب غسيلك بالصوت أو النص بلهجتك اليومية، ونحن نتكفل بالباقي",
+    description: "اطلب غسيلك بالصوت أو النص بلهجتك اليومية، ونحن نتكفل بالباقي",
   },
 
-  greeting:
-    "أهلاً بك! أنا مساعدك نيفو الذكي. اكتب أو سجل صوتياً أي طلب مثل:",
-  greetingExample: "\"عندي قميصين وبطانية وعايزهم بكرة\"",
+  greeting: "أهلاً بك! أنا مساعدك نيفو الذكي. اكتب أو سجل صوتياً أي طلب مثل:",
+  greetingExample: '"عندي قميصين وبطانية وعايزهم بكرة"',
   greetingEnd: "وسأقوم بتجهيز مسودة طلبك فوراً!",
   exampleMessage: "عندي قميصين كلاسيك وبطانية كبيرة وعايز أستلمهم بكرة مساءً",
 
   suggestionsTitle: "اقتراحات سريعة للبدء:",
   suggestions: [
     { label: "غسيل وكوي", text: "عندي 3 قمصان عايز غسيل وكوي", icon: "wash" },
-    { label: "تنظيف جاف", text: "عندي بدلة وفستان محتاجين تنظيف جاف", icon: "dry" },
-    { label: "مفروشات وسجاد", text: "عندي بطانيتين كبار محتاجين تنظيف عميق", icon: "bedding" },
-    { label: "إكسبريس 12س", text: "عندي قميصين وبنطلون وعايزهم مستعجل", icon: "express" },
+    {
+      label: "تنظيف جاف",
+      text: "عندي بدلة وفستان محتاجين تنظيف جاف",
+      icon: "dry",
+    },
+    {
+      label: "مفروشات وسجاد",
+      text: "عندي بطانيتين كبار محتاجين تنظيف عميق",
+      icon: "bedding",
+    },
+    {
+      label: "إكسبريس 12س",
+      text: "عندي قميصين وبنطلون وعايزهم مستعجل",
+      icon: "express",
+    },
   ],
 
   draft: {
@@ -1371,7 +1532,7 @@ export const AiAssistantData = {
   },
 
   notUnderstood:
-    "معلش، ماقدرتش أطلع قطع من رسالتك. جرب تكتب اسم القطعة وعددها، مثلاً: \"عندي 2 قميص وبطانية\".",
+    'معلش، ماقدرتش أطلع قطع من رسالتك. جرب تكتب اسم القطعة وعددها، مثلاً: "عندي 2 قميص وبطانية".',
 
   schedules: {
     tomorrowWords: ["بكرة", "بكره", "غدا", "غداً"],
@@ -1387,7 +1548,11 @@ export const AiAssistantData = {
   itemKeywords: [
     { id: "classic-shirt", words: ["قميص", "قمصان"], dual: "قميصين" },
     { id: "blue-jeans", words: ["بنطلون", "بنطال", "جينز"], dual: "بنطلونين" },
-    { id: "winter-blanket", words: ["بطانية", "بطاطين", "بطانيه"], dual: "بطانيتين" },
+    {
+      id: "winter-blanket",
+      words: ["بطانية", "بطاطين", "بطانيه"],
+      dual: "بطانيتين",
+    },
     { id: "suit-jacket", words: ["جاكيت", "بدلة", "بدل"], dual: "بدلتين" },
     { id: "polo-shirt", words: ["تيشيرت", "تيشرت", "بولو"], dual: "تيشيرتين" },
     { id: "silk-abaya", words: ["عباية", "فستان", "فساتين"], dual: "فستانين" },
@@ -1527,7 +1692,8 @@ export const ProfileData = {
 export const AddressesData = {
   title: "عناوينك المحفوظة",
   countSuffix: "مواقع",
-  description: "يمكنك إدارة خيارات التوصيل، التعديل أو التبديل بين العناوين بسهولة",
+  description:
+    "يمكنك إدارة خيارات التوصيل، التعديل أو التبديل بين العناوين بسهولة",
   backLabel: "العودة للملف الشخصي",
   emptyMessage: "لا توجد عناوين محفوظة، أضف عنوانك الأول من النموذج",
 
