@@ -1415,3 +1415,187 @@ export const AiAssistantData = {
     "نيفو لا يؤكد الطلب تلقائياً، لك حرية المراجعة والتعديل دائماً قبل الدفع",
   nowLabel: "الآن",
 };
+
+export const ProfileData = {
+  title: "الملف الشخصي وإعدادات الحساب",
+  description:
+    "إدارة بياناتك الشخصية، باقات الاشتراك، رصيد نقاط الولاء، وتفضيلات الغسيل الافتراضية بسهولة وأمان.",
+  lastUpdate: "آخر تحديث: اليوم 11:42 ص",
+
+  user: {
+    fullName: "أحمد مصطفى",
+    initials: "أ.م",
+    email: "ahmed.mostafa@example.com",
+    phone: "+20 102 345 6789",
+    birthDate: "1994-05-14",
+    avatar: "",
+  },
+
+  stats: [
+    { value: "8", label: "طلبات مكتملة", icon: "orders", tone: "primary" },
+    { value: "34", label: "قطعة منعشة", icon: "items", tone: "success" },
+    { value: "16+", label: "ساعة موفرة", icon: "time", tone: "danger" },
+  ],
+
+  form: {
+    title: "البيانات الشخصية ومعلومات الاتصال",
+    subtitle: "تُستخدم هذه المعلومات لتأكيد الطلبات وإرسال إشعارات التسليم.",
+    fullNameLabel: "الاسم الكامل",
+    emailLabel: "البريد الإلكتروني",
+    phoneLabel: "رقم الهاتف المحمول",
+    verifiedLabel: "موثّق بالرمز",
+    birthDateLabel: "تاريخ الميلاد",
+    cancelLabel: "إلغاء التغييرات",
+    saveLabel: "حفظ التعديلات",
+    savedMessage: "تم حفظ التعديلات بنجاح",
+    requiredMessage: "من فضلك اكمل الاسم والبريد ورقم الهاتف",
+  },
+
+  menuGroups: [
+    {
+      title: "إدارة الحساب والعناوين",
+      items: [
+        {
+          title: "المعلومات الشخصية",
+          description: "الاسم، البريد، كلمة المرور",
+          icon: "user",
+          path: "/profile",
+          badge: "",
+        },
+        {
+          title: "عناويني",
+          description: "المنزل، العمل، تفاصيل التسليم",
+          icon: "address",
+          path: "/profile/addresses",
+          badge: "addresses",
+        },
+        {
+          title: "طرق الدفع والمحفظة",
+          description: "البطاقات البنكية، فودافون كاش",
+          icon: "payment",
+          path: "",
+          badge: "dot",
+        },
+      ],
+    },
+    {
+      title: "التفضيلات والنظام",
+      items: [
+        {
+          title: "سجل الإشعارات",
+          description: "تتبع حالة الملابس ومواعيد الكابتن",
+          icon: "notifications",
+          path: "",
+          badge: "",
+        },
+        {
+          title: "اللغة وتفضيلات الغسيل",
+          description: "العربية، المعطرات، درجات الحرارة",
+          icon: "settings",
+          path: "",
+          badge: "العربية",
+        },
+      ],
+    },
+    {
+      title: "المساعدة والضمان",
+      items: [
+        {
+          title: "مركز المساعدة",
+          description: "محادثة حية مع فريق خدمة عملاء نيفو 24/7",
+          icon: "help",
+          path: "/assistant",
+          badge: "",
+        },
+        {
+          title: "سياسة الضمان",
+          description: "ضمان نيفو 100% لسلامة الأقمشة الفاخرة",
+          icon: "warranty",
+          path: "",
+          badge: "",
+        },
+      ],
+    },
+  ],
+
+  addressesBadgeSuffix: "عناوين",
+  logoutLabel: "تسجيل الخروج",
+  logoutPath: "/login",
+  version: "تطبيق نيفو الذكي • الإصدار 1.2.0",
+};
+
+export const AddressesData = {
+  title: "عناوينك المحفوظة",
+  countSuffix: "مواقع",
+  description: "يمكنك إدارة خيارات التوصيل، التعديل أو التبديل بين العناوين بسهولة",
+  backLabel: "العودة للملف الشخصي",
+  emptyMessage: "لا توجد عناوين محفوظة، أضف عنوانك الأول من النموذج",
+
+  defaultLabel: "العنوان الافتراضي",
+  setDefaultLabel: "تعيين كافتراضي",
+  phoneLabel: "هاتف الاستلام:",
+  notesLabel: "تعليمات للمندوب:",
+  editLabel: "تعديل",
+  deleteLabel: "حذف",
+  deleteConfirm: "متأكد إنك عايز تحذف العنوان ده؟",
+
+  types: [
+    { id: "home", label: "المنزل", icon: "home" },
+    { id: "work", label: "العمل", icon: "work" },
+    { id: "other", label: "آخر", icon: "other" },
+  ],
+
+  areas: [
+    "القاهرة - المعادي وحلوان",
+    "القاهرة - مدينة نصر ومصر الجديدة",
+    "القاهرة - التجمع الخامس",
+    "الجيزة - الشيخ زايد و6 أكتوبر",
+    "الجيزة - الدقي والمهندسين",
+  ],
+
+  addresses: [
+    {
+      id: 1,
+      type: "home",
+      title: "عنوان المنزل",
+      area: "القاهرة - المعادي وحلوان",
+      street:
+        "شقة ٤، الطابق الثاني، عمارة ١٤، شارع النصر، متفرع من شارع اللاسلكي، المعادي الجديدة",
+      phone: "01023456789",
+      notes: "المصعد يعمل، يرجى الاتصال هاتفياً قبل الوصول بربع ساعة.",
+      isDefault: true,
+    },
+    {
+      id: 2,
+      type: "work",
+      title: "مكتب العمل",
+      area: "القاهرة - التجمع الخامس",
+      street: "الطابق السادس، مبنى كابيتال بيزنس بارك، التجمع الخامس",
+      phone: "01023456789",
+      notes: "",
+      isDefault: false,
+    },
+  ],
+
+  form: {
+    addTitle: "إضافة عنوان جديد",
+    editTitle: "تعديل العنوان",
+    typeLabel: "نوع العنوان",
+    areaLabel: "المحافظة والمنطقة",
+    streetLabel: "اسم الشارع الرئيسي والفرعي",
+    streetPlaceholder: "مثال: شارع النصر، متفرع من شارع اللاسلكي",
+    phoneLabel: "رقم هاتف الاستلام",
+    phonePlaceholder: "01xxxxxxxxx",
+    notesLabel: "علامة مميزة وملاحظات للمندوب",
+    notesPlaceholder:
+      "مثال: بجوار صيدلية العزبي، المصعد شغال، يرجى الرن على الجرس...",
+    saveLabel: "حفظ العنوان",
+    cancelLabel: "إلغاء التعديل",
+    requiredMessage: "من فضلك اكتب اسم الشارع ورقم هاتف صحيح",
+    defaultTitles: {
+      home: "عنوان المنزل",
+      work: "مكتب العمل",
+      other: "عنوان آخر",
+    } as Record<string, string>,
+  },
+};
