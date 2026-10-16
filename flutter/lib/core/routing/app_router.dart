@@ -1,0 +1,15 @@
+import 'package:go_router/go_router.dart';
+import '../../features/welcome/presentation/views/welcome_view.dart';
+import 'app_routes.dart';
+
+abstract class AppRouter {
+  static final GoRouter router = GoRouter(
+    initialLocation: AppRoutes.welcome,
+    routes: [
+      GoRoute(
+        path: AppRoutes.welcome,
+        builder: (context, state) => const WelcomeView(),
+      ),
+    ],
+  );
+}
