@@ -7,6 +7,7 @@ import 'package:smart_laundry/core/widgets/primary_button.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/address_popup_input_field.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/address_type.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/area_drop_down.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class AddressPopup extends StatelessWidget {
   const AddressPopup({super.key});
@@ -27,30 +28,30 @@ class AddressPopup extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text("إضافة عنوان جديد", style: AppTextStyle.f18w700(context, color: AppColors.navyBlue),),
+              Text(AppStrings.addNewAddress, style: AppTextStyle.f18w700(context, color: AppColors.navyBlue),),
               IconButton(onPressed: (){
                 Navigator.pop(context);
               }, icon: Icon(Icons.close))
             ],
           ),
           SizedBox(height: 12.h,),
-          Text("نوع العنوان", style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
+          Text(AppStrings.addressType, style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
           SizedBox(height: 12.h,),
           AddressType(),
           SizedBox(height: 12.h,),
-          Text("المحافظة و المنطقة", style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
+          Text(AppStrings.governorateAndArea, style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
           SizedBox(height: 12.h,),
           AreaDropdown(items: ["القاهرة - المعادي و حلوان", "الأسكندرية - سيدي جابر"]),
           SizedBox(height: 12.h,),
-          Text("اسم الشارع الرئيسي و الفرعي", style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
+          Text(AppStrings.streetName, style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
           SizedBox(height: 12.h,),
-          AddressPopupInputField(hint: "مثال: شارع النصر، متفرع من شارع اللاسلكي", icon: AppAssets.streetSign,),
+          AddressPopupInputField(hint: AppStrings.streetNameHint, icon: AppAssets.streetSign,),
           SizedBox(height: 12.h,),
-          Text("علامة مميزة وملاحظات للمندوب", style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
+          Text(AppStrings.landmarkAndNotes, style: AppTextStyle.f12w700(context, color: AppColors.navyBlue),),
           SizedBox(height: 12.h,),
-          AddressPopupInputField(hint: "مثال: بجوار صيدلية العزبي، المصعد شغال، يرجى الرن على الجرس", isMultiline: true,),
+          AddressPopupInputField(hint: AppStrings.landmarkAndNotesHint, isMultiline: true,),
           SizedBox(height: 12.h,),
-          PrimaryButton(label: "حفظ العنوان", onPressed: (){}, icon:Icons.offline_pin_outlined,)
+          PrimaryButton(label: AppStrings.saveAddress, onPressed: (){}, icon:Icons.offline_pin_outlined,)
 
           
 

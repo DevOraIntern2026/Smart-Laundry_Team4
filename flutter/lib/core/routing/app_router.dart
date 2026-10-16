@@ -13,7 +13,7 @@ import '../../features/auth/presentation/views/forgot_password_view.dart';
 /// App router configuration
 abstract class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutes.services,
+    initialLocation: AppRoutes.mainPage,
     routes: [
       GoRoute(
         path: AppRoutes.welcome,
@@ -33,7 +33,7 @@ abstract class AppRouter {
 
       ),
       GoRoute(
-        path: AppRoutes.services,
+        path: AppRoutes.mainPage,
         builder: (context, state) => const MainScreen(),
       ),
       GoRoute(

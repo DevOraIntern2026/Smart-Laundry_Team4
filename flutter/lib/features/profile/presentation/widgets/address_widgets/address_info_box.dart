@@ -3,6 +3,7 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/features/profile/domain/address.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/courier_notes_box.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/info_row.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 
 class AddressInfoBox extends StatelessWidget {
@@ -42,7 +43,7 @@ class AddressInfoBox extends StatelessWidget {
             child: Row(
               children: [
                 const Text(
-                  'هاتف الاستلام: ',
+                  AppStrings.pickupPhone,
                   style: TextStyle(fontSize: 12, color: AppColors.textGrey),
                 ),
                 Text(

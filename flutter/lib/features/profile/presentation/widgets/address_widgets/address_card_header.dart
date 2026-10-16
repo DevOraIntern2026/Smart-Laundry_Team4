@@ -3,6 +3,7 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/widgets/app_badge.dart';
 import 'package:smart_laundry/features/profile/domain/address.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/circle_icon.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class AddressCardHeader extends StatelessWidget {
   final Address address;
@@ -37,13 +38,13 @@ class AddressCardHeader extends StatelessWidget {
         ),
         address.isDefault
             ? const AppBadge(
-                label: 'العنوان الافتراضي',
+                label: AppStrings.defaultAddress,
                 background: AppColors.iconCircle,
                 foreground: AppColors.primary,
                 icon: Icons.check_circle_rounded,
               )
             : const AppBadge(
-                label: 'عنوان ثانوي',
+                label: AppStrings.secondaryAddress,
                 background: AppColors.secondaryBadgeBg,
                 foreground: AppColors.textGrey,
               ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_laundry/core/routing/app_routes.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 import 'package:smart_laundry/core/widgets/custom_app_bar.dart';
 import 'package:smart_laundry/features/profile/domain/address.dart';
@@ -9,6 +10,7 @@ import 'package:smart_laundry/features/profile/presentation/widgets/address_popu
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/address_card.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/section_header.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/wide_soft_button.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class AddressesView extends StatelessWidget {
    AddressesView({super.key});
@@ -40,9 +42,9 @@ class AddressesView extends StatelessWidget {
         title: Image.asset(AppAssets.welcomeLogo, width: 51.w, height: 51.h,),
         actions: [
           Row(children: [
-            Text("تعديل عنواني"),
+            Text(AppStrings.editMyAddress),
             IconButton(onPressed: (){
-              context.pop();
+             context.canPop() ? context.pop(): context.go(AppRoutes.mainPage);
             }, icon: Icon(Icons.keyboard_arrow_right))
           ],)
         ],
@@ -54,8 +56,8 @@ class AddressesView extends StatelessWidget {
             padding: const EdgeInsets.all(14),
             children: [
               SectionHeader(
-                title: 'العناوين المحفوظة',
-                count: '${_addresses.length} عناوين',
+                title: AppStrings.savedAddresses,
+                count: AppStrings.addressesCount(_addresses.length),
               ),
               const SizedBox(height: 12),
               ..._addresses.map(
@@ -70,7 +72,7 @@ class AddressesView extends StatelessWidget {
                 ),
               ),
               WideSoftButton(
-                label: 'إضافة عنوان جديد',
+                label: AppStrings.addNewAddress,
                 icon: Icons.add_location_alt_outlined,
                 onTap: () => showAddressPopup(context),
               ),

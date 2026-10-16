@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class AddressType extends StatelessWidget {
    const AddressType({super.key});
@@ -10,11 +11,11 @@ class AddressType extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-            Expanded(child: addressTypeItem(context, icon: Icons.home_outlined, title: "المنزل", isSelected: true,)),
+            Expanded(child: addressTypeItem(context, icon: Icons.home_outlined, title: AppStrings.typeHome, isSelected: true,)),
             SizedBox(width: 8.w,),
-            Expanded(child: addressTypeItem(context, icon: Icons.domain_outlined, title: "العمل")),
+            Expanded(child: addressTypeItem(context, icon: Icons.domain_outlined, title: AppStrings.typeWork)),
             SizedBox(width: 8.w,),
-            Expanded(child: addressTypeItem(context,  icon: Icons.location_on_outlined, title: "أخرى")),
+            Expanded(child: addressTypeItem(context,  icon: Icons.location_on_outlined, title: AppStrings.typeOther)),
           ],);
   }
 

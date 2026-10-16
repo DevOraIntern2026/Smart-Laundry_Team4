@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/action_text_button.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class AddressCardActions extends StatelessWidget {
   final VoidCallback onEdit;
@@ -22,7 +23,7 @@ class AddressCardActions extends StatelessWidget {
           child: onSetDefault == null
               ? const SizedBox.shrink()
               : ActionTextButton(
-                  label: 'تعيين كافتراضي',
+                  label: AppStrings.setAsDefault,
                   icon: Icons.check_circle_outline_rounded,
                   color: AppColors.textGrey,
                   onTap: onSetDefault!,
@@ -30,7 +31,7 @@ class AddressCardActions extends StatelessWidget {
         ),
         Expanded(
           child: ActionTextButton(
-            label: 'تعديل',
+            label: AppStrings.edit,
             icon: Icons.edit_outlined,
             color: AppColors.textGrey,
             onTap: onEdit,
@@ -38,7 +39,7 @@ class AddressCardActions extends StatelessWidget {
         ),
         Expanded(
           child: ActionTextButton(
-            label: 'حذف',
+            label: AppStrings.delete,
             icon: Icons.delete_outline_rounded,
             color: AppColors.red,
             onTap: onDelete,

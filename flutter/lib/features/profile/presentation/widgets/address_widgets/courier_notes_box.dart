@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
 
 class CourierNotesBox extends StatelessWidget {
   final String notes;
@@ -28,7 +29,7 @@ class CourierNotesBox extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'تعليمات للمندوب:',
+                  AppStrings.courierInstructions,
                   style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w800,
