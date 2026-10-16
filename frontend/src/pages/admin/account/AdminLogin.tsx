@@ -11,6 +11,7 @@ import {
   type AdminLoginFormData,
 } from "../../../types/adminLoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate } from "react-router-dom";
 
 const features = [
   {
@@ -32,6 +33,8 @@ const features = [
 ];
 
 export default function AdminLogin() {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -41,7 +44,7 @@ export default function AdminLogin() {
   });
 
   const onSubmit = (formData: AdminLoginFormData) => {
-    console.log(formData.email, "|", formData.password);
+    navigate("/admin");
   };
 
   return (

@@ -53,7 +53,7 @@ export default function SignUp() {
   });
 
   const onSubmit = (formData: RegisterFormData) => {
-    console.log(formData);
+    navigate("/");
   };
 
   return (
