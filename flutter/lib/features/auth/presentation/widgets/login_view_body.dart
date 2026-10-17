@@ -4,6 +4,10 @@ import '../../../../core/widgets/primary_button.dart';
 import 'login_header.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../core/routing/app_routes.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -22,17 +26,17 @@ class LoginViewBody extends StatelessWidget {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0x1A000000),
+                    color: AppColors.shadowMedium,
                     offset: Offset(0, 2),
                     blurRadius: 4,
                     spreadRadius: -2,
                   ),
                   BoxShadow(
-                    color: Color(0x1A000000),
+                    color: AppColors.shadowMedium,
                     offset: Offset(0, 4),
                     blurRadius: 6,
                     spreadRadius: -1,
@@ -43,13 +47,13 @@ class LoginViewBody extends StatelessWidget {
                 children: [
                   // Phone or email
                   const AppTextField(
-                    label: 'رقم الهاتف أو البريد الإلكتروني',
-                    hint: 'name@example.com أو 01X XXXX XXXX',
+                    label: AppStrings.phoneOrEmail,
+                    hint: AppStrings.phoneOrEmailHint,
                     isRequired: true,
                     suffixIcon: Icon(
                       Icons.alternate_email,
                       size: 20,
-                      color: Color(0xFF737373),
+                      color: AppColors.gray,
                     ),
                   ),
 
@@ -68,13 +72,13 @@ class LoginViewBody extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () => context.push(AppRoutes.forgotPassword),
                         child: const Text(
-                          'نسيت كلمة المرور؟',
+                          AppStrings.forgotPasswordQuestion,
                           style: TextStyle(
-                            fontFamily: 'Tajawal',
+                            fontFamily: AppTextStyle.fontFamily,
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.0,
-                            color: Color(0xFF1A37FF),
+                            color: AppColors.secondaryColor,
                           ),
                         ),
                       ),
@@ -85,7 +89,7 @@ class LoginViewBody extends StatelessWidget {
 
                   // Login button
                   PrimaryButton(
-                    label: 'تسجيل الدخول',
+                    label: AppStrings.login,
                     icon: Icons.login,
                     onPressed: () {
                       // TODO: login
@@ -104,9 +108,9 @@ class LoginViewBody extends StatelessWidget {
                     children: [
                       Expanded(
                         child: _SocialButton(
-                          label: 'Google',
+                          label: AppStrings.google,
                           icon: Image.asset(
-                            'assets/images/Auth/google.png',
+                            AppAssets.authGoogle,
                             width: 20,
                             height: 20,
                           ),
@@ -115,11 +119,11 @@ class LoginViewBody extends StatelessWidget {
                       SizedBox(width: 12),
                       Expanded(
                         child: _SocialButton(
-                          label: 'Apple',
+                          label: AppStrings.apple,
                           icon: Icon(
                             Icons.apple,
                             size: 22,
-                            color: Color(0xFF272727),
+                            color: AppColors.black,
                           ),
                         ),
                       ),
@@ -158,21 +162,21 @@ class _PasswordFieldState extends State<_PasswordField> {
   @override
   Widget build(BuildContext context) {
     return AppTextField(
-      label: 'كلمة المرور',
-      hint: '••••••••',
+      label: AppStrings.password,
+      hint: AppStrings.passwordHint,
       isRequired: true,
       obscureText: _obscure,
       suffixIcon: const Icon(
         Icons.lock_outline,
         size: 20,
-        color: Color(0xFF737373),
+        color: AppColors.gray,
       ),
       prefixIcon: GestureDetector(
         onTap: () => setState(() => _obscure = !_obscure),
         child: Icon(
           _obscure ? Icons.visibility_outlined : Icons.visibility_off_outlined,
           size: 20,
-          color: const Color(0xFF737373),
+          color: AppColors.gray,
         ),
       ),
     );
@@ -188,23 +192,23 @@ class _OrDivider extends StatelessWidget {
     return const Row(
       children: [
         Expanded(
-          child: Divider(height: 1, thickness: 1, color: Color(0xFFD0DFFF)),
+          child: Divider(height: 1, thickness: 1, color: AppColors.softBorderBlue),
         ),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 12),
           child: Text(
-            'أو الدخول عبر',
+            AppStrings.orLoginWith,
             style: TextStyle(
-              fontFamily: 'Tajawal',
+              fontFamily: AppTextStyle.fontFamily,
               fontSize: 10,
               fontWeight: FontWeight.w400,
               height: 1.0,
-              color: Color(0xFF737373),
+              color: AppColors.gray,
             ),
           ),
         ),
         Expanded(
-          child: Divider(height: 1, thickness: 1, color: Color(0xFFD0DFFF)),
+          child: Divider(height: 1, thickness: 1, color: AppColors.softBorderBlue),
         ),
       ],
     );
@@ -223,7 +227,7 @@ class _SocialButton extends StatelessWidget {
     return Container(
       height: 48,
       decoration: BoxDecoration(
-        color: const Color(0xFFF9FBFF),
+        color: AppColors.backgroundColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -232,11 +236,11 @@ class _SocialButton extends StatelessWidget {
           Text(
             label,
             style: const TextStyle(
-              fontFamily: 'Tajawal',
+              fontFamily: AppTextStyle.fontFamily,
               fontSize: 14,
               fontWeight: FontWeight.w500,
               height: 1.0,
-              color: Color(0xFF272727),
+              color: AppColors.black,
             ),
           ),
           const SizedBox(width: 8),
@@ -261,28 +265,28 @@ class _SignUpPrompt extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'ليس لديك حساب؟',
+              AppStrings.noAccount,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
                 height: 1.0,
-                color: Color(0xFF737373),
+                color: AppColors.gray,
               ),
             ),
             SizedBox(width: 4),
             Text(
-              'إنشاء حساب جديد',
+              AppStrings.createNewAccount,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
                 height: 1.0,
-                color: Color(0xFFFE574F),
+                color: AppColors.primaryColor,
               ),
             ),
             SizedBox(width: 2),
-            Icon(Icons.chevron_left, size: 16, color: Color(0xFFFE574F)),
+            Icon(Icons.chevron_left, size: 16, color: AppColors.primaryColor),
           ],
         ),
       ),
@@ -299,15 +303,15 @@ class _TermsNote extends StatelessWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 45),
       child: Text(
-        'بالتسجيل أنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنيفو',
+        AppStrings.loginTerms,
         textAlign: TextAlign.center,
         textDirection: TextDirection.rtl,
         style: TextStyle(
-          fontFamily: 'Tajawal',
+          fontFamily: AppTextStyle.fontFamily,
           fontSize: 10,
           fontWeight: FontWeight.w400,
           height: 1.4,
-          color: Color(0xFF737373),
+          color: AppColors.gray,
         ),
       ),
     );

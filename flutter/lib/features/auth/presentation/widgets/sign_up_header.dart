@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class SignUpHeader extends StatelessWidget {
   const SignUpHeader({super.key});
@@ -18,23 +22,23 @@ class SignUpHeader extends StatelessWidget {
               child: const Icon(
                 Icons.arrow_back,
                 size: 24,
-                color: Color(0xFF111827),
+                color: AppColors.darkblue,
               ),
             ),
             const SizedBox(width: 12),
             const Text(
-              'انشاء حساب',
+              AppStrings.signUpTitle,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 height: 24 / 18,
-                color: Color(0xFF111827),
+                color: AppColors.darkblue,
               ),
             ),
             const Spacer(),
             Image.asset(
-              'assets/images/welcome/nivo_logo_only.png',
+              AppAssets.welcomeLogo,
               width: 52,
               fit: BoxFit.contain,
             ),

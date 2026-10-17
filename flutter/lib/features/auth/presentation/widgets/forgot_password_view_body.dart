@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/app_top_bar.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class ForgotPasswordViewBody extends StatelessWidget {
   const ForgotPasswordViewBody({super.key});
@@ -9,7 +13,7 @@ class ForgotPasswordViewBody extends StatelessWidget {
     return const SingleChildScrollView(
       child: Column(
         children: [
-          AppTopBar(title: 'اعادة تعيين كلمة السر'),
+          AppTopBar(title: AppStrings.resetPasswordTitle),
 
           SizedBox(height: 16),
 
@@ -18,14 +22,14 @@ class ForgotPasswordViewBody extends StatelessWidget {
           SizedBox(height: 12),
 
           Text(
-            'نسيت كلمة المرور؟',
+            AppStrings.forgotPasswordQuestion,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontFamily: 'Tajawal',
+              fontFamily: AppTextStyle.fontFamily,
               fontSize: 20,
               fontWeight: FontWeight.w700,
               height: 1.0,
-              color: Color(0xFF272727),
+              color: AppColors.black,
             ),
           ),
 
@@ -34,14 +38,14 @@ class ForgotPasswordViewBody extends StatelessWidget {
           SizedBox(
             width: 320,
             child: Text(
-              'لا تقلق! أدخل رقم هاتفك أو بريدك الإلكتروني المسجل وسنرسل لك رمز تحقق لإعادة تعيين كلمة المرور.',
+              AppStrings.forgotPasswordDesc,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
                 height: 1.25,
-                color: Color(0xFF737373),
+                color: AppColors.gray,
               ),
             ),
           ),
@@ -72,7 +76,7 @@ class _ResetIcon extends StatelessWidget {
             margin: const EdgeInsets.only(top: 8, left: 8),
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Color(0xFFE6EEFF),
+              color: AppColors.darkblue100,
             ),
             alignment: Alignment.center,
             // Inner white circle
@@ -81,10 +85,10 @@ class _ResetIcon extends StatelessWidget {
               height: 64,
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white,
+                color: AppColors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0x0D000000),
+                    color: AppColors.shadowLight,
                     offset: Offset(0, 1),
                     blurRadius: 2,
                   ),
@@ -92,7 +96,7 @@ class _ResetIcon extends StatelessWidget {
               ),
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/images/Auth/reset_lock.png',
+                AppAssets.authResetLock,
                 width: 30,
                 height: 30,
               ),
@@ -107,12 +111,12 @@ class _ResetIcon extends StatelessWidget {
               width: 24,
               height: 24,
               decoration: BoxDecoration(
-                color: const Color(0xFF1A37FF),
+                color: AppColors.secondaryColor,
                 borderRadius: BorderRadius.circular(8),
               ),
               alignment: Alignment.center,
               child: Image.asset(
-                'assets/images/Auth/badge_laundry.png',
+                AppAssets.authBadgeLaundry,
                 width: 14,
                 height: 14,
               ),

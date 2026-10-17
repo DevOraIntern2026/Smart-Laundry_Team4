@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 class AreaDropdown extends StatefulWidget {
   const AreaDropdown({
@@ -17,9 +18,9 @@ class AreaDropdown extends StatefulWidget {
 }
 
 class _AreaDropdownState extends State<AreaDropdown> {
-  static const _bg = Color(0xFFEEF3FC);
-  static const _iconColor = Color(0xFF6B7280);
-  static const _textColor = Color(0xFF1F2937);
+  static const _bg = AppColors.dropdownBg;
+  static const _iconColor = AppColors.gray500;
+  static const _textColor = AppColors.dropdownText;
 
   late String? _value = widget.initialValue ?? widget.items.first;
 
@@ -39,7 +40,7 @@ class _AreaDropdownState extends State<AreaDropdown> {
             value: _value,
             isExpanded: true,
             itemHeight: 64,
-            dropdownColor: Colors.white,
+            dropdownColor: AppColors.white,
             borderRadius: BorderRadius.circular(16),
             // In RTL, this lands on the far left, as in the screenshot.
             icon: const Icon(

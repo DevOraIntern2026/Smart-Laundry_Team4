@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class PasswordStrengthBar extends StatelessWidget {
   const PasswordStrengthBar({super.key, required this.password});
 
   final String password;
-
-  // Empty state colors
-  static const Color _emptyBox = Color(0xFFFFE9E6);
-  static const Color _emptyBar = Color(0xFFFE574F);
 
   /// Number of satisfied rules (0 to 3)
   int get _score {
@@ -24,26 +23,26 @@ class PasswordStrengthBar extends StatelessWidget {
   String get _text {
     switch (_score) {
       case 1:
-        return 'ضعيفة';
+        return AppStrings.strengthWeak;
       case 2:
-        return 'متوسطة';
+        return AppStrings.strengthMedium;
       case 3:
-        return 'قوية ومثالية';
+        return AppStrings.strengthStrong;
       default:
-        return 'أدخل كلمة المرور';
+        return AppStrings.strengthEmpty;
     }
   }
 
   Color get _color {
     switch (_score) {
       case 1:
-        return const Color(0xFFE53935);
+        return AppColors.danger;
       case 2:
-        return const Color(0xFFFB8C00);
+        return AppColors.orange;
       case 3:
-        return const Color(0xFF22A06B);
+        return AppColors.emerald;
       default:
-        return _emptyBar;
+        return AppColors.primaryColor;
     }
   }
 
@@ -58,7 +57,7 @@ class PasswordStrengthBar extends StatelessWidget {
         width: double.infinity,
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: isEmpty ? _emptyBox : const Color(0xFFF4F7FF),
+          color: isEmpty ? AppColors.sunsetOrange : AppColors.darkblue50,
           borderRadius: BorderRadius.circular(8),
         ),
         child: Column(
@@ -68,20 +67,20 @@ class PasswordStrengthBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text(
-                  'قوة كلمة المرور',
+                  AppStrings.passwordStrength,
                   style: TextStyle(
-                    fontFamily: 'Tajawal',
+                    fontFamily: AppTextStyle.fontFamily,
                     fontSize: 10,
                     fontWeight: FontWeight.w400,
                     height: 1.0,
-                    color: Color(0xFF737373),
+                    color: AppColors.gray,
                   ),
                 ),
                 if (!isEmpty)
                   Text(
                     _text,
                     style: TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
@@ -102,8 +101,8 @@ class PasswordStrengthBar extends StatelessWidget {
                     margin: EdgeInsetsDirectional.only(start: i == 0 ? 0 : 6),
                     decoration: BoxDecoration(
                       color: isEmpty
-                          ? const Color(0xFFFFB4AB)
-                          : (active ? _color : const Color(0xFFD0DFFF)),
+                          ? AppColors.strengthEmptyBar
+                          : (active ? _color : AppColors.softBorderBlue),
                       borderRadius: BorderRadius.circular(9999),
                     ),
                   ),

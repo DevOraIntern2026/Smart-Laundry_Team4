@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
-import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 import 'package:smart_laundry/core/widgets/custom_app_bar.dart';

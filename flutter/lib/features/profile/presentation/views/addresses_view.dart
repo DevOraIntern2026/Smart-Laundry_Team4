@@ -10,7 +10,7 @@ import 'package:smart_laundry/features/profile/presentation/widgets/address_popu
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/address_card.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/section_header.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/wide_soft_button.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AddressesView extends StatelessWidget {
    AddressesView({super.key});

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -9,7 +13,7 @@ class LoginHeader extends StatelessWidget {
       children: [
         // Logo
         Image.asset(
-          'assets/images/welcome/nivo_logo_only.png',
+          AppAssets.welcomeLogo,
           width: 118,
           fit: BoxFit.contain,
         ),
@@ -23,25 +27,25 @@ class LoginHeader extends StatelessWidget {
             right: 12,
           ),
           decoration: BoxDecoration(
-            color: const Color(0xFFF4F7FF),
+            color: AppColors.darkblue50,
             borderRadius: BorderRadius.circular(9999),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'العناية الذكية بالملابس',
+                AppStrings.loginBadge,
                 style: TextStyle(
                   fontSize: 11,
                   fontWeight: FontWeight.w400,
-                  color: Color(0xFF1A37FF),
-                  fontFamily: 'Tajawal',
+                  color: AppColors.secondaryColor,
+                  fontFamily: AppTextStyle.fontFamily,
                 ),
               ),
 
               SizedBox(width: 6),
               Image.asset(
-                'assets/images/Auth/badge_laundry.png',
+                AppAssets.authBadgeLaundry,
                 width: 14,
                 height: 14,
               ),
@@ -52,14 +56,14 @@ class LoginHeader extends StatelessWidget {
         const SizedBox(height: 16),
 
         const Text(
-          'مرحباً بعودتك!',
+          AppStrings.welcomeBack,
           textDirection: TextDirection.rtl,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'Tajawal',
+            fontFamily: AppTextStyle.fontFamily,
             fontSize: 25,
             fontWeight: FontWeight.w700,
-            color: Color(0xFF272727),
+            color: AppColors.black,
             height: 1.0,
           ),
         ),
@@ -68,13 +72,13 @@ class LoginHeader extends StatelessWidget {
 
         // Subtitle
         const Text(
-          'سجّل دخولك لمتابعة وطلب غسيل ملابسك بكل\nراحة وسرعة',
+          AppStrings.loginSubtitle,
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontFamily: 'Tajawal',
+            fontFamily: AppTextStyle.fontFamily,
             fontSize: 13,
             fontWeight: FontWeight.w400,
-            color: Color(0xFF737373),
+            color: AppColors.gray,
             height: 1.4,
           ),
         ),

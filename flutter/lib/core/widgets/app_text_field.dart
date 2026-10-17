@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 /// Labeled text field used across the app (label + optional trailing text + input)
 class AppTextField extends StatelessWidget {
@@ -35,7 +38,7 @@ class AppTextField extends StatelessWidget {
   final bool obscureText;
   final TextInputType? keyboardType;
 
-  /// Small text on the left end of the label row (e.g. "مطلوب")
+  /// Small text on the left end of the label row (e.g. AppStrings.requiredLabel)
   final String? trailingLabel;
 
   /// Input height (Figma: 45 on login, 41 on sign up)
@@ -59,23 +62,23 @@ class AppTextField extends StatelessWidget {
                     Text(
                       label,
                       style: const TextStyle(
-                        fontFamily: 'Tajawal',
+                        fontFamily: AppTextStyle.fontFamily,
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         height: 1.0,
-                        color: Color(0xFF272727),
+                        color: AppColors.black,
                       ),
                     ),
                     if (isRequired) ...[
                       const SizedBox(width: 6),
                       const Text(
-                        '*',
+                        AppStrings.requiredMark,
                         style: TextStyle(
-                          fontFamily: 'Tajawal',
+                          fontFamily: AppTextStyle.fontFamily,
                           fontSize: 20,
                           fontWeight: FontWeight.w700,
                           height: 1.0,
-                          color: Color(0xFFE53935),
+                          color: AppColors.danger,
                         ),
                       ),
                     ],
@@ -85,11 +88,11 @@ class AppTextField extends StatelessWidget {
                   Text(
                     trailingLabel!,
                     style: const TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
-                      color: Color(0xFF737373),
+                      color: AppColors.gray,
                     ),
                   ),
               ],
@@ -104,12 +107,12 @@ class AppTextField extends StatelessWidget {
             height: height,
             padding: const EdgeInsets.symmetric(horizontal: 16),
             decoration: BoxDecoration(
-              color: isWhite ? Colors.white : const Color(0xFFF9FBFF),
+              color: isWhite ? AppColors.white : AppColors.backgroundColor,
               borderRadius: BorderRadius.circular(12),
               boxShadow: isWhite
                   ? const [
                       BoxShadow(
-                        color: Color(0x0D000000), // #000000 at 5%
+                        color: AppColors.shadowLight, // #000000 at 5%
                         offset: Offset(0, 1),
                         blurRadius: 2,
                       ),
@@ -130,18 +133,18 @@ class AppTextField extends StatelessWidget {
                     onChanged: onChanged,
                     textAlign: TextAlign.start,
                     style: const TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 14,
-                      color: Color(0xFF272727),
+                      color: AppColors.black,
                     ),
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       isDense: true,
                       hintText: hint,
                       hintStyle: const TextStyle(
-                        fontFamily: 'Tajawal',
+                        fontFamily: AppTextStyle.fontFamily,
                         fontSize: 14,
-                        color: Color(0xFFBCC2FF),
+                        color: AppColors.hintBlue,
                       ),
                     ),
                   ),

@@ -4,6 +4,10 @@ import '../widgets/feature_card.dart';
 import '../../../../core/widgets/primary_button.dart';
 import 'package:flutter/gestures.dart';
 import '../../../../core/widgets/blur_circle.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -11,7 +15,7 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -20,19 +24,19 @@ class WelcomeView extends StatelessWidget {
             left: 182,
             top: -95,
             size: Size(288, 288),
-            color: Color(0x4DDFE0FF),
+            color: AppColors.blurLightBlue,
           ),
           const BlurCircle(
             left: -97,
             top: 266,
             size: Size(320, 315.25),
-            color: Color(0x99E1E8FD),
+            color: AppColors.blurBlue,
           ),
           const BlurCircle(
             left: 80,
             top: 590,
             size: Size(240, 240),
-            color: Color(0x33BCC2FF),
+            color: AppColors.blurIndigo,
           ),
 
           // Screen content
@@ -53,7 +57,7 @@ class WelcomeView extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 17.5),
                     child: PrimaryButton(
-                      label: 'ابدأ الآن',
+                      label: AppStrings.getStarted,
                       icon: Icons.arrow_forward,
                       onPressed: null,
                     ),
@@ -94,11 +98,11 @@ class _TopBar extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: AppColors.white,
                 borderRadius: BorderRadius.circular(9999),
                 boxShadow: const [
                   BoxShadow(
-                    color: Color(0x0D000000),
+                    color: AppColors.shadowLight,
                     offset: Offset(0, 1),
                     blurRadius: 2,
                   ),
@@ -108,11 +112,11 @@ class _TopBar extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'EN',
-                    style: TextStyle(fontSize: 12, color: Color(0xFF777777)),
+                    AppStrings.languageShort,
+                    style: TextStyle(fontSize: 12, color: AppColors.languageGrey),
                   ),
                   SizedBox(width: 4),
-                  Icon(Icons.language, size: 16, color: Color(0xFF777777)),
+                  Icon(Icons.language, size: 16, color: AppColors.languageGrey),
                 ],
               ),
             ),
@@ -121,18 +125,18 @@ class _TopBar extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
               decoration: BoxDecoration(
-                color: const Color(0xFFE6EEFF),
+                color: AppColors.darkblue100,
                 borderRadius: BorderRadius.circular(9999),
               ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 textDirection: TextDirection.rtl,
                 children: [
-                  Icon(Icons.circle, size: 10, color: Color(0xFF20B486)),
+                  Icon(Icons.circle, size: 10, color: AppColors.mint),
                   SizedBox(width: 6),
                   Text(
-                    'الخدمة متاحة الآن في مدينتك',
-                    style: TextStyle(fontSize: 12, color: Color(0xFF272727)),
+                    AppStrings.serviceAvailable,
+                    style: TextStyle(fontSize: 12, color: AppColors.black),
                   ),
                 ],
               ),
@@ -165,14 +169,14 @@ class _HeroSection extends StatelessWidget {
 
             // App name
             const Text(
-              'نيفو',
+              AppStrings.welcomeAppName,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 31,
                 fontWeight: FontWeight.w700,
                 height: 37 / 31,
-                color: Color(0xFF01002F),
+                color: AppColors.deepNavy,
               ),
             ),
 
@@ -180,14 +184,14 @@ class _HeroSection extends StatelessWidget {
 
             // Slogan
             const Text(
-              'غسيل أذكى، وقت أكثر لما تحب',
+              AppStrings.welcomeSlogan,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
                 height: 19 / 16,
-                color: Color(0xFF1A37FF),
+                color: AppColors.secondaryColor,
               ),
             ),
 
@@ -197,14 +201,14 @@ class _HeroSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 271),
               child: const Text(
-                'تجربة عناية متطورة بملابسك تدار كلياً بأحدث تقنيات الفحص والجدولة التلقائية.',
+                AppStrings.welcomeDescription,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppTextStyle.fontFamily,
                   fontSize: 13,
                   fontWeight: FontWeight.w400,
                   height: 16 / 13,
-                  color: Color(0xFF737373),
+                  color: AppColors.gray,
                 ),
               ),
             ),
@@ -236,17 +240,17 @@ class _LogoWithBadge extends StatelessWidget {
             height: 128,
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(24),
               boxShadow: const [
                 BoxShadow(
-                  color: Color(0x1A000000),
+                  color: AppColors.shadowMedium,
                   offset: Offset(0, 2),
                   blurRadius: 4,
                   spreadRadius: -2,
                 ),
                 BoxShadow(
-                  color: Color(0x1A000000),
+                  color: AppColors.shadowMedium,
                   offset: Offset(0, 4),
                   blurRadius: 6,
                   spreadRadius: -1,
@@ -254,7 +258,7 @@ class _LogoWithBadge extends StatelessWidget {
               ],
             ),
             child: Image.asset(
-              'assets/images/welcome/nivo_logo_only.png',
+              AppAssets.welcomeLogo,
               fit: BoxFit.contain,
             ),
           ),
@@ -268,19 +272,19 @@ class _LogoWithBadge extends StatelessWidget {
               height: 18,
               alignment: Alignment.center,
               decoration: BoxDecoration(
-                color: const Color(0xFF2F5BFF),
+                color: AppColors.aiBadge,
                 borderRadius: BorderRadius.circular(9999),
               ),
               child: const Row(
                 mainAxisSize: MainAxisSize.min,
                 textDirection: TextDirection.rtl,
                 children: [
-                  Icon(Icons.auto_awesome, size: 13.92, color: Colors.white),
+                  Icon(Icons.auto_awesome, size: 13.92, color: AppColors.white),
                   SizedBox(width: 4),
                   Text(
-                    'ذكاء فائق',
+                    AppStrings.superIntelligence,
                     style: TextStyle(
-                      color: Colors.white,
+                      color: AppColors.white,
                       fontSize: 10,
                       fontWeight: FontWeight.w700,
                       height: 1,
@@ -312,8 +316,8 @@ class _FeaturesList extends StatelessWidget {
           // Card 1
           FeatureCard(
             icon: Icons.local_shipping_outlined,
-            title: 'استلام وتسليم مجاني من باب بيتك',
-            subtitle: 'مندوبنا يصلك في الموعد المحدد بدقة فائقة',
+            title: AppStrings.featureDeliveryTitle,
+            subtitle: AppStrings.featureDeliverySubtitle,
           ),
 
           SizedBox(height: 8),
@@ -321,8 +325,8 @@ class _FeaturesList extends StatelessWidget {
           // Card 2
           FeatureCard(
             icon: Icons.track_changes,
-            title: 'أسعار شفافة وتتبع دقيق لحظة بلحظة',
-            subtitle: 'راقب مراحل غسيل وكي ملابسك مباشرة من هاتفك',
+            title: AppStrings.featureTrackingTitle,
+            subtitle: AppStrings.featureTrackingSubtitle,
           ),
 
           SizedBox(height: 8),
@@ -332,8 +336,8 @@ class _FeaturesList extends StatelessWidget {
             icon: Icons.psychology_outlined,
             iconSize: 30,
             flipIcon: true,
-            title: 'خدمة ذكية مدعومة بالذكاء الاصطناعي',
-            subtitle: 'تعرف على الأقمشة ومسارات العناية المثلى',
+            title: AppStrings.featureAiTitle,
+            subtitle: AppStrings.featureAiSubtitle,
           ),
         ],
       ),
@@ -353,7 +357,7 @@ class _TrustBanner extends StatelessWidget {
       width: 350,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        color: const Color(0xFFF4F7FF),
+        color: AppColors.darkblue50,
         borderRadius: BorderRadius.circular(12),
       ),
       child: const Directionality(
@@ -362,21 +366,21 @@ class _TrustBanner extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Verified icon
-            Icon(Icons.verified_outlined, size: 16, color: Color(0xFF20B486)),
+            Icon(Icons.verified_outlined, size: 16, color: AppColors.mint),
 
             SizedBox(width: 8),
             // Guarantee text
             Flexible(
               child: Text(
-                'ضمان العناية التامة بنظافة وراحة أنسجتك بنسبة 100%',
+                AppStrings.trustGuarantee,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                  fontFamily: 'Tajawal',
+                  fontFamily: AppTextStyle.fontFamily,
                   fontSize: 10,
                   fontWeight: FontWeight.w700,
                   height: 1.0,
-                  color: Color(0xFF01002F),
+                  color: AppColors.deepNavy,
                 ),
               ),
             ),
@@ -400,17 +404,17 @@ class _LoginPrompt extends StatelessWidget {
         textDirection: TextDirection.rtl,
         TextSpan(
           style: const TextStyle(
-            fontFamily: 'Tajawal',
+            fontFamily: AppTextStyle.fontFamily,
             fontSize: 16,
             fontWeight: FontWeight.w700,
             height: 1.0,
-            color: Color(0xFF737373),
+            color: AppColors.gray,
           ),
           children: [
-            const TextSpan(text: 'لديك حساب بالفعل؟ '),
+            const TextSpan(text: AppStrings.welcomeHaveAccount),
             TextSpan(
-              text: 'تسجيل الدخول',
-              style: const TextStyle(color: Color(0xFFFE574F)),
+              text: AppStrings.login,
+              style: const TextStyle(color: AppColors.primaryColor),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
                   Navigator.push(
@@ -433,19 +437,19 @@ class _TermsText extends StatelessWidget {
   const _TermsText();
 
   static const _base = TextStyle(
-    fontFamily: 'Tajawal',
+    fontFamily: AppTextStyle.fontFamily,
     fontSize: 10,
     fontWeight: FontWeight.w400,
     height: 1.0,
-    color: Color(0xFF737373),
+    color: AppColors.gray,
   );
 
   static const _link = TextStyle(
-    fontFamily: 'Tajawal',
+    fontFamily: AppTextStyle.fontFamily,
     fontSize: 10,
     fontWeight: FontWeight.w400,
     height: 1.0,
-    color: Color(0xFF272727),
+    color: AppColors.black,
   );
 
   @override
@@ -456,10 +460,10 @@ class _TermsText extends StatelessWidget {
       TextSpan(
         style: _base,
         children: [
-          TextSpan(text: 'بالبدء أنت توافق على '),
-          TextSpan(text: 'شروط الخدمة', style: _link),
-          TextSpan(text: ' و'),
-          TextSpan(text: 'سياسة الخصوصية', style: _link),
+          TextSpan(text: AppStrings.welcomeTermsPrefix),
+          TextSpan(text: AppStrings.termsOfService, style: _link),
+          TextSpan(text: AppStrings.andWord),
+          TextSpan(text: AppStrings.privacyPolicy, style: _link),
         ],
       ),
     );

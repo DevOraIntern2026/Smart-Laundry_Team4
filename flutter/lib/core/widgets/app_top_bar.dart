@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class AppTopBar extends StatelessWidget {
   const AppTopBar({super.key, required this.title});
@@ -12,7 +15,7 @@ class AppTopBar extends StatelessWidget {
       width: double.infinity,
       height: 64,
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      decoration: const BoxDecoration(color: Colors.white),
+      decoration: const BoxDecoration(color: AppColors.white),
       child: Directionality(
         textDirection: TextDirection.rtl,
         child: Row(
@@ -23,7 +26,7 @@ class AppTopBar extends StatelessWidget {
               child: const Icon(
                 Icons.arrow_back,
                 size: 24,
-                color: Color(0xFF111827),
+                color: AppColors.darkblue,
               ),
             ),
             const SizedBox(width: 12),
@@ -32,11 +35,11 @@ class AppTopBar extends StatelessWidget {
             Text(
               title,
               style: const TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 18,
                 fontWeight: FontWeight.w700,
                 height: 24 / 18,
-                color: Color(0xFF111827),
+                color: AppColors.darkblue,
               ),
             ),
 
@@ -44,7 +47,7 @@ class AppTopBar extends StatelessWidget {
 
             // Logo
             Image.asset(
-              'assets/images/welcome/nivo_logo_only.png',
+              AppAssets.welcomeLogo,
               width: 52,
               fit: BoxFit.contain,
             ),

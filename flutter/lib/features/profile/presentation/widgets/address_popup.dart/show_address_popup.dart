@@ -3,13 +3,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/address_popup.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 Future<void> showAddressPopup(BuildContext context) {
   return showGeneralDialog(
     context: context,
     barrierDismissible: true,
     barrierLabel: AppStrings.close,
-    barrierColor: Colors.black.withOpacity(0.2),
+    barrierColor: AppColors.barrier,
     transitionDuration: const Duration(milliseconds: 200),
     pageBuilder: (_, __, ___) => const SizedBox.shrink(),
     transitionBuilder: (context, anim, _, __) {

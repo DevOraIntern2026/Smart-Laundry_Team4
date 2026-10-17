@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 /// Primary call-to-action button used across the app (Fill x 51)
 class PrimaryButton extends StatelessWidget {
@@ -7,27 +10,46 @@ class PrimaryButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.icon,
+    this.color,
+    this.borderColor,
+    this.borderWidth = 1, this.textColor,
   });
 
   final String label;
   final VoidCallback? onPressed;
+  final Color? color;
+  final Color? textColor;
 
-  /// Optional icon shown before the label (on the right in RTL)
+  /// Optional border. No border is drawn when null.
+  final Color? borderColor;
+  final double borderWidth;
+
+  /// Optional icon shown after the label (on the left in RTL)
   final IconData? icon;
+
+  static const double _radius = 16;
 
   @override
   Widget build(BuildContext context) {
+    final radius = BorderRadius.circular(_radius);
+
     return SizedBox(
       width: double.infinity,
-      height: 51,
+      height: 51.h,
       child: Material(
-        color: const Color(0xFFFE574F),
-        borderRadius: BorderRadius.circular(16),
+        color: color ?? AppColors.primaryColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: radius,
+          side: borderColor == null
+              ? BorderSide.none
+              : BorderSide(color: borderColor!, width: borderWidth),
+        ),
         child: InkWell(
           onTap: onPressed,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: radius,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            // Horizontal only: the SizedBox already fixes the height.
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Directionality(
               textDirection: TextDirection.rtl,
               child: Row(
@@ -35,20 +57,19 @@ class PrimaryButton extends StatelessWidget {
                 children: [
                   Text(
                     label,
-                    style: const TextStyle(
-                      fontFamily: 'Tajawal',
+                    style:  TextStyle(
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 13,
                       fontWeight: FontWeight.w700,
                       height: 1.0,
-                      color: Colors.white,
+                      color: textColor?? AppColors.white ,
                     ),
                   ),
-
                   if (icon != null) ...[
                     const SizedBox(width: 8),
                     Directionality(
                       textDirection: TextDirection.ltr,
-                      child: Icon(icon, size: 20, color: Colors.white),
+                      child: Icon(icon, size: 20, color: textColor?? AppColors.white),
                     ),
                   ],
                 ],

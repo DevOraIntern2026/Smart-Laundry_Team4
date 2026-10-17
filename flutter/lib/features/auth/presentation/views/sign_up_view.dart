@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/sign_up_view_body.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});
@@ -7,7 +8,7 @@ class SignUpView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SafeArea(child: SignUpViewBody()),
     );
   }

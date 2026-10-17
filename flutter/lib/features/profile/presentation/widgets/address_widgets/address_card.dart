@@ -3,6 +3,7 @@ import 'package:smart_laundry/features/profile/domain/address.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/address_card_actions.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/address_card_header.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/address_info_box.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 
 class AddressCard extends StatelessWidget {
@@ -24,11 +25,11 @@ class AddressCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
+            color: AppColors.shadowFaint,
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),

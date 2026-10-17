@@ -3,7 +3,7 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/widgets/app_badge.dart';
 import 'package:smart_laundry/features/profile/domain/address.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/circle_icon.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AddressCardHeader extends StatelessWidget {
   final Address address;
