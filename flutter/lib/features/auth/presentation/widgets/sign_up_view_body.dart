@@ -6,6 +6,9 @@ import '../../../../core/widgets/app_text_field.dart';
 import '../../../../core/widgets/primary_button.dart';
 import 'password_strength_bar.dart';
 import 'phone_field.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class SignUpViewBody extends StatefulWidget {
   const SignUpViewBody({super.key});
@@ -40,14 +43,14 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
                 // Full name
                 const AppTextField(
-                  label: 'الاسم بالكامل',
-                  hint: 'مثال: أحمد عبد الله',
-                  trailingLabel: 'مطلوب',
+                  label: AppStrings.fullName,
+                  hint: AppStrings.fullNameHint,
+                  trailingLabel: AppStrings.requiredLabel,
                   height: 41,
                   suffixIcon: Icon(
                     Icons.person_outline,
                     size: 20,
-                    color: Color(0xFFA2A2A2),
+                    color: AppColors.iconGrey,
                   ),
                 ),
 
@@ -60,16 +63,16 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
                 // Email (optional)
                 const AppTextField(
-                  label: 'البريد الإلكتروني',
-                  hint: 'name@example.com',
-                  trailingLabel: '(اختياري للفواتير)',
+                  label: AppStrings.email,
+                  hint: AppStrings.emailHint,
+                  trailingLabel: AppStrings.optionalForInvoices,
                   height: 41,
                   isWhite: true,
                   keyboardType: TextInputType.emailAddress,
                   suffixIcon: Icon(
                     Icons.mail_outline,
                     size: 20,
-                    color: Color(0xFF737373),
+                    color: AppColors.gray,
                   ),
                 ),
 
@@ -77,7 +80,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
                 // Password
                 _SignUpPasswordField(
-                  label: 'كلمة المرور',
+                  label: AppStrings.password,
                   onChanged: (value) => setState(() => _password = value),
                 ),
 
@@ -90,7 +93,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
                 // Confirm password (shield icon on the right)
                 const _SignUpPasswordField(
-                  label: 'تأكيد كلمة المرور',
+                  label: AppStrings.confirmPassword,
                   leadingIcon: Icons.shield_outlined,
                 ),
 
@@ -106,7 +109,7 @@ class _SignUpViewBodyState extends State<SignUpViewBody> {
 
                 // Create account button
                 PrimaryButton(
-                  label: 'إنشاء الحساب والمتابعة',
+                  label: AppStrings.createAccountContinue,
                   icon: Icons.arrow_back,
                   onPressed: _accepted
                       ? () {
@@ -160,7 +163,7 @@ class _SignUpPasswordFieldState extends State<_SignUpPasswordField> {
   Widget build(BuildContext context) {
     return AppTextField(
       label: widget.label,
-      hint: '••••••••',
+      hint: AppStrings.passwordHint,
       height: 41,
       isWhite: true,
       obscureText: _obscure,
@@ -168,14 +171,14 @@ class _SignUpPasswordFieldState extends State<_SignUpPasswordField> {
       suffixIcon: Icon(
         widget.leadingIcon ?? Icons.lock_outline,
         size: 20,
-        color: const Color(0xFF737373),
+        color: AppColors.gray,
       ),
       prefixIcon: GestureDetector(
         onTap: () => setState(() => _obscure = !_obscure),
         child: Icon(
           _obscure ? Icons.visibility_off_outlined : Icons.visibility_outlined,
           size: 20,
-          color: const Color(0xFF737373),
+          color: AppColors.gray,
         ),
       ),
     );
@@ -191,18 +194,18 @@ class _TermsCheckbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const base = TextStyle(
-      fontFamily: 'Tajawal',
+      fontFamily: AppTextStyle.fontFamily,
       fontSize: 10,
       fontWeight: FontWeight.w400,
       height: 1.0,
-      color: Color(0xFF272727),
+      color: AppColors.black,
     );
     const link = TextStyle(
-      fontFamily: 'Tajawal',
+      fontFamily: AppTextStyle.fontFamily,
       fontSize: 10,
       fontWeight: FontWeight.w400,
       height: 1.0,
-      color: Color(0xFF1A37FF),
+      color: AppColors.secondaryColor,
     );
 
     return Directionality(
@@ -217,12 +220,12 @@ class _TermsCheckbox extends StatelessWidget {
                 width: 20,
                 height: 20,
                 decoration: BoxDecoration(
-                  color: value ? const Color(0xFFFE574F) : Colors.white,
+                  color: value ? AppColors.primaryColor : AppColors.white,
                   borderRadius: BorderRadius.circular(6),
-                  border: Border.all(color: const Color(0xFFD0DFFF)),
+                  border: Border.all(color: AppColors.softBorderBlue),
                 ),
                 child: value
-                    ? const Icon(Icons.check, size: 14, color: Colors.white)
+                    ? const Icon(Icons.check, size: 14, color: AppColors.white)
                     : null,
               ),
             ),
@@ -230,10 +233,10 @@ class _TermsCheckbox extends StatelessWidget {
             const Text.rich(
               TextSpan(
                 children: [
-                  TextSpan(text: 'أوافق على ', style: base),
-                  TextSpan(text: 'الشروط والأحكام', style: link),
-                  TextSpan(text: ' و', style: base),
-                  TextSpan(text: 'سياسة الخصوصية', style: link),
+                  TextSpan(text: AppStrings.iAgreeTo, style: base),
+                  TextSpan(text: AppStrings.termsAndConditions, style: link),
+                  TextSpan(text: AppStrings.andWord, style: base),
+                  TextSpan(text: AppStrings.privacyPolicy, style: link),
                 ],
               ),
             ),
@@ -250,11 +253,11 @@ class _SecureNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const style = TextStyle(
-      fontFamily: 'Tajawal',
+      fontFamily: AppTextStyle.fontFamily,
       fontSize: 10,
       fontWeight: FontWeight.w400,
       height: 1.0,
-      color: Color(0xFF737373),
+      color: AppColors.gray,
     );
 
     return const Directionality(
@@ -262,15 +265,15 @@ class _SecureNote extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.verified, size: 14, color: Color(0xFF22A06B)),
+          Icon(Icons.verified, size: 14, color: AppColors.emerald),
           SizedBox(width: 4),
-          Text('بياناتك مشفرة ومحمية', style: style),
+          Text(AppStrings.dataEncrypted, style: style),
           SizedBox(width: 8),
-          CircleAvatar(radius: 2, backgroundColor: Color(0xFFD0DFFF)),
+          CircleAvatar(radius: 2, backgroundColor: AppColors.softBorderBlue),
           SizedBox(width: 8),
-          Icon(Icons.bolt, size: 14, color: Color(0xFF1A37FF)),
+          Icon(Icons.bolt, size: 14, color: AppColors.secondaryColor),
           SizedBox(width: 4),
-          Text('تفعيل فوري للخدمة', style: style),
+          Text(AppStrings.instantActivation, style: style),
         ],
       ),
     );
@@ -290,24 +293,24 @@ class _LoginLink extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'لديك حساب بالفعل؟',
+              AppStrings.alreadyHaveAccount,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 13,
                 fontWeight: FontWeight.w400,
                 height: 1.0,
-                color: Color(0xFF737373),
+                color: AppColors.gray,
               ),
             ),
             SizedBox(width: 4),
             Text(
-              'تسجيل الدخول',
+              AppStrings.login,
               style: TextStyle(
-                fontFamily: 'Tajawal',
+                fontFamily: AppTextStyle.fontFamily,
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
                 height: 1.0,
-                color: Color(0xFFFE574F),
+                color: AppColors.primaryColor,
               ),
             ),
           ],

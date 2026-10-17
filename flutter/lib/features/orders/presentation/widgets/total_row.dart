@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class TotalRow extends StatelessWidget {
   const TotalRow({super.key, required this.label, required this.total});
@@ -18,7 +19,7 @@ class TotalRow extends StatelessWidget {
           style: AppTextStyle.f12w500(context, color: AppColors.white500),
         ),
         Text(
-          '$total ج.م',
+          AppStrings.priceEgp(total),
           style: AppTextStyle.f20w700(context, color: AppColors.darkblue600),
         ),
       ],

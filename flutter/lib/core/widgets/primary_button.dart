@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 /// Primary call-to-action button used across the app (Fill x 51)
 class PrimaryButton extends StatelessWidget {
@@ -35,7 +37,7 @@ class PrimaryButton extends StatelessWidget {
       width: double.infinity,
       height: 51.h,
       child: Material(
-        color: color ?? const Color(0xFFFE574F),
+        color: color ?? AppColors.primaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: radius,
           side: borderColor == null
@@ -56,18 +58,18 @@ class PrimaryButton extends StatelessWidget {
                   Text(
                     label,
                     style:  TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 13,
                       fontWeight: FontWeight.w700,
                       height: 1.0,
-                      color: textColor?? Colors.white ,
+                      color: textColor?? AppColors.white ,
                     ),
                   ),
                   if (icon != null) ...[
                     const SizedBox(width: 8),
                     Directionality(
                       textDirection: TextDirection.ltr,
-                      child: Icon(icon, size: 20, color: textColor?? Colors.white),
+                      child: Icon(icon, size: 20, color: textColor?? AppColors.white),
                     ),
                   ],
                 ],

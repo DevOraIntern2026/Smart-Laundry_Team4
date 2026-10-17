@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class SignUpBanner extends StatelessWidget {
   const SignUpBanner({super.key});
@@ -9,7 +13,7 @@ class SignUpBanner extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFFFFE9E6),
+        color: AppColors.sunsetOrange,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Directionality(
@@ -20,7 +24,7 @@ class SignUpBanner extends StatelessWidget {
               width: 80,
               height: 80,
               child: Image.asset(
-                'assets/images/Auth/banner_logo.png',
+                AppAssets.authBannerLogo,
                 fit: BoxFit.cover,
               ),
             ),
@@ -34,24 +38,24 @@ class SignUpBanner extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    'انضم إلى نيفو',
+                    AppStrings.joinNivo,
                     style: TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 18,
                       fontWeight: FontWeight.w700,
                       height: 1.2,
-                      color: Color(0xFFE53935),
+                      color: AppColors.danger,
                     ),
                   ),
                   SizedBox(height: 4),
                   Text(
-                    'واستمتع بأسهل تجربة غسيل وكوي فائقة العناية',
+                    AppStrings.joinNivoDesc,
                     style: TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 11,
                       fontWeight: FontWeight.w400,
                       height: 1.3,
-                      color: Color(0xFF737373),
+                      color: AppColors.gray,
                     ),
                   ),
                 ],

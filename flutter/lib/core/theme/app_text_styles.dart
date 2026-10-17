@@ -3,13 +3,13 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 
 class AppTextStyle {
   AppTextStyle._();
-  static const String _fontFamily = 'Tajawal';
+  static const String fontFamily = 'Tajawal';
   // Heading
   static TextStyle heading(BuildContext context) => TextStyle(
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontWeight: FontWeight.bold,
     color: AppColors.black,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
 
   // Title Medium
@@ -17,7 +17,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 10),
     fontWeight: FontWeight.w500,
     color: AppColors.black,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
 
   //------------ Medium Text ------------//
@@ -29,14 +29,14 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 13),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.black,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle mediumTitle10(BuildContext context, {Color? color}) =>
       TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 10),
         fontWeight: FontWeight.w400,
         color: color ?? AppColors.gray,
-        fontFamily: _fontFamily,
+        fontFamily: fontFamily,
       );
   static TextStyle mediumTitle11(
     BuildContext context, {
@@ -46,7 +46,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 11),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.gray,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle mediumTitle16(
     BuildContext context, {
@@ -56,7 +56,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 16),
     fontWeight: fontWeight ?? FontWeight.w400,
     color: color ?? AppColors.gray,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
 
   static TextStyle profileTileHeader18(
@@ -67,7 +67,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle profileSubHeader12(
     BuildContext context, {
@@ -77,7 +77,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 12),
     fontWeight: fontWeight ?? FontWeight.w400,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle f18w700(
     BuildContext context, {
@@ -87,7 +87,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle f12w700(
     BuildContext context, {
@@ -97,7 +97,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 18),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle f14w400(
     BuildContext context, {
@@ -107,7 +107,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 14),
     fontWeight: fontWeight ?? FontWeight.w400,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle f12w500(
     BuildContext context, {
@@ -117,7 +117,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 12),
     fontWeight: fontWeight ?? FontWeight.w500,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
   static TextStyle f20w700(
     BuildContext context, {
@@ -127,7 +127,7 @@ class AppTextStyle {
     fontSize: getResponsiveFontSize(context, fontSize: 20),
     fontWeight: fontWeight ?? FontWeight.w700,
     color: color ?? AppColors.darkblue,
-    fontFamily: _fontFamily,
+    fontFamily: fontFamily,
   );
 
 

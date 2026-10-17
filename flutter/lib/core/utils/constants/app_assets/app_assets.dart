@@ -20,6 +20,12 @@ class AppAssets {
   static const String locationArrow = "assets/Icons/location_arrow.svg";
   static const String cash = "assets/Icons/cash.svg";
 
+  // ───────────── Auth images ─────────────
+  static const String authResetLock = 'assets/images/Auth/reset_lock.png';
+  static const String authBadgeLaundry = 'assets/images/Auth/badge_laundry.png';
+  static const String authGoogle = 'assets/images/Auth/google.png';
+  static const String authBannerLogo = 'assets/images/Auth/banner_logo.png';
+
 
 
 

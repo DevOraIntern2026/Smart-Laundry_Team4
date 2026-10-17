@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 /// Feature card: icon box + title + description (350 x 72)
 class FeatureCard extends StatelessWidget {
@@ -24,11 +26,11 @@ class FeatureCard extends StatelessWidget {
       height: 72,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(16),
         boxShadow: const [
           BoxShadow(
-            color: Color(0x0D000000), // #000000 at 5%
+            color: AppColors.shadowLight, // #000000 at 5%
             offset: Offset(0, 1),
             blurRadius: 2,
           ),
@@ -45,7 +47,7 @@ class FeatureCard extends StatelessWidget {
               width: 48,
               height: 48,
               decoration: BoxDecoration(
-                color: const Color(0xFFE6EEFF),
+                color: AppColors.darkblue100,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Transform.flip(
@@ -53,7 +55,7 @@ class FeatureCard extends StatelessWidget {
                 child: Icon(
                   icon,
                   size: iconSize,
-                  color: const Color(0xFF1A37FF),
+                  color: AppColors.secondaryColor,
                 ),
               ),
             ),
@@ -73,11 +75,11 @@ class FeatureCard extends StatelessWidget {
                       title,
                       maxLines: 1,
                       style: const TextStyle(
-                        fontFamily: 'Tajawal',
+                        fontFamily: AppTextStyle.fontFamily,
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
                         height: 1.2,
-                        color: Color(0xFF01002F),
+                        color: AppColors.deepNavy,
                       ),
                     ),
                   ),
@@ -89,11 +91,11 @@ class FeatureCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
-                      fontFamily: 'Tajawal',
+                      fontFamily: AppTextStyle.fontFamily,
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
                       height: 1.0,
-                      color: Color(0xFF737373),
+                      color: AppColors.gray,
                     ),
                   ),
                 ],

@@ -7,7 +7,7 @@ import 'package:smart_laundry/core/widgets/primary_button.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/address_popup_input_field.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/address_type.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_popup.dart/area_drop_down.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AddressPopup extends StatelessWidget {
   const AddressPopup({super.key});

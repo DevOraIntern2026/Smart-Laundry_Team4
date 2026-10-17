@@ -12,6 +12,7 @@ import 'package:smart_laundry/features/services/presentation/widgets/order_confi
 import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/confirmation_header.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/guidance.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/time_line.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class OrderConfirmed extends StatelessWidget {
   const OrderConfirmed({super.key});
@@ -19,7 +20,7 @@ class OrderConfirmed extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: "الخدمات", icon: AppAssets.servicesIcon),
+      appBar: CustomAppBar(title: AppStrings.services, icon: AppAssets.servicesIcon),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -37,13 +38,13 @@ class OrderConfirmed extends StatelessWidget {
                   Guidance(),
                   SizedBox(height: 24.h),
                   PrimaryButton(
-                    label: "تتبع حالة الطلب",
+                    label: AppStrings.trackOrderStatus,
                     onPressed: () => context.push(AppRoutes.orderTracking),
                     icon: Icons.arrow_back,
                   ),
                   SizedBox(height: 10.h,),
                   PrimaryButton(
-                    label: "تتبع حالة الطلب",
+                    label: AppStrings.trackOrderStatus,
                     onPressed: () {},
                     icon: Icons.home_outlined,
                     color: AppColors.white,
@@ -57,11 +58,11 @@ class OrderConfirmed extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                     SvgPicture.asset(AppAssets.callCenter, color: AppColors.white500,),
-                    Text("هل تحتاج تعديل الموعد؟", style: AppTextStyle.f12w500(context),),
+                    Text(AppStrings.needRescheduling, style: AppTextStyle.f12w500(context),),
 
                     Expanded(child: TextButton(
                     
-                      onPressed: (){}, child: Text("تواصل مع خدمة عملاء نيفو", style: AppTextStyle.f12w500(context),)))
+                      onPressed: (){}, child: Text(AppStrings.contactNivoSupport, style: AppTextStyle.f12w500(context),)))
                   ],)
                 ],
               ),

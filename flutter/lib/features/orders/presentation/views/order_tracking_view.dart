@@ -11,6 +11,7 @@ import 'package:smart_laundry/features/orders/presentation/widgets/order_status_
 import 'package:smart_laundry/features/orders/presentation/widgets/support_banner.dart';
 import 'package:smart_laundry/features/orders/presentation/widgets/timeline_step.dart';
 import 'package:smart_laundry/features/orders/presentation/widgets/total_row.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class OrderTrackingView extends StatelessWidget {
   const OrderTrackingView({super.key});
@@ -25,7 +26,7 @@ class OrderTrackingView extends StatelessWidget {
           backgroundColor: AppColors.white,
           centerTitle: true,
           leading: const BackButton(color: AppColors.darkblue),
-          title: Text('تتبع الطلب', style: AppTextStyle.heading(context)),
+          title: Text(AppStrings.orderTracking, style: AppTextStyle.heading(context)),
         ),
         body: SafeArea(
           child: SingleChildScrollView(
@@ -42,7 +43,7 @@ class OrderTrackingView extends StatelessWidget {
                 ),
                 SizedBox(height: 20.h),
                 SectionTitle(
-                  title: 'تتبع مراحل الطلب',
+                  title: AppStrings.trackOrderStages,
                   trailing: AppBadge(
                     label: 'منذ 3 ساعات',
                     background: AppColors.sunsetOrange,
@@ -54,34 +55,34 @@ class OrderTrackingView extends StatelessWidget {
                   child: Column(
                     children: [
                       TimelineStep(
-                        title: 'تم تأكيد الطلب',
+                        title: AppStrings.stepOrderConfirmed,
                         time: '10:45 ص',
-                        subtitle: 'تم استلام طلبك وتأكيده بنجاح',
+                        subtitle: AppStrings.stepOrderConfirmedDesc,
                         state: StepState.done,
                       ),
                       TimelineStep(
-                        title: 'تم استلام الملابس',
+                        title: AppStrings.stepClothesReceived,
                         time: '11:15 ص',
-                        subtitle: 'المندوب استلم ملابسك من منزلك',
+                        subtitle: AppStrings.stepClothesReceivedDesc,
                         state: StepState.done,
                       ),
                       TimelineStep(
-                        title: 'المعالجة والغسيل الآن',
-                        subtitle: 'جاري تنظيف ملابسك بالمعايير المعتمدة وبأعلى جودة',
+                        title: AppStrings.stepProcessing,
+                        subtitle: AppStrings.stepProcessingDesc,
                         state: StepState.active,
                       ),
                       TimelineStep(
-                        title: 'جاهز للتوصيل والتغليف',
-                        subtitle: 'في الانتظار',
+                        title: AppStrings.stepReadyForDelivery,
+                        subtitle: AppStrings.stepWaiting,
                         state: StepState.pending,
                       ),
                       TimelineStep(
-                        title: 'جاري التوصيل للمنزل',
-                        subtitle: 'في الانتظار',
+                        title: AppStrings.stepDelivering,
+                        subtitle: AppStrings.stepWaiting,
                         state: StepState.pending,
                       ),
                       TimelineStep(
-                        title: 'تم التسليم بنجاح',
+                        title: AppStrings.stepDelivered,
                         state: StepState.pending,
                         isLast: true,
                       ),
@@ -89,7 +90,7 @@ class OrderTrackingView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20.h),
-                const SectionTitle(title: 'مندوب الاستلام والتوصيل'),
+                const SectionTitle(title: AppStrings.courierSection),
                 SizedBox(height: 10.h),
                 CourierCard(
                   name: 'محمود الشافعي',
@@ -99,7 +100,7 @@ class OrderTrackingView extends StatelessWidget {
                   onCall: () {}, // TODO: launch dialer
                 ),
                 SizedBox(height: 20.h),
-                const SectionTitle(title: 'تفاصيل الفاتورة والأصناف'),
+                const SectionTitle(title: AppStrings.invoiceDetails),
                 SizedBox(height: 10.h),
                 AppCard(
                   child: Column(
@@ -115,11 +116,11 @@ class OrderTrackingView extends StatelessWidget {
                         price: 75,
                       ),
                       const InvoiceItemRow(
-                        name: 'رسوم التوصيل والاستلام',
+                        name: AppStrings.deliveryFee,
                         isFee: true,
                       ),
                       Divider(height: 24.h, color: AppColors.border),
-                      const TotalRow(label: 'الإجمالي النهائي', total: 105),
+                      const TotalRow(label: AppStrings.finalTotal, total: 105),
                     ],
                   ),
                 ),

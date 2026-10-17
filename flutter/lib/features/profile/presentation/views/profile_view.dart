@@ -12,7 +12,6 @@ import 'package:smart_laundry/features/profile/presentation/widgets/profile_head
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_indecators.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_list_tile.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/profile_section.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart' as profile;
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -65,7 +64,7 @@ class ProfileView extends StatelessWidget {
                           color: AppColors.lightBlue,
                           borderRadius: BorderRadius.circular(30.r),
                         ),
-                        child: Text(profile.AppStrings.addressesCount(2)),
+                        child: Text(AppStrings.addressesCount(2)),
                       ),
                     ),
                     ProfileListTile(
@@ -95,7 +94,7 @@ class ProfileView extends StatelessWidget {
                       image: AppAssets.preferances,
                       title: AppStrings.languages,
                       subTtitle: AppStrings.languagesDesc,
-                      tralingWidget: Text(profile.AppStrings.arabic),
+                      tralingWidget: Text(AppStrings.arabic),
                     ),
                   ],
                 ),
@@ -116,7 +115,7 @@ class ProfileView extends StatelessWidget {
                   ],
                 ),
 
-                ProfileButton(text: profile.AppStrings.logout, icons: AppAssets.logout, onPressed: (){}),
+                ProfileButton(text: AppStrings.logout, icons: AppAssets.logout, onPressed: (){}),
                 SizedBox(height: 100.h,)
               ],
             ),

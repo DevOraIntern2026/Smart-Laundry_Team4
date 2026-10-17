@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/forgot_password_view_body.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
@@ -7,7 +8,7 @@ class ForgotPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: SafeArea(child: ForgotPasswordViewBody()),
     );
   }

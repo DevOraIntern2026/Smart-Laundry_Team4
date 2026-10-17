@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class OrderStatusHeader extends StatelessWidget {
   const OrderStatusHeader({
@@ -38,7 +39,7 @@ class OrderStatusHeader extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text("كود الطلب:"),
+                  Text(AppStrings.orderCode),
                   SizedBox(width: 4.w,),
                   Text(
                     orderId,
@@ -64,7 +65,7 @@ class OrderStatusHeader extends StatelessWidget {
                 ],
               ),
               Text(
-                '$itemsCount قطع',
+                AppStrings.piecesCount(itemsCount),
                 style: AppTextStyle.f12w500(context),
               ),
             ],
@@ -91,7 +92,7 @@ class OrderStatusHeader extends StatelessWidget {
                 SizedBox(height: 4.h),
                 Text(
                   eta,
-                  style: AppTextStyle.f12w500(context, color: Colors.white70),
+                  style: AppTextStyle.f12w500(context, color: AppColors.white70),
                 ),
               ],
             ),

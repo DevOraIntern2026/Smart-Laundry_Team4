@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class CourierNotesBox extends StatelessWidget {
   final String notes;
@@ -12,7 +12,7 @@ class CourierNotesBox extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: AppColors.white,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

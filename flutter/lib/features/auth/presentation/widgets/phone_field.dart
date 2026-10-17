@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
+import 'package:smart_laundry/core/theme/app_text_styles.dart';
 
 class PhoneField extends StatelessWidget {
   const PhoneField({super.key, this.controller});
@@ -18,23 +21,23 @@ class PhoneField extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  'رقم الهاتف',
+                  AppStrings.phoneNumber,
                   style: TextStyle(
-                    fontFamily: 'Tajawal',
+                    fontFamily: AppTextStyle.fontFamily,
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                     height: 1.0,
-                    color: Color(0xFF272727),
+                    color: AppColors.black,
                   ),
                 ),
                 Text(
-                  'لتأكيد المواعيد',
+                  AppStrings.phoneConfirmAppointments,
                   style: TextStyle(
-                    fontFamily: 'Tajawal',
+                    fontFamily: AppTextStyle.fontFamily,
                     fontSize: 10,
                     fontWeight: FontWeight.w700,
                     height: 1.0,
-                    color: Color(0xFFE53935),
+                    color: AppColors.danger,
                   ),
                 ),
               ],
@@ -47,11 +50,11 @@ class PhoneField extends StatelessWidget {
             height: 40,
             clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(12),
               boxShadow: const [
                 BoxShadow(
-                  color: Color(0x0D000000),
+                  color: AppColors.shadowLight,
                   offset: Offset(0, 1),
                   blurRadius: 2,
                 ),
@@ -61,28 +64,28 @@ class PhoneField extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.fromLTRB(10, 12, 14, 12),
-                  color: const Color(0xFFF4F7FF),
+                  color: AppColors.darkblue50,
                   child: const Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('🇪🇬', style: TextStyle(fontSize: 14)),
+                      Text(AppStrings.countryFlagEg, style: TextStyle(fontSize: 14)),
                       SizedBox(width: 6),
                       Text(
-                        '+20',
+                        AppStrings.countryCodeEg,
                         textDirection: TextDirection.ltr,
                         style: TextStyle(
-                          fontFamily: 'Tajawal',
+                          fontFamily: AppTextStyle.fontFamily,
                           fontSize: 14,
                           fontWeight: FontWeight.w700,
                           height: 1.0,
-                          color: Color(0xFF272727),
+                          color: AppColors.black,
                         ),
                       ),
                       SizedBox(width: 6),
                       Icon(
                         Icons.keyboard_arrow_down,
                         size: 16,
-                        color: Color(0xFF737373),
+                        color: AppColors.gray,
                       ),
                     ],
                   ),
@@ -98,20 +101,20 @@ class PhoneField extends StatelessWidget {
                       textDirection: TextDirection.ltr,
                       textAlign: TextAlign.start,
                       style: const TextStyle(
-                        fontFamily: 'Tajawal',
+                        fontFamily: AppTextStyle.fontFamily,
                         fontSize: 15,
-                        color: Color(0xFF272727),
+                        color: AppColors.black,
                       ),
                       decoration: const InputDecoration(
                         border: InputBorder.none,
                         enabledBorder: InputBorder.none,
                         focusedBorder: InputBorder.none,
                         isDense: true,
-                        hintText: '5678 1234 10',
+                        hintText: AppStrings.phoneHint,
                         hintStyle: TextStyle(
-                          fontFamily: 'Tajawal',
+                          fontFamily: AppTextStyle.fontFamily,
                           fontSize: 14,
-                          color: Color(0xFFB5B5B5),
+                          color: AppColors.hintGrey,
                         ),
                       ),
                     ),

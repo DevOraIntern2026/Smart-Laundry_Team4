@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../core/widgets/blur_circle.dart';
 import '../widgets/login_view_body.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -12,7 +13,7 @@ class LoginView extends StatelessWidget {
     final scale = MediaQuery.sizeOf(context).width / _designWidth;
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -30,7 +31,7 @@ class LoginView extends StatelessWidget {
                     left: -40,
                     top: 80,
                     size: Size(160, 160),
-                    color: Color(0x66FFDAD6),
+                    color: AppColors.blurPink,
                     blur: 40,
                   ),
 
@@ -39,7 +40,7 @@ class LoginView extends StatelessWidget {
                     left: 203,
                     top: -48,
                     size: Size(192, 192),
-                    color: Color(0x4DDFE0FF),
+                    color: AppColors.blurLightBlue,
                     blur: 64,
                   ),
                 ],

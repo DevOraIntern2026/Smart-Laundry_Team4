@@ -5,6 +5,7 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/guidance.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AddressAppointmentDetails extends StatelessWidget {
   const AddressAppointmentDetails({super.key});
@@ -27,7 +28,7 @@ class AddressAppointmentDetails extends StatelessWidget {
                   SvgPicture.asset(AppAssets.locationArrow),
                   SizedBox(width: 8.w),
                   Text(
-                    "عنوان الاستلام",
+                    AppStrings.pickupAddress,
                     style: AppTextStyle.f12w500(
                       context,
                       color: AppColors.white500,
@@ -48,7 +49,7 @@ class AddressAppointmentDetails extends StatelessWidget {
                   SvgPicture.asset(AppAssets.cash),
                   SizedBox(width: 8.w),
                   Text(
-                    "إجمالي الفاتورة",
+                    AppStrings.invoiceTotal,
                     style: AppTextStyle.f12w500(
                       context,
                       color: AppColors.white500,

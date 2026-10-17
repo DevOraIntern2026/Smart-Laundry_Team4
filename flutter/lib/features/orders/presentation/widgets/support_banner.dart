@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/widgets/app_card.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class SupportBanner extends StatelessWidget {
   const SupportBanner({super.key, required this.onTap});
@@ -18,7 +19,7 @@ class SupportBanner extends StatelessWidget {
           SizedBox(width: 10.w),
           Expanded(
             child: Text(
-              'هل لديك أي استفسار؟',
+              AppStrings.haveQuestion,
               style: AppTextStyle.f14w400(
                 context,
                 fontWeight: FontWeight.w700,
@@ -36,7 +37,7 @@ class SupportBanner extends StatelessWidget {
               ),
             ),
             child: Text(
-              'تحدث معنا',
+              AppStrings.talkToUs,
               style: AppTextStyle.f12w500(
                 context,
                 color: AppColors.white,

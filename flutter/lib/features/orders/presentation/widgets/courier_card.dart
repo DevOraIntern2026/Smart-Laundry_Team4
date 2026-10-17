@@ -5,6 +5,7 @@ import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
 import 'package:smart_laundry/core/widgets/app_card.dart';
 import 'package:smart_laundry/core/widgets/circle_icon_button.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class CourierCard extends StatelessWidget {
   const CourierCard({
@@ -49,10 +50,10 @@ class CourierCard extends StatelessWidget {
                 SizedBox(height: 2.h),
                 Row(
                   children: [
-                    Icon(Icons.star, size: 14.w, color: Colors.amber),
+                    Icon(Icons.star, size: 14.w, color: AppColors.amber),
                     SizedBox(width: 3.w),
                     Text(
-                      '$rating ($reviewsCount تقييم)',
+                      AppStrings.ratingWithReviews(rating, reviewsCount),
                       style: AppTextStyle.mediumTitle11(
                         context,
                         fontWeight: FontWeight.w400,

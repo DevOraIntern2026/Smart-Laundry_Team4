@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/features/profile/presentation/widgets/address_widgets/action_text_button.dart';
-import 'package:smart_laundry/features/profile/presentation/constants/profile_strings.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AddressCardActions extends StatelessWidget {
   final VoidCallback onEdit;

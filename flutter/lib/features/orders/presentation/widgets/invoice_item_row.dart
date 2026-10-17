@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class InvoiceItemRow extends StatelessWidget {
   const InvoiceItemRow({
@@ -39,7 +40,7 @@ class InvoiceItemRow extends StatelessWidget {
           Expanded(child: Text(name, style: AppTextStyle.f12w500(context))),
           if (price != null)
             Text(
-              '$price ج.م',
+              AppStrings.priceEgp(price!),
               style: AppTextStyle.f12w500(
                 context,
                 fontWeight: FontWeight.w700,

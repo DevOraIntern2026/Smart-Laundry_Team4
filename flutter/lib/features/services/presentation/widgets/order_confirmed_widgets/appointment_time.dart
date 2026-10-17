@@ -4,6 +4,7 @@ import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/address_appointment_details.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/guidance.dart';
+import 'package:smart_laundry/core/utils/constants/app_strings/app_strings.dart';
 
 class AppointmentTime extends StatelessWidget {
   const AppointmentTime({super.key});
@@ -31,7 +32,7 @@ class AppointmentTime extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "موعد الزيارة",
+                        AppStrings.visitTime,
                         style: AppTextStyle.f12w500(
                           context,
                           color: AppColors.white500,
