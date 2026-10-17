@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors {
   AppColors._();
   static const Color primaryColor = Color(0xFFFE574F);
@@ -38,4 +40,11 @@ class AppColors {
   static const addBg = Color(0xFFFDE8E8);
   static const addFg = Color(0xFFD62828);
   static const secondaryBadgeBg = Color(0xFFE9EAF0);
+
+  static const danger = Color(0xFFE53935);
+  static const dangerLight = Color(0xFFFDECEC);
+  static const success = Color(0xFF1FA64A);
+  static const bg = Color(0xFFF5F7FB);
+  static const card = Colors.white;
+  static const border = Color(0xFFE6E9F0);
 }

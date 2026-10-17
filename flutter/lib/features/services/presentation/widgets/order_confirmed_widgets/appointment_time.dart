@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/features/services/presentation/widgets/address_appointment_details.dart';
+import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/guidance.dart';
 
 class AppointmentTime extends StatelessWidget {
   const AppointmentTime({super.key});
@@ -53,9 +54,8 @@ class AppointmentTime extends StatelessWidget {
             ],
           ),
           SizedBox(height: 12.h,),
-          AddressAppointmentDetails(
-
-          )
+          AddressAppointmentDetails(),
+          SizedBox(height: 16.h,),
         ],
       ),
     );

@@ -7,4 +7,5 @@ abstract class AppRoutes {
   static const String mainPage = '/mainPage';
   static const String addresses = "/addresses";
   static const String testScreen = "/testScreen";
+  static const String orderTracking = "/orderTracking";
 }

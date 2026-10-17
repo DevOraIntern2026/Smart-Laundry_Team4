@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:smart_laundry/core/theme/app_colors.dart';
 import 'package:smart_laundry/core/theme/app_text_styles.dart';
 import 'package:smart_laundry/core/utils/constants/app_assets/app_assets.dart';
+import 'package:smart_laundry/features/services/presentation/widgets/order_confirmed_widgets/guidance.dart';
 
 class AddressAppointmentDetails extends StatelessWidget {
   const AddressAppointmentDetails({super.key});
