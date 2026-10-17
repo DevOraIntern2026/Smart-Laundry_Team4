@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:smart_laundry/core/routing/app_router.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smart_laundry/core/theme/app_colors.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,13 +20,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: 'Tajawal',
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      routerConfig: AppRouter.router,
+    return ScreenUtilInit(
+      designSize: const Size(393, 852),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            fontFamily: 'Tajawal',
+            scaffoldBackgroundColor: AppColors.backgroundColor,
+          ),
+          routerConfig: AppRouter.router,
+        );
+      },
     );
   }
 }

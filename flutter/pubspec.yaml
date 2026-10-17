@@ -14,6 +14,8 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.3.0
   go_router: ^17.5.0
+  flutter_screenutil: ^5.9.3
+
 
 dev_dependencies:
   flutter_test:
@@ -26,7 +28,12 @@ flutter:
 
   assets:
     - assets/images/welcome/nivo_logo_only.png
-  
+    - assets/images/Auth/badge_laundry.png 
+    - assets/images/Auth/google.png
+    - assets/images/Auth/banner_logo.png
+    - assets/images/Auth/reset_lock.png
+    - assets/images/profile/
+    - assets/Icons/
 
   fonts:
     - family: Tajawal
