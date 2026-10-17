@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smart_laundry/features/auth/presentation/views/login_view.dart';
 import '../widgets/feature_card.dart';
 import '../../../../core/widgets/primary_button.dart';
 import 'package:flutter/gestures.dart';
@@ -413,10 +412,7 @@ class _LoginPrompt extends StatelessWidget {
               style: const TextStyle(color: Color(0xFFFE574F)),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const LoginView()),
-                  );
+                  // TODO: Add login navigation after Auth feature is merged.
                 },
             ),
           ],
